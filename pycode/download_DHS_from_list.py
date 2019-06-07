@@ -63,9 +63,9 @@ if not options.password:
 chrome_options = webdriver.ChromeOptions()
 chrome_options.binary_location = "/usr/lib/chromium-browser/chromium-browser"
 # chrome_options.add_argument("--headless") # Runs Chrome in headless mode.
-chrome_options.add_argument('--no-sandbox') # Bypass OS security model
+chrome_options.add_argument('--no-sandbox')  # Bypass OS security model
 chrome_options.add_argument('--disable-gpu')  # applicable to windows os only
-chrome_options.add_argument('start-maximized') #
+chrome_options.add_argument('start-maximized')
 chrome_options.add_argument('disable-infobars')
 chrome_options.add_argument("--disable-extensions")
 chrome_options.add_argument('--disable-gpu')
