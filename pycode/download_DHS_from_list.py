@@ -6,6 +6,7 @@ import pdb
 from selenium.webdriver.remote.command import Command
 from optparse import OptionParser
 import os
+import progressbar
 
 class Error(Exception):
     """Base class for exceptions in this module."""
@@ -83,7 +84,7 @@ browser.find_element_by_xpath("//*[@name='proj_id']/option[{}]".format(options.p
 
 links = open(options.download).read().splitlines()
 
-for link in links:
+for link in progressbar.progressbar(links):
     if link != "":
         browser.get(link)
         sleep(1)
