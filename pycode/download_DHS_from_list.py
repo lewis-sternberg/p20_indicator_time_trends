@@ -64,7 +64,7 @@ chromeOptions = webdriver.ChromeOptions()
 prefs = {"download.default_directory": options.output, "directory_upgrade": True, "extensions_to_open": "", "profile.default_content_settings.popups": 0}
 chromeOptions.add_experimental_option("prefs", prefs)
 
-browser = webdriver.Chrome("~/chromedriver", chrome_options=chromeOptions)
+browser = webdriver.Chrome("/home/alex/chromedriver", chrome_options=chromeOptions)
 browser.implicitly_wait(30)  # Configure the WebDriver to wait up to 30 seconds for each page to load
 
 browser.get("https://dhsprogram.com/data/dataset_admin")
