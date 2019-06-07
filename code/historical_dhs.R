@@ -6,12 +6,12 @@ lapply(list.of.packages, require, character.only=T)
 
 #Taken from https://raw.githubusercontent.com/akmiller01/alexm-util/master/DevInit/R/P20/2013_tab_data2.R
 # wd <- "E:/DHSauto"
-wd<- "E:/git/p20_indicator_time_trends"
+wd<- "~/git/p20_indicator_time_trends"
 setwd(wd)
 
 source("https://raw.githubusercontent.com/akmiller01/alexm-util/master/DevInit/R/P20/wealth_pca.R")
-povcalcuts <- fread("https://raw.githubusercontent.com/ZChristensen/poverty_trends/master/data/P20incometrends.csv",as.is=TRUE)
-dhsmeta<- fread("https://raw.githubusercontent.com/ZChristensen/p20_indicator_time_trends/master/data/dhs_meta_data20190524.csv", as.is=TRUE)
+povcalcuts <- fread("https://raw.githubusercontent.com/ZChristensen/poverty_trends/master/data/P20incometrends.csv")
+dhsmeta<- fread("https://raw.githubusercontent.com/ZChristensen/p20_indicator_time_trends/master/data/dhs_meta_data20190524.csv")
 dhsmeta<- subset(dhsmeta, Recode.Structure.!="DHS-I")
 
 
@@ -36,7 +36,7 @@ dhsmeta$filename=paste0(dhsmeta$dhs_cc,"HR",dhsmeta$dhs_recode_code,"DT")
 dhsmeta=dhsmeta[which(!is.na(dhsmeta$dhs_cc)),]
 
 keep=c("CountryName","RequestYear","filename")
-dhsmeta2=dhsmeta[,keep]
+dhsmeta2=dhsmeta[,keep,with=F]
 
 povcalcuts <- join(dhsmeta2,povcalcuts,by=c("CountryName","RequestYear"))
 
@@ -44,8 +44,8 @@ names(povcalcuts)[which(names(povcalcuts)=="RequestYear")] <- "year"
 names(povcalcuts)[which(names(povcalcuts)=="CountryCode")] <- "iso3"
 povcalcuts$hc<- povcalcuts$P20Headcount/100
 povcalcuts$extreme <- povcalcuts$ExtPovHC/100
-keep <- c("iso3","year","hc","PG","filename","extreme")
-povcalcuts <- povcalcuts[,keep]
+keep <- c("iso3","year","hc","PovGap","filename","extreme")
+povcalcuts <- povcalcuts[,keep, with=F]
 # povcalcuts$filename <- NA
 # povcalcuts$filename[which(povcalcuts$iso3=="NPL")]<-"NPIR7HFL"
 # povcalcuts$filename[which(povcalcuts$iso3=="BEN")]<-"BJIR61FL"
@@ -81,8 +81,8 @@ psum <- function(...,na.rm=TRUE) {
 
 ####Run function####
 # set our working directory, change this if using on another machine
-# wd <- "~/Survey Microdata/DHSauto"
-# setwd(wd)
+wd <- "~/Survey Microdata/DHSauto"
+setwd(wd)
 
 # List out all the directories in our wd, this is where our data is contained
 dirs<- list.dirs(wd)
