@@ -26,7 +26,7 @@ parser.add_option("-u", "--username", dest="user", help="DHS username", metavar=
 parser.add_option("-p", "--password", dest="password", default=False, help="DHS password", metavar="STRING")
 parser.add_option("-r", "--project", dest="proj", default=1, help="Project index", metavar="INTEGER")
 parser.add_option("-d", "--download", dest="download", default="/home/alex/git/p20_indicator_time_trends/data/dhslist.txt", help="Bulk download PATH", metavar="STRING")
-parser.add_option("-o", "--output", dest="output", default="/home/alex/Survey Microdata/DHSauto", help="Output path. Default is wd", metavar="FOLDER")
+parser.add_option("-o", "--output", dest="output", default="/home/alex/Survey Microdata/DHSauto/", help="Output path.", metavar="FOLDER")
 (options, args) = parser.parse_args()
 
 
@@ -44,7 +44,7 @@ def input_text(browser, inputs):
     # javacript function into the iframe. The collection
     # of textbox ids and strings is serialized
     # as a Javascript object literal using the json module.
-    inputs= json.dumps(inputs)
+    inputs = json.dumps(inputs)
     js = "var inputs = {};".format(inputs)
     js += """
     console.log(inputs)
@@ -56,18 +56,16 @@ def input_text(browser, inputs):
     return true;"""
     browser.execute_script(js)
 
+
 if not options.password:
     raise InputError("A valid password was not supplied.")
 
 chromeOptions = webdriver.ChromeOptions()
-prefs = {"download.default_directory" : options.output
-         ,"directory_upgrade":True
-         ,"extensions_to_open":""
-         ,"profile.default_content_settings.popups": 0}
-chromeOptions.add_experimental_option("prefs",prefs)
+prefs = {"download.default_directory": options.output, "directory_upgrade": True, "extensions_to_open": "", "profile.default_content_settings.popups": 0}
+chromeOptions.add_experimental_option("prefs", prefs)
 
-browser = webdriver.Chrome("C://chromedriver//chromedriver",chrome_options=chromeOptions)
-browser.implicitly_wait(30) # Configure the WebDriver to wait up to 30 seconds for each page to load
+browser = webdriver.Chrome("~/chromedriver", chrome_options=chromeOptions)
+browser.implicitly_wait(30)  # Configure the WebDriver to wait up to 30 seconds for each page to load
 
 browser.get("https://dhsprogram.com/data/dataset_admin")
 queries = []
@@ -80,8 +78,8 @@ passInput["input_id"] = "Password"
 passInput["input_str"] = options.password
 queries.append(passInput)
 input_text(browser, queries)
-browser.find_element_by_xpath('//*[@name="submit"]').click() #Click the submit button
-browser.find_element_by_xpath("//*[@name='proj_id']/option[{}]".format(options.proj+1)).click() #Click on the project option in the drop down
+browser.find_element_by_xpath('//*[@name="submit"]').click()  # Click the submit button
+browser.find_element_by_xpath("//*[@name='proj_id']/option[{}]".format(options.proj+1)).click()  # Click on the project option in the drop down
 
 links = open(options.download).read().splitlines()
 
