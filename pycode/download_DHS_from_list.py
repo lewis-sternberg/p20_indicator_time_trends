@@ -60,11 +60,19 @@ def input_text(browser, inputs):
 if not options.password:
     raise InputError("A valid password was not supplied.")
 
-chromeOptions = webdriver.ChromeOptions()
+chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = "/usr/lib/chromium-browser/chromium-browser"
+# chrome_options.add_argument("--headless") # Runs Chrome in headless mode.
+chrome_options.add_argument('--no-sandbox') # Bypass OS security model
+chrome_options.add_argument('--disable-gpu')  # applicable to windows os only
+chrome_options.add_argument('start-maximized') #
+chrome_options.add_argument('disable-infobars')
+chrome_options.add_argument("--disable-extensions")
+chrome_options.add_argument('--disable-gpu')
 prefs = {"download.default_directory": options.output, "directory_upgrade": True, "extensions_to_open": "", "profile.default_content_settings.popups": 0}
-chromeOptions.add_experimental_option("prefs", prefs)
+chrome_options.add_experimental_option("prefs", prefs)
 
-browser = webdriver.Chrome("/home/alex/chromedriver", chrome_options=chromeOptions)
+browser = webdriver.Chrome("/home/alex/chromedriver", chrome_options=chrome_options)
 browser.implicitly_wait(30)  # Configure the WebDriver to wait up to 30 seconds for each page to load
 
 browser.get("https://dhsprogram.com/data/dataset_admin")
