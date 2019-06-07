@@ -1,16 +1,14 @@
 from selenium import webdriver
-import time
 from time import sleep
 import json
-import pdb
-from selenium.webdriver.remote.command import Command
 from optparse import OptionParser
-import os
 import progressbar
+
 
 class Error(Exception):
     """Base class for exceptions in this module."""
     pass
+
 
 class InputError(Error):
     """Exception raised for errors in the input.
@@ -21,6 +19,7 @@ class InputError(Error):
 
     def __init__(self, msg):
         self.msg = msg
+
 
 parser = OptionParser()
 parser.add_option("-u", "--username", dest="user", help="DHS username", metavar="STRING")
