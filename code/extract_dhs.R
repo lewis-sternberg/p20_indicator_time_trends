@@ -1,62 +1,40 @@
 ####Function and setup####
-library(Hmisc)
-library(plyr)
-library(foreign)
-library(data.table)
-library(devtools)
+list.of.packages <- c("Hmisc","plyr","foreign","data.table","devtools")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+lapply(list.of.packages, require, character.only=T)
 ####Run function####
 # set our working directory, change this if using on another machine
-# wd <- "C:/Users/Alex/Documents/Data/P20/DHS"
-wd <- "C:/Users/Alex/Desktop/data/DHSauto/"
+wd <- "/home/alex/Survey Microdata/DHSauto"
 setwd(wd)
 
+output.dir = "/home/alex/git/p20_private_data/project_data/DHS auto/"
+
 #Unzip
-# zips <- list.files(pattern="*.zip")
-# 
+# message("Unzipping...")
+# zips <- list.files(pattern="*.zip",ignore.case=T,full.names=T)
+# pb = txtProgressBar(max=length(zips),style=3)
 # for(i in 1:length(zips)){
+#   setTxtProgressBar(pb,i)
 #   zip <- zips[i]
 #   unzip(zip)
 # }
+# close(pb)
 
-dirs <- list.dirs(wd)
-
-for(dir in dirs){
-  if (dir==wd){
-    #skip
-  }else{
-    message(dir)
-    # List out all the .dta in our wd, this is where our data is contained
-    files <- list.files(dir,"*.dta",ignore.case=TRUE,full.names=TRUE)
-    
-    for(j in 1:length(files)){
-      file <- files[j]
-      fileBase <- basename(file)
-      fileName <- substr(fileBase,1,nchar(fileBase)-4)
-      fileName <- tolower(fileName)
-      rdatas <- list.files(dir,"*.RData",ignore.case=TRUE)
-      #Comment this out to avoid re-writing
-      #       rdatas <- c()
-      if(!(paste0(fileName,".RData") %in% rdatas)){
-        data <- read.dta(file,convert.factors=FALSE)
-        save(data,file=paste0(dir,"/",fileName,".RData"))  
-      }
-    }
+message("Reading and resaving...")
+files <- list.files(pattern="*.dta",ignore.case=T,full.names=T,recursive=T)
+pb = txtProgressBar(max=length(files),style=3)
+for(i in 1:length(files)){
+  setTxtProgressBar(pb,i)
+  file <- files[i]
+  fileBase <- basename(file)
+  fileName <- substr(fileBase,1,nchar(fileBase)-4)
+  fileName <- tolower(fileName)
+  output.filename = paste0(output.dir,"/",fileName,".RData")
+  if(!file.exists(output.filename)){
+    data <- read.dta(file,convert.factors=F)
+    save(data,file=output.filename)
+    rm(data)
   }
 }
-
-# List out all the .dta in our wd, this is where our data is contained
-# files <- list.files(wd,"*.dta",ignore.case=TRUE,full.names=TRUE)
-# 
-# for(j in 1:length(files)){
-#   file <- files[j]
-#   fileBase <- basename(file)
-#   fileName <- substr(fileBase,1,nchar(fileBase)-4)
-#   fileName <- tolower(fileName)
-#   rdatas <- list.files(wd,"*.RData",ignore.case=TRUE)
-#   #Comment this out to avoid re-writing
-# #       rdatas <- c()
-#   if(!(paste0(fileName,".RData") %in% rdatas)){
-#     data <- read.dta(file,convert.factors=FALSE)
-#     save(data,file=paste0(wd,"/",fileName,".RData"))  
-#   }
-# }
+close(pb)
