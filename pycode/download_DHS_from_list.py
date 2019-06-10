@@ -1,8 +1,12 @@
-from selenium import webdriver
+from optparse import OptionParser
 from time import sleep
 import json
-from optparse import OptionParser
+import urllib.parse as urlparse
+import os
+
 import progressbar
+from selenium import webdriver
+
 
 
 class Error(Exception):
@@ -26,7 +30,7 @@ parser.add_option("-u", "--username", dest="user", help="DHS username", metavar=
 parser.add_option("-p", "--password", dest="password", default=False, help="DHS password", metavar="STRING")
 parser.add_option("-r", "--project", dest="proj", default=1, help="Project index", metavar="INTEGER")
 parser.add_option("-d", "--download", dest="download", default="/home/alex/git/p20_indicator_time_trends/data/dhslist.txt", help="Bulk download PATH", metavar="STRING")
-parser.add_option("-o", "--output", dest="output", default="/home/alex/Survey Microdata/DHSauto/", help="Output path.", metavar="FOLDER")
+parser.add_option("-o", "--output", dest="output", default="/home/alex/Survey Microdata/DHSauto", help="Output path.", metavar="FOLDER")
 (options, args) = parser.parse_args()
 
 
@@ -93,7 +97,15 @@ links = open(options.download).read().splitlines()
 
 for link in progressbar.progressbar(links):
     if link != "":
-        browser.get(link)
-        sleep(1)
+        link_parsed = urlparse.urlparse(link)
+        link_filename = urlparse.parse_qs(link_parsed.query)['Filename'][0]
+        link_filename_base, link_filename_ext = os.path.splitext(link_filename)
+        link_filename_upper = link_filename_base + link_filename_ext.upper()
+        link_filename_lower = link_filename_base + link_filename_ext.lower()
+        link_filepath_upper = os.path.join(options.output, link_filename_upper)
+        link_filepath_lower = os.path.join(options.output, link_filename_lower)
+        if not os.path.isfile(link_filepath_upper) and not os.path.isfile(link_filepath_lower):
+            browser.get(link)
+            sleep(1)
 
 browser.close()

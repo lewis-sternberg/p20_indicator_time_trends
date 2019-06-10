@@ -21,6 +21,8 @@ output.dir = "/home/alex/git/p20_private_data/project_data/DHS auto/"
 # }
 # close(pb)
 
+too.big = c("iahr74fl","iahr74fl","iapr74fl","iabr74fl")
+
 message("Reading and resaving...")
 files <- list.files(pattern="*.dta",ignore.case=T,full.names=T,recursive=T)
 pb = txtProgressBar(max=length(files),style=3)
@@ -31,7 +33,7 @@ for(i in 1:length(files)){
   fileName <- substr(fileBase,1,nchar(fileBase)-4)
   fileName <- tolower(fileName)
   output.filename = paste0(output.dir,"/",fileName,".RData")
-  if(!file.exists(output.filename)){
+  if(!file.exists(output.filename) & !(fileName %in% too.big)){
     data <- read.dta(file,convert.factors=F)
     save(data,file=output.filename)
     rm(data)
