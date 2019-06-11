@@ -21,7 +21,7 @@ output.dir = "/home/alex/git/p20_private_data/project_data/DHS auto/"
 # }
 # close(pb)
 
-too.big = c("iahr74fl","iahr74fl","iapr74fl","iabr74fl","iair74fl")
+too.big = c("iahr74fl","iahr74fl","iapr74fl","iabr74fl","iair74fl","iakr74fl")
 
 message("Reading and resaving...")
 files <- list.files(pattern="*.dta",ignore.case=T,full.names=T,recursive=T)

@@ -1,0 +1,463 @@
+match,var,desc,skilled,filename
+vacc,im6,Child ever received any vaccinations,,Afghanistan_MICS4_Datasets
+vacc,im6,L'enfant a dÃ©jÃ  reÃ§u des vaccins pour Ã©viter contracter des maladies,,Algeria_MICS4_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Afghanistan_MICS4_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Afghanistan_MICS4_Datasets
+attendant,mn17c,Assistance at delivery: Auxiliary midwife,0,Afghanistan_MICS4_Datasets
+attendant,mn17g,Assistance at delivery: Community health worker,0,Afghanistan_MICS4_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Afghanistan_MICS4_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Afghanistan_MICS4_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Afghanistan_MICS4_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Afghanistan_MICS4_Datasets
+attendant,mn17a,Assistance Ã  l'accouchement : MÃ©decin,1,Algeria_MICS4_Datasets
+attendant,mn17b,Assistance Ã  l'accouchement : InfirmiÃ¨re / Sage-femme,1,Algeria_MICS4_Datasets
+attendant,mn17f,Assistance Ã  l'accouchement : Accoucheuse traditionnelle,0,Algeria_MICS4_Datasets
+attendant,mn17x,Assistance Ã  l'accouchement : Autre,0,Algeria_MICS4_Datasets
+attendant,mn17h,Assistance Ã  l'accouchement : Parent(e) / Ami(e),0,Algeria_MICS4_Datasets
+attendant,mn17y,Assistance Ã  l'accouchement : Personne,0,Algeria_MICS4_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Barbados_MICS4_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Barbados_MICS4_Datasets
+attendant,mn17g,Assistance at delivery: Community health worker,0,Barbados_MICS4_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Barbados_MICS4_Datasets
+vacc,im6,Child ever received any vaccinations,,Belize_MICS4_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Barbados_MICS4_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Barbados_MICS4_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Belarus_MICS4_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Belarus_MICS4_Datasets
+attendant,mn17d,Assistance at delivery: Medical assistance,1,Belarus_MICS4_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Belarus_MICS4_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Belarus_MICS4_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Belarus_MICS4_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Belize_MICS4_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Belize_MICS4_Datasets
+attendant,mn17c,Assistance at delivery: Auxiliary midwife,0,Belize_MICS4_Datasets
+attendant,mn17g,Assistance at delivery: Community health worker,0,Belize_MICS4_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Belize_MICS4_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Belize_MICS4_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Belize_MICS4_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Belize_MICS4_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Bhutan_MICS4_Datasets
+vacc,im6,Child ever received any vaccinations,,Bosnia and Herzegovina_MICS4_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Bhutan_MICS4_Datasets
+attendant,mn17d,Assistance at delivery:ACO,1,Bhutan_MICS4_Datasets
+attendant,mn17c,Assistance at delivery: HA/BHW,0,Bhutan_MICS4_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Bhutan_MICS4_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Bhutan_MICS4_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Bhutan_MICS4_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Bhutan_MICS4_Datasets
+attendant,mn17g,Assistance at delivery: Village health worker,0,Bhutan_MICS4_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Bosnia and Herzegovina_MICS4_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Bosnia and Herzegovina_MICS4_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Bosnia and Herzegovina_MICS4_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Bosnia and Herzegovina_MICS4_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Bosnia and Herzegovina_MICS4_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Bosnia and Herzegovina_MICS4_Datasets
+attendant,mn17a,Doctor,1,Cameroon_MICS5_Datasets
+vacc,im6,L'enfant a déjà reçu des vaccins pour éviter contracter des maladies,,Central African Republic_MICS4_Datasets
+attendant,mn17b,Nurse,1,Cameroon_MICS5_Datasets
+attendant,mn17c,Assistant nurse,1,Cameroon_MICS5_Datasets
+attendant,mn17d,caregiver,1,Cameroon_MICS5_Datasets
+attendant,mn17g,community,0,Cameroon_MICS5_Datasets
+attendant,mn17y,no one,0,Cameroon_MICS5_Datasets
+attendant,mn17x,other,0,Cameroon_MICS5_Datasets
+attendant,mn17h,parent/friend,0,Cameroon_MICS5_Datasets
+attendant,mn17f,traditional,0,Cameroon_MICS5_Datasets
+vacc,im6,L'enfant a déjà reçu des vaccins pour éviter contracter des ,,Chad_MICS4_Datasets
+attendant,mn17a,Assistance à l'accouchement : Médecin,1,Central African Republic_MICS4_Datasets
+attendant,mn17b,Assistance à l'accouchement : Infirmière / Sage-femme,1,Central African Republic_MICS4_Datasets
+attendant,mn17f,Assistance à l'accouchement : Accoucheuse traditionnelle,0,Central African Republic_MICS4_Datasets
+attendant,mn17g,Assistance à l'accouchement : Agent de santé communautaire,0,Central African Republic_MICS4_Datasets
+attendant,mn17x,Assistance à l'accouchement : Autre,0,Central African Republic_MICS4_Datasets
+attendant,mn17h,Assistance à l'accouchement : Parent(e) / Ami(e),0,Central African Republic_MICS4_Datasets
+attendant,mn17y,Assistance à l'accouchement : Personne,0,Central African Republic_MICS4_Datasets
+attendant,mn17c,Assistance à l'accouchement : Sage-femme auxiliaire,0,Central African Republic_MICS4_Datasets
+attendant,mn17a,Assistance à l'accouchement : Médecin,1,Chad_MICS4_Datasets
+vacc,im6,Alguna vez recibió el niño una vacuna para prevenir alguna enfermedad,,Costa Rica_MICS4_Datasets
+attendant,mn17b,Assistance à l'accouchement : Infirmière / Sage-femme,1,Chad_MICS4_Datasets
+attendant,mn17f,Assistance à l'accouchement : Accoucheuse traditionnelle,0,Chad_MICS4_Datasets
+attendant,mn17g,Assistance à l'accouchement : Agent de santé communautaire,0,Chad_MICS4_Datasets
+attendant,mn17x,Assistance à l'accouchement : Autre,0,Chad_MICS4_Datasets
+attendant,mn17h,Assistance à l'accouchement : Parent(e) / Ami(e),0,Chad_MICS4_Datasets
+attendant,mn17y,Assistance à l'accouchement : Personne,0,Chad_MICS4_Datasets
+attendant,mn17c,Assistance à l'accouchement : Sage-femme auxiliaire,0,Chad_MICS4_Datasets
+attendant,mn17a,Asistencia en el parto: Médico general/Obstetra,1,Costa Rica_MICS4_Datasets
+attendant,mn17b,Asistencia en el parto: Enfermera general,1,Costa Rica_MICS4_Datasets
+attendant,mn17i,Asistencia en el parto: Enfermera obstétrica,1,Costa Rica_MICS4_Datasets
+attendant,mn17c,Asistencia en el parto: Comadrona auxiliar,0,Costa Rica_MICS4_Datasets
+attendant,mn17q,Asistencia en el parto: Missing,0,Costa Rica_MICS4_Datasets
+attendant,mn17y,Asistencia en el parto: Nadie,0,Costa Rica_MICS4_Datasets
+attendant,mn17x,Asistencia en el parto: Otro,0,Costa Rica_MICS4_Datasets
+attendant,mn17h,Asistencia en el parto: Pariente/Amiga/o,0,Costa Rica_MICS4_Datasets
+attendant,mn17f,Asistencia en el parto: Partera tradicional,0,Costa Rica_MICS4_Datasets
+attendant,mn17g,Asistencia en el parto: Trabajadora de salud comunitaria,0,Costa Rica_MICS4_Datasets
+attendant,mn7a,Doctor,1,Djibouti MICS 2006 SPSS Datasets
+attendant,mn7b,nurse,1,Djibouti MICS 2006 SPSS Datasets
+attendant,mn7g,community,0,Djibouti MICS 2006 SPSS Datasets
+attendant,mn7y,no one,0,Djibouti MICS 2006 SPSS Datasets
+attendant,mn7x,other,0,Djibouti MICS 2006 SPSS Datasets
+attendant,mn7h,parent/friend,0,Djibouti MICS 2006 SPSS Datasets
+attendant,mn7c,safe-woman assistant,0,Djibouti MICS 2006 SPSS Datasets
+attendant,mn7f,traditional,0,Djibouti MICS 2006 SPSS Datasets
+attendant,mn17a,Doctor,1,Dominican Republic_MICS5_Datasets
+attendant,mn17b,Nurse,1,Dominican Republic_MICS5_Datasets
+attendant,mn17c,OBGYN,1,Dominican Republic_MICS5_Datasets
+attendant,mn17d,Other physician,1,Dominican Republic_MICS5_Datasets
+attendant,mn17g,community,0,Dominican Republic_MICS5_Datasets
+attendant,mn17y,no one,0,Dominican Republic_MICS5_Datasets
+attendant,mn17x,other,0,Dominican Republic_MICS5_Datasets
+attendant,mn17h,parent/friend,0,Dominican Republic_MICS5_Datasets
+attendant,mn17f,traditional,0,Dominican Republic_MICS5_Datasets
+vacc,im10,Child ever received any vaccinations,,Georgia MICS 2005 SPSS Datasets
+attendant,mn17a,Doctor,1,El Salvador_MICS5_Datasets
+attendant,mn17b,Nurse,1,El Salvador_MICS5_Datasets
+attendant,mn17c,assistant nurse,1,El Salvador_MICS5_Datasets
+attendant,mn17g,MINSAL health promoter,0,El Salvador_MICS5_Datasets
+attendant,mn17y,no one,0,El Salvador_MICS5_Datasets
+attendant,mn17x,other,0,El Salvador_MICS5_Datasets
+attendant,mn17h,parent/friend,0,El Salvador_MICS5_Datasets
+attendant,mn17f,traditional,0,El Salvador_MICS5_Datasets
+attendant,mn7a,Assistance at delivery: Doctor,1,Georgia MICS 2005 SPSS Datasets
+attendant,mn7b,Assistance at delivery: Nurse/midwife,1,Georgia MICS 2005 SPSS Datasets
+attendant,mn7y,Assistance at delivery: No one,0,Georgia MICS 2005 SPSS Datasets
+attendant,mn7x,Assistance at delivery: Other,0,Georgia MICS 2005 SPSS Datasets
+attendant,mn7h,Assistance at delivery: Relative/friend,0,Georgia MICS 2005 SPSS Datasets
+vacc,im10,Est-ce-que l'enfant a recu  des vaccinations y compris celle,,Guinea-Bissau MICS 2006 SPSS Datasets
+attendant,mn7f,Assistance at delivery: Traditional birth attendant,0,Georgia MICS 2005 SPSS Datasets
+attendant,mn17a,Doctor,1,Guinea Bissau_MICS5_Datasets
+attendant,mn17b,Nurse,1,Guinea Bissau_MICS5_Datasets
+attendant,mn17g,MINSAL health promoter,0,Guinea Bissau_MICS5_Datasets
+attendant,mn17y,no one,0,Guinea Bissau_MICS5_Datasets
+attendant,mn17x,other,0,Guinea Bissau_MICS5_Datasets
+attendant,mn17h,parent/friend,0,Guinea Bissau_MICS5_Datasets
+attendant,mn17f,traditional,0,Guinea Bissau_MICS5_Datasets
+attendant,mn7a,Assistance a l'accouchement: Docteur,1,Guinea-Bissau MICS 2006 SPSS Datasets
+attendant,mn7b,Assistance a l'accouchement: Infirmiere/safe-femme,1,Guinea-Bissau MICS 2006 SPSS Datasets
+attendant,mn7f,Assistance a l'accouchement: Accoucheuse traditionnelle,0,Guinea-Bissau MICS 2006 SPSS Datasets
+attendant,mn7g,Assistance a l'accouchement: Agent de sante communautaire,0,Guinea-Bissau MICS 2006 SPSS Datasets
+attendant,mn7x,Assistance a l'accouchement: Autre,0,Guinea-Bissau MICS 2006 SPSS Datasets
+attendant,mn7h,Assistance a l'accouchement: Parente/Amie,0,Guinea-Bissau MICS 2006 SPSS Datasets
+attendant,mn7y,Assistance a l'accouchement: Personne,0,Guinea-Bissau MICS 2006 SPSS Datasets
+attendant,mn7c,Assistance a l'accouchement: Safe-femme auxiliaire,0,Guinea-Bissau MICS 2006 SPSS Datasets
+attendant,mn17a,Doctor,1,Guyana_MICS5_Datasets
+vacc,im6,Child ever received any vaccinations,,Iraq_MICS4_Datasets
+attendant,mn17b,Nurse,1,Guyana_MICS5_Datasets
+attendant,mn17c,Single midwife,1,Guyana_MICS5_Datasets
+attendant,mn17d,medex,1,Guyana_MICS5_Datasets
+attendant,mn17g,community,0,Guyana_MICS5_Datasets
+attendant,mn17y,no one,0,Guyana_MICS5_Datasets
+attendant,mn17x,other,0,Guyana_MICS5_Datasets
+attendant,mn17h,parent/friend,0,Guyana_MICS5_Datasets
+vacc,im6,Child ever received any vaccinations,,Jamaica_MICS4_Datasets
+attendant,mn17f,traditional,0,Guyana_MICS5_Datasets
+attendant,mn17a,Assistance at delivery: Doctor public,1,Iraq_MICS4_Datasets
+attendant,mn17b,Assistance at delivery: Doctor private,1,Iraq_MICS4_Datasets
+attendant,mn17c,Assistance at delivery: Nurse / Midwife,1,Iraq_MICS4_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Iraq_MICS4_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Iraq_MICS4_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Iraq_MICS4_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Iraq_MICS4_Datasets
+vacc,im6,Child ever received any vaccinations,,Kazakhstan_MICS4_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Jamaica_MICS4_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Jamaica_MICS4_Datasets
+attendant,mn17c,Assistance at delivery: Auxiliary midwife,0,Jamaica_MICS4_Datasets
+attendant,mn17g,Assistance at delivery: Community health worker,0,Jamaica_MICS4_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Jamaica_MICS4_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Jamaica_MICS4_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Jamaica_MICS4_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Jamaica_MICS4_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Kazakhstan_MICS4_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Kazakhstan_MICS4_Datasets
+attendant,mn17d,Assistance at delivery: Feldsher,1,Kazakhstan_MICS4_Datasets
+attendant,mn17c,Assistance at delivery: Auxiliary midwife,0,Kazakhstan_MICS4_Datasets
+attendant,mn17g,Assistance at delivery: Community health worker,0,Kazakhstan_MICS4_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Kazakhstan_MICS4_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Kazakhstan_MICS4_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Kazakhstan_MICS4_Datasets
+vacc,im6,Child ever received any vaccinations,,Kosovo under UNSC res. 1244_MICS5_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Kazakhstan_MICS4_Datasets
+attendant,mn17a,Doctor,1,Kazakhstan_MICS5_Datasets
+attendant,mn17b,Nurse,1,Kazakhstan_MICS5_Datasets
+attendant,mn17d,Feldsher,1,Kazakhstan_MICS5_Datasets
+attendant,mn17y,no one,0,Kazakhstan_MICS5_Datasets
+attendant,mn17x,other,0,Kazakhstan_MICS5_Datasets
+attendant,mn17h,parent/friend,0,Kazakhstan_MICS5_Datasets
+vacc,im6,Child ever received any vaccinations,,Kyrgyzstan MICS5 Datasets
+attendant,mn17f,traditional,0,Kazakhstan_MICS5_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Kosovo under UNSC res. 1244_MICS5_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Kosovo under UNSC res. 1244_MICS5_Datasets
+attendant,mn17c,Assistance at delivery: Auxiliary midwife,0,Kosovo under UNSC res. 1244_MICS5_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Kosovo under UNSC res. 1244_MICS5_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Kosovo under UNSC res. 1244_MICS5_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Kosovo under UNSC res. 1244_MICS5_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Kosovo under UNSC res. 1244_MICS5_Datasets
+vacc,im6,Child ever received any vaccinations,,Lao People's Democratic Republic_LSIS_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Kyrgyzstan MICS5 Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Kyrgyzstan MICS5 Datasets
+attendant,mn17c,Assistance at delivery: Auxiliary midwife,0,Kyrgyzstan MICS5 Datasets
+attendant,mn17g,Assistance at delivery: Community health worker,0,Kyrgyzstan MICS5 Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Kyrgyzstan MICS5 Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Kyrgyzstan MICS5 Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Kyrgyzstan MICS5 Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Kyrgyzstan MICS5 Datasets
+vacc,im6,Child ever received any vaccinations,,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets"
+attendant,mn17a,Assistance at delivery: Doctor,1,Lao People's Democratic Republic_LSIS_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Lao People's Democratic Republic_LSIS_Datasets
+attendant,mn17c,Assistance at delivery: Auxiliary midwife,0,Lao People's Democratic Republic_LSIS_Datasets
+attendant,mn17g,Assistance at delivery: Community health worker,0,Lao People's Democratic Republic_LSIS_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Lao People's Democratic Republic_LSIS_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Lao People's Democratic Republic_LSIS_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Lao People's Democratic Republic_LSIS_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Lao People's Democratic Republic_LSIS_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets"
+attendant,mn17b,Assistance at delivery: Nurse,1,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets"
+vacc,im6,L'enfant a dejÐ° reÐ·u des vaccins pour eviter contracter des ,,Mauritania_MICS4_Datasets
+attendant,mn17c,Assistance at delivery: Obsetrical nurse,1,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets"
+attendant,mn17d,Assistance at delivery: Midwife,1,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets"
+attendant,mn17e,Assistance at delivery: Nurse,1,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets"
+attendant,mn17g,Assistance at delivery: Community health worker,0,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets"
+attendant,mn17y,Assistance at delivery: No one,0,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets"
+attendant,mn17x,Assistance at delivery: Other,0,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets"
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets"
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets"
+attendant,mn17a,Professionnel de la sante : Medecin,1,Mauritania_MICS4_Datasets
+attendant,mn17b,Professionnel de la sante: Sage-femme,1,Mauritania_MICS4_Datasets
+attendant,mn17c,Professionnel de la sante : Infirmiere(e),1,Mauritania_MICS4_Datasets
+attendant,mn17d,Professionnel de la sante:Accoucheuse auxiliaire,1,Mauritania_MICS4_Datasets
+attendant,mn17x,Professionnel de la sante:Medecin,1,Mauritania_MICS4_Datasets
+attendant,mn17y,Professionnel de la sante:Sage femme,1,Mauritania_MICS4_Datasets
+attendant,mn17x,Assistance e l'accouchement : Autre,0,Mauritania_MICS4_Datasets
+attendant,mn17h,Assistance e l'accouchement : Parent(e) / Ami(e),0,Mauritania_MICS4_Datasets
+attendant,mn17y,Assistance e l'accouchement : Personne,0,Mauritania_MICS4_Datasets
+attendant,mn17f,Autre personne : Accoucheuse traditionnelle,0,Mauritania_MICS4_Datasets
+attendant,mn17g,Autre personne : Agent de sante communautaire,0,Mauritania_MICS4_Datasets
+attendant,mn17h,Autre personne : Autre,0,Mauritania_MICS4_Datasets
+attendant,mn17f,Autre personne: Accoucheuse traditionnelle,0,Mauritania_MICS4_Datasets
+attendant,mn17g,Autre personne:Agent de sante communautaire,0,Mauritania_MICS4_Datasets
+attendant,mn17a,Doctor,1,Mexico_MICS5_Datasets
+vacc,im6,Child ever received any vaccinations,,Moldova_MICS4_Datasets
+attendant,mn17b,Nurse,1,Mexico_MICS5_Datasets
+attendant,mn17c,Professional midwife,1,Mexico_MICS5_Datasets
+attendant,mn17g,community,0,Mexico_MICS5_Datasets
+attendant,mn17y,no one,0,Mexico_MICS5_Datasets
+attendant,mn17q,no response,0,Mexico_MICS5_Datasets
+attendant,mn17x,other,0,Mexico_MICS5_Datasets
+vacc,im6,Child ever received any vaccinations,,Mongolia_MICS5_Datasets
+attendant,mn17h,parent/friend,0,Mexico_MICS5_Datasets
+attendant,mn17f,traditional,0,Mexico_MICS5_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Moldova_MICS4_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Moldova_MICS4_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Moldova_MICS4_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Moldova_MICS4_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Moldova_MICS4_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Moldova_MICS4_Datasets
+attendant,mn17d,Assistance at delivery: Gyneacologist,1,Mongolia_MICS5_Datasets
+attendant,mn17e,Assistance at delivery: Physician,1,Mongolia_MICS5_Datasets
+vacc,im6,Child ever received any vaccinations,,Montenegro_MICS5_Datasets
+attendant,mn17i,Assistance at delivery: Family/ Soum doctor,1,Mongolia_MICS5_Datasets
+attendant,mn17j,Assistance at delivery: Midwife,1,Mongolia_MICS5_Datasets
+attendant,mn17k,Assistance at delivery: Nurse,1,Mongolia_MICS5_Datasets
+attendant,mn17c,Assistance at delivery: Auxiliary midwife,0,Mongolia_MICS5_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Mongolia_MICS5_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Mongolia_MICS5_Datasets
+vacc,im6,Child ever received any vaccinations,,Nepal_MICS5_Datasets
+attendant,mn17h,Assistance at delivery: Relatives/ friends,0,Mongolia_MICS5_Datasets
+attendant,mn17f,Assistance at delivery: Traditional practitioner,0,Mongolia_MICS5_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Montenegro_MICS5_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Montenegro_MICS5_Datasets
+attendant,mn17c,Assistance at delivery: Auxiliary midwife,0,Montenegro_MICS5_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Montenegro_MICS5_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Montenegro_MICS5_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Montenegro_MICS5_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Nepal_MICS5_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Nepal_MICS5_Datasets
+attendant,mn17d,Assistance at delivery: Health assistant/Assistant health worker,1,Nepal_MICS5_Datasets
+attendant,mn17c,Assistance at delivery: Auxiliary midwife,0,Nepal_MICS5_Datasets
+attendant,mn17h,Assistance at delivery: Female community health volunteer (FCHV),0,Nepal_MICS5_Datasets
+attendant,mn17e,Assistance at delivery: Maternal child health worker (MCHW),0,Nepal_MICS5_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Nepal_MICS5_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Nepal_MICS5_Datasets
+attendant,mn17i,Assistance at delivery: Relative/Friend,0,Nepal_MICS5_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Nepal_MICS5_Datasets
+vacc,im6,Child ever received any vaccinations,,Serbia_MICS5_Datasets
+attendant,mn17g,Assistance at delivery: Village health worker,0,Nepal_MICS5_Datasets
+attendant,mn17a,Doctor,1,Sao Tome and Principe_MICS5_Datasets
+attendant,mn17b,Nurse,1,Sao Tome and Principe_MICS5_Datasets
+attendant,mn17g,community,0,Sao Tome and Principe_MICS5_Datasets
+attendant,mn17y,no one,0,Sao Tome and Principe_MICS5_Datasets
+attendant,mn17x,other,0,Sao Tome and Principe_MICS5_Datasets
+attendant,mn17h,parent/friend,0,Sao Tome and Principe_MICS5_Datasets
+attendant,mn17f,traditional,0,Sao Tome and Principe_MICS5_Datasets
+vacc,im10,Child ever received any vaccinations,,Somalia MICS 2006 SPSS Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Serbia_MICS5_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Serbia_MICS5_Datasets
+attendant,mn17i,Assistance at delivery: Husband / Partner,0,Serbia_MICS5_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Serbia_MICS5_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Serbia_MICS5_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Serbia_MICS5_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Serbia_MICS5_Datasets
+attendant,mn7a,Assistance at delivery: Doctor,1,Somalia MICS 2006 SPSS Datasets
+attendant,mn7b,Assistance at delivery: Nurse/midwife,1,Somalia MICS 2006 SPSS Datasets
+attendant,mn7d,assistance at delivery: Private Doctor,1,Somalia MICS 2006 SPSS Datasets
+attendant,mn7c,Assistance at delivery: Auxiliary midwife,0,Somalia MICS 2006 SPSS Datasets
+attendant,mn7y,Assistance at delivery: No one,0,Somalia MICS 2006 SPSS Datasets
+attendant,mn7x,Assistance at delivery: Other,0,Somalia MICS 2006 SPSS Datasets
+attendant,mn7h,Assistance at delivery: Relative/friend,0,Somalia MICS 2006 SPSS Datasets
+attendant,mn7f,Assistance at delivery: Traditional birth attendant,0,Somalia MICS 2006 SPSS Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,South Sudan_MICS4_Datasets
+attendant,mn17c,Assistance at delivery: Nurse Midwife,1,South Sudan_MICS4_Datasets
+attendant,mn17e,Assistance at delivery: Medical assistant,1,South Sudan_MICS4_Datasets
+attendant,mn17g,Assistance at delivery: Community health worker,0,South Sudan_MICS4_Datasets
+attendant,mn17b,Assistance at delivery: Health Visitor,0,South Sudan_MICS4_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,South Sudan_MICS4_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,South Sudan_MICS4_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendent,0,South Sudan_MICS4_Datasets
+attendant,mn17d,Assistance at delivery: Village midwife,0,South Sudan_MICS4_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,St.Lucia_MICS4_Datasets
+vacc,im6,Child ever received any vaccinations,,South Sudan_MICS4_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,St.Lucia_MICS4_Datasets
+attendant,mn17g,Assistance at delivery: Community health worker,0,St.Lucia_MICS4_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,St.Lucia_MICS4_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,St.Lucia_MICS4_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,St.Lucia_MICS4_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,St.Lucia_MICS4_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,State of Palestine_MICS5_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,State of Palestine_MICS5_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,State of Palestine_MICS5_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,State of Palestine_MICS5_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,State of Palestine_MICS5_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,State of Palestine_MICS5_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Sudan_MICS5_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Sudan_MICS5_Datasets
+attendant,mn17d,Assistance at delivery:Trained Midwife,1,Sudan_MICS5_Datasets
+attendant,mn17e,Assistance at delivery: Medical Assistant,1,Sudan_MICS5_Datasets
+attendant,mn17c,Assistance at delivery:  Health Visitor,0,Sudan_MICS5_Datasets
+attendant,mn17g,Assistance at delivery: Community health worker,0,Sudan_MICS5_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Sudan_MICS5_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Sudan_MICS5_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Sudan_MICS5_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Suriname_MICS4_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Suriname_MICS4_Datasets
+vacc,im6,Child ever received any vaccinations,,State of Palestine_MICS5_Datasets
+attendant,mn17d,Assistence at delivery: Midwife/doctor in training,0,Suriname_MICS4_Datasets
+attendant,mn17c,Assistance at delivery: Auxiliary midwife,1,Suriname_MICS4_Datasets
+attendant,mn17g,Assistance at delivery: Community health worker,1,Suriname_MICS4_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Suriname_MICS4_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Suriname_MICS4_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Suriname_MICS4_Datasets
+vacc,im6,Child ever received any vaccinations,,Sudan_MICS5_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Suriname_MICS4_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Swaziland_MICS4_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Swaziland_MICS4_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Swaziland_MICS4_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Swaziland_MICS4_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Swaziland_MICS4_Datasets
+attendant,mn17g,Assistance at delivery: Rural Health Motivator,0,Swaziland_MICS4_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Swaziland_MICS4_Datasets
+attendant,mn17a,Doctor,1,Swaziland_MICS5_Datasets
+vacc,im6,Child ever received any vaccinations,,Suriname_MICS4_Datasets
+attendant,mn17b,Nurse,1,Swaziland_MICS5_Datasets
+attendant,mn17g,community,0,Swaziland_MICS5_Datasets
+attendant,mn17y,no one,0,Swaziland_MICS5_Datasets
+attendant,mn17x,other,0,Swaziland_MICS5_Datasets
+attendant,mn17h,parent/friend,0,Swaziland_MICS5_Datasets
+attendant,mn17f,traditional,0,Swaziland_MICS5_Datasets
+attendant,mn7a,Assistance at delivery: Doctor,1,Syria MICS 2006 SPSS Datasets
+attendant,mn7b,Assistance at delivery: Nurse/midwife,1,Syria MICS 2006 SPSS Datasets
+attendant,mn7c,Assistance at delivery: Auxiliary midwife,1,Syria MICS 2006 SPSS Datasets
+vacc,im6,Child ever received any vaccinations,,Swaziland_MICS4_Datasets
+attendant,mn7y,Assistance at delivery: No one,0,Syria MICS 2006 SPSS Datasets
+attendant,mn7x,Assistance at delivery: Other,0,Syria MICS 2006 SPSS Datasets
+attendant,mn7h,Assistance at delivery: Relative/friend,0,Syria MICS 2006 SPSS Datasets
+attendant,mn7f,Assistance at delivery: Traditional birth attendant,0,Syria MICS 2006 SPSS Datasets
+vacc,im10,Child ever received any vaccinations,,Syria MICS 2006 SPSS Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Thailand_MICS4_Datasets
+attendant,mn17b,Assistance at delivery: Nurse/midwife,1,Thailand_MICS4_Datasets
+attendant,mn17e,Assistance at delivery: Health centre staff/nurse's aide/midwife's aide,1,Thailand_MICS4_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Thailand_MICS4_Datasets
+vacc,im6,Child ever received any vaccinations including vaccinations received in a campaign or immunization day,,Thailand_MICS4_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Thailand_MICS4_Datasets
+attendant,mn17h,Assistance at delivery: Relative/friend,0,Thailand_MICS4_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Thailand_MICS4_Datasets
+attendant,mn17g,Assistance at delivery: Village health volunteer (VHV),0,Thailand_MICS4_Datasets
+attendant,mn7a,Assistance at delivery: Doctor,1,Trinidad and Tobago MICS 2006 SPSS Datasets
+attendant,mn7b,Assistance at delivery: Nurse/midwife,1,Trinidad and Tobago MICS 2006 SPSS Datasets
+vacc,im10,Child ever received any vaccinations,,Trinidad and Tobago MICS 2006 SPSS Datasets
+attendant,mn7c,Assistance at delivery: Auxiliary midwife,1,Trinidad and Tobago MICS 2006 SPSS Datasets
+attendant,mn7g,Assistance at delivery: Community health worker,0,Trinidad and Tobago MICS 2006 SPSS Datasets
+attendant,mn7y,Assistance at delivery: No one,0,Trinidad and Tobago MICS 2006 SPSS Datasets
+attendant,mn7x,Assistance at delivery: Other,0,Trinidad and Tobago MICS 2006 SPSS Datasets
+attendant,mn7h,Assistance at delivery: Relative/friend,0,Trinidad and Tobago MICS 2006 SPSS Datasets
+attendant,mn7f,Assistance at delivery: Traditional birth attendant,0,Trinidad and Tobago MICS 2006 SPSS Datasets
+attendant,mn17a,Assistance à l'accouchement : Médecin,1,Tunisia_MICS4_Datasets
+vacc,im6,L'enfant a déjà reçu des vaccins pour éviter contracter des maladies,,Tunisia_MICS4_Datasets
+attendant,mn17b,Assistance à l'accouchement : Infirmière / Sage-femme,1,Tunisia_MICS4_Datasets
+attendant,mn17c,Assistance à l'accouchement : Sage-femme,1,Tunisia_MICS4_Datasets
+attendant,mn17f,Assistance à l'accouchement : Accoucheuse traditionnelle,0,Tunisia_MICS4_Datasets
+attendant,mn17x,Assistance à l'accouchement : Autre,0,Tunisia_MICS4_Datasets
+attendant,mn17h,Assistance à l'accouchement : Parent(e) / Ami(e),0,Tunisia_MICS4_Datasets
+attendant,mn17y,Assistance à l'accouchement : Personne,0,Tunisia_MICS4_Datasets
+vacc,im10,Child ever received any vaccinations,,Turkmenistan_MICS3_Datasets
+attendant,mn7a,Assistance at delivery: Doctor,1,Turkmenistan_MICS3_Datasets
+attendant,mn7b,Assistance at delivery: Nurse/midwife,1,Turkmenistan_MICS3_Datasets
+attendant,mn7y,Assistance at delivery: No one,0,Turkmenistan_MICS3_Datasets
+attendant,mn7x,Assistance at delivery: Other,0,Turkmenistan_MICS3_Datasets
+attendant,mn7h,Assistance at delivery: Relative/friend,0,Turkmenistan_MICS3_Datasets
+attendant,mn7f,Assistance at delivery: Traditional birth attendant,0,Turkmenistan_MICS3_Datasets
+attendant,mn17a,Doctor,1,Turkmenistan_MICS5_Datasets
+attendant,mn17b,Nurse,1,Turkmenistan_MICS5_Datasets
+attendant,mn17d,Feldsher,1,Turkmenistan_MICS5_Datasets
+attendant,mn17y,no one,0,Turkmenistan_MICS5_Datasets
+attendant,mn17q,no response,0,Turkmenistan_MICS5_Datasets
+attendant,mn17x,other,0,Turkmenistan_MICS5_Datasets
+attendant,mn17h,parent/friend,0,Turkmenistan_MICS5_Datasets
+attendant,mn17f,traditional,0,Turkmenistan_MICS5_Datasets
+vacc,im6,Child ever received any vaccinations,,Ukraine_MICS4_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Ukraine_MICS4_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Ukraine_MICS4_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Ukraine_MICS4_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Ukraine_MICS4_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Ukraine_MICS4_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Ukraine_MICS4_Datasets
+attendant,mn17a,Asistencia en el parto: Doctor,1,Uruguay_MICS4_Datasets
+attendant,mn17b,Asistencia en el parto: Enfermera,1,Uruguay_MICS4_Datasets
+attendant,mn17c,Asistencia en el parto: Partera,1,Uruguay_MICS4_Datasets
+attendant,mn17f,Asistencia en el parto: Curandera,0,Uruguay_MICS4_Datasets
+attendant,mn17q,Asistencia en el parto: Missing,0,Uruguay_MICS4_Datasets
+attendant,mn17y,Asistencia en el parto: Nadie,0,Uruguay_MICS4_Datasets
+attendant,mn17x,Asistencia en el parto: Otro,0,Uruguay_MICS4_Datasets
+attendant,mn17h,Asistencia en el parto: Pariente/Amiga/o,0,Uruguay_MICS4_Datasets
+attendant,mn17g,Asistencia en el parto: Trabajadora de salud comunitaria,0,Uruguay_MICS4_Datasets
+vacc,im10,Child ever received any vaccinations,,Uzbekistan MICS 2006 SPSS Datasets
+attendant,mn7a,Assistance at delivery: Doctor,1,Uzbekistan MICS 2006 SPSS Datasets
+attendant,mn7b,Assistance at delivery: Nurse/midwife,1,Uzbekistan MICS 2006 SPSS Datasets
+attendant,mn7c,Assistance at delivery: Auxiliary midwife,0,Uzbekistan MICS 2006 SPSS Datasets
+attendant,mn7g,Assistance at delivery: Community health worker,0,Uzbekistan MICS 2006 SPSS Datasets
+attendant,mn7y,Assistance at delivery: No one,0,Uzbekistan MICS 2006 SPSS Datasets
+attendant,mn7x,Assistance at delivery: Other,0,Uzbekistan MICS 2006 SPSS Datasets
+attendant,mn7h,Assistance at delivery: Relative/friend,0,Uzbekistan MICS 2006 SPSS Datasets
+attendant,mn7f,Assistance at delivery: Traditional birth attendant,0,Uzbekistan MICS 2006 SPSS Datasets
+vacc,im10,Child ever received any vaccinations,,Vanuatu MICS 2007 SPSS Datasets
+attendant,mn7a,Assistance at delivery: Doctor,1,Vanuatu MICS 2007 SPSS Datasets
+attendant,mn7b,Assistance at delivery: Nurse/midwife,1,Vanuatu MICS 2007 SPSS Datasets
+attendant,mn7c,Assistance at delivery: Auxiliary midwife,0,Vanuatu MICS 2007 SPSS Datasets
+attendant,mn7g,Assistance at delivery: Community health worker (Aid post),0,Vanuatu MICS 2007 SPSS Datasets
+attendant,mn7y,Assistance at delivery: No one,0,Vanuatu MICS 2007 SPSS Datasets
+attendant,mn7x,Assistance at delivery: Other,0,Vanuatu MICS 2007 SPSS Datasets
+attendant,mn7h,Assistance at delivery: Relative/friend,0,Vanuatu MICS 2007 SPSS Datasets
+attendant,mn7f,Assistance at delivery: Traditional birth attendant,0,Vanuatu MICS 2007 SPSS Datasets
+vacc,im6,Child ever received any vaccinations,,Viet Nam_MICS5_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Viet Nam_MICS5_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Viet Nam_MICS5_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Viet Nam_MICS5_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Viet Nam_MICS5_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Viet Nam_MICS5_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Viet Nam_MICS5_Datasets
+attendant,mn17g,Assistance at delivery: Village health worker,0,Viet Nam_MICS5_Datasets
+vacc,im6,Child ever received any vaccinations,,Zimbabwe_MICS5_Datasets
+attendant,mn17a,Assistance at delivery: Doctor,1,Zimbabwe_MICS5_Datasets
+attendant,mn17b,Assistance at delivery: Nurse / Midwife,1,Zimbabwe_MICS5_Datasets
+attendant,mn17g,Assistance at delivery: Community health worker,0,Zimbabwe_MICS5_Datasets
+attendant,mn17y,Assistance at delivery: No one,0,Zimbabwe_MICS5_Datasets
+attendant,mn17x,Assistance at delivery: Other,0,Zimbabwe_MICS5_Datasets
+attendant,mn17h,Assistance at delivery: Relative / Friend,0,Zimbabwe_MICS5_Datasets
+attendant,mn17f,Assistance at delivery: Traditional birth attendant,0,Zimbabwe_MICS5_Datasets

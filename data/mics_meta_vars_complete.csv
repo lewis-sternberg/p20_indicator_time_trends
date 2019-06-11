@@ -1,0 +1,1167 @@
+match,varName,varLabel,filename,fromWide
+attended,ed3,ED3 : Ever attended school or pre-school,Afghanistan_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Afghanistan_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Afghanistan_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Afghanistan_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Afghanistan_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Afghanistan_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Afghanistan_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Afghanistan_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Afghanistan_MICS4_Datasets,0
+attended,ed2,ED2 : ED2.Ever attended school,Albania MICS 2005 SPSS Datasets,0
+car,hc10e,HC10E : HC10E.Car or truck,Albania MICS 2005 SPSS Datasets,0
+fridge,hc9f,HC9F : HC9F.Refrigerator,Albania MICS 2005 SPSS Datasets,0
+grade,ed3b,ED3B : ED3B.Highest grade at level,Albania MICS 2005 SPSS Datasets,0
+phone,hc9e,HC9E : HC9E.Non-mobile phone,Albania MICS 2005 SPSS Datasets,0
+school,ed3a,ED3A : ED3A.Highest level of school attended,Albania MICS 2005 SPSS Datasets,0
+share.toilets,ws8,WS8 : WS8.Toilet facility shared,Albania MICS 2005 SPSS Datasets,0
+toilets,ws7,WS7 : WS7.Kind of toilet facility,Albania MICS 2005 SPSS Datasets,1
+tv,hc9c,HC9C : HC9C.Television,Albania MICS 2005 SPSS Datasets,0
+attended,ed3,ED3 : A frÃ©quentÃ© l'Ã©cole ou l'Ã©cole maternelle,Algeria_MICS4_Datasets,1
+car,hc9f,HC9F : Voiture / Camion,Algeria_MICS4_Datasets,1
+fridge,hc8e,HC8E : RÃ©frigÃ©rateur,Algeria_MICS4_Datasets,1
+grade,ed4b,ED4B : DerniÃ¨re classe achevÃ©e a ce niveau,Algeria_MICS4_Datasets,1
+phone,hc8d,HC8D : TÃ©lÃ©phone fixe,Algeria_MICS4_Datasets,0
+school,ed4a,ED4A : Plus haut niveau d'Ã©ducation frÃ©quentÃ©,Algeria_MICS4_Datasets,1
+share.toilets,ws9,WS9 : Toilettes partagÃ©es,Algeria_MICS4_Datasets,1
+tv,hc8c,HC8C : TÃ©lÃ©vision,Algeria_MICS4_Datasets,2
+attended,ed2,ED2 : Ever attended school,Bangladesh MICS 2006 SPSS Datasets,0
+car,hc10e,HC10E : Car or truck,Bangladesh MICS 2006 SPSS Datasets,0
+fridge,hc9f,HC9F : Refrigerator,Bangladesh MICS 2006 SPSS Datasets,0
+grade,ed3b,ED3B : Highest class at level,Bangladesh MICS 2006 SPSS Datasets,1
+phone,hc9e,HC9E : Non-mobile phone,Bangladesh MICS 2006 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Bangladesh MICS 2006 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Bangladesh MICS 2006 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Bangladesh MICS 2006 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Bangladesh MICS 2006 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Bangladesh_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,Bangladesh_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Bangladesh_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Bangladesh_MICS5_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Bangladesh_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Bangladesh_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Bangladesh_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Bangladesh_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Bangladesh_MICS5_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Barbados_MICS4_Datasets,0
+car,hc9e,HC9E : Car or Truck,Barbados_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refridgerator,Barbados_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Barbados_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile Telephone,Barbados_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Barbados_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Barbados_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Barbados_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Barbados_MICS4_Datasets,0
+attended,ed2,ED2 : Ever attended school,Belarus MICS 2005 SPSS Datasets,0
+car,hc10e,HC10e : Car or truck,Belarus MICS 2005 SPSS Datasets,0
+fridge,hc9f,HC9f : Refrigerator,Belarus MICS 2005 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Belarus MICS 2005 SPSS Datasets,0
+phone,hc9e,HC9e : Non-mobile phone,Belarus MICS 2005 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Belarus MICS 2005 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Belarus MICS 2005 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Belarus MICS 2005 SPSS Datasets,1
+tv,hc9c,HC9c : Television,Belarus MICS 2005 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Belarus_MICS4_Datasets,0
+car,hc9d,HC9D : Car or truck,Belarus_MICS4_Datasets,0
+fridge,hc8d,HC8D : Refrigerator,Belarus_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Belarus_MICS4_Datasets,0
+phone,hc8c,HC8C : Non-mobile phone,Belarus_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Belarus_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Belarus_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Belarus_MICS4_Datasets,0
+tv,hc8a,HC8A : Television,Belarus_MICS4_Datasets,0
+attended,ed2,ed2 : Ever attended school,Belize MICS 2006 SPSS Datasets,0
+car,hc10e,hc10e : Car or truck,Belize MICS 2006 SPSS Datasets,0
+fridge,hc9f,hc9f : Refrigerator,Belize MICS 2006 SPSS Datasets,0
+grade,ed3b,ed3b : Highest grade at level,Belize MICS 2006 SPSS Datasets,0
+phone,hc9e,hc9e : Non-mobile phone,Belize MICS 2006 SPSS Datasets,0
+school,ed3a,ed3a : Highest level of school attended,Belize MICS 2006 SPSS Datasets,0
+share.toilets,ws8,ws8 : Toilet facility shared,Belize MICS 2006 SPSS Datasets,0
+toilets,ws7,ws7 : Kind of toilet facility,Belize MICS 2006 SPSS Datasets,1
+tv,hc9c,hc9c : Television,Belize MICS 2006 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Belize_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Belize_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Belize_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Belize_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Belize_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Belize_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Belize_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Belize_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Belize_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Bhutan_MICS4_Datasets,0
+car,hc9e,HC9E : Car or truck,Bhutan_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Bhutan_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade at level,Bhutan_MICS4_Datasets,0
+phone,hc8d,HC8D : Fixed telephone,Bhutan_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Bhutan_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Bhutan_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Bhutan_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Bhutan_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Bosnia and Herzegovina (Roma Settlements)_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Bosnia and Herzegovina (Roma Settlements)_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Bosnia and Herzegovina (Roma Settlements)_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Bosnia and Herzegovina (Roma Settlements)_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Bosnia and Herzegovina (Roma Settlements)_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Bosnia and Herzegovina (Roma Settlements)_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Bosnia and Herzegovina (Roma Settlements)_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Bosnia and Herzegovina (Roma Settlements)_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Bosnia and Herzegovina (Roma Settlements)_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Bosnia and Herzegovina_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Bosnia and Herzegovina_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Bosnia and Herzegovina_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Bosnia and Herzegovina_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Bosnia and Herzegovina_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Bosnia and Herzegovina_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Bosnia and Herzegovina_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Bosnia and Herzegovina_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Bosnia and Herzegovina_MICS4_Datasets,0
+attended,ed2,ED2 : Ever attended school,Bosnia MICS 2006 SPSS Datasets,0
+car,hc10e,HC10E : Car or truck,Bosnia MICS 2006 SPSS Datasets,0
+fridge,hc9f,HC9F : Refrigerator,Bosnia MICS 2006 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Bosnia MICS 2006 SPSS Datasets,0
+phone,hc9e,HC9E : Non-mobile phone,Bosnia MICS 2006 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Bosnia MICS 2006 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Bosnia MICS 2006 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Bosnia MICS 2006 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Bosnia MICS 2006 SPSS Datasets,0
+attended,ed2,ED2 : A-t-il/elle frequente l'ecole,Burkina Faso MICS 2006 SPSS Datasets,1
+car,hc10e,HC10E : Voiture/Camion,Burkina Faso MICS 2006 SPSS Datasets,1
+fridge,hc9f,HC9F : Refrigerateur,Burkina Faso MICS 2006 SPSS Datasets,0
+grade,ed3b,ED3B : Derniere classe achevee a ce niveau,Burkina Faso MICS 2006 SPSS Datasets,1
+phone,hc9e,HC9E : Telephone non-mobile (fixe),Burkina Faso MICS 2006 SPSS Datasets,0
+school,ed3a,ED3A : Plus haut niveau d'etudes atteint,Burkina Faso MICS 2006 SPSS Datasets,1
+share.toilets,ws8,WS8 : Partagez-vous ces toilettes avec d'autres menages,Burkina Faso MICS 2006 SPSS Datasets,1
+toilets,ws7,WS7 : Type de toilettes,Burkina Faso MICS 2006 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Burkina Faso MICS 2006 SPSS Datasets,0
+attended,ed2,ED2 : A-t-il/elle frequente l'ecole,Burundi MICS 2005 SPSS Datasets,1
+car,hc10e,HC10E : Voiture/Camion,Burundi MICS 2005 SPSS Datasets,1
+fridge,hc9f,HC9F : Refrigerateur,Burundi MICS 2005 SPSS Datasets,0
+grade,ed3b,ED3B : Derniere classe achevee a ce niveau,Burundi MICS 2005 SPSS Datasets,1
+phone,hc9e,HC9E : Telephone fixe,Burundi MICS 2005 SPSS Datasets,0
+school,ed3a,ED3A : Plus haut niveau  d'etudes atteint,Burundi MICS 2005 SPSS Datasets,1
+share.toilets,ws8,WS8 : Partagez-vous ces toilettes avec d'autres menages,Burundi MICS 2005 SPSS Datasets,1
+toilets,ws7,WS7 : Type de toilettes,Burundi MICS 2005 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Burundi MICS 2005 SPSS Datasets,0
+attended,ed2,ED2 : A-t-il/elle frequente ecole,Cameroon MICS 2006 SPSS Datasets,1
+car,hc10e,HC10E : Voiture/Camion,Cameroon MICS 2006 SPSS Datasets,1
+fridge,hc9h,HC9H : Refrigerateur/Congelateur,Cameroon MICS 2006 SPSS Datasets,0
+grade,ed3b,ED3B : Derniere classe achevee a ce niveau,Cameroon MICS 2006 SPSS Datasets,1
+phone,hc9g,HC9G : Telephone fixe,Cameroon MICS 2006 SPSS Datasets,0
+school,ed3a,ED3A : Plus haut niveau  etudes atteint,Cameroon MICS 2006 SPSS Datasets,1
+share.toilets,ws8,WS8 : Partagez-vous ces toilettes avec autres menages,Cameroon MICS 2006 SPSS Datasets,1
+toilets,ws7,WS7 : Type de toilettes,Cameroon MICS 2006 SPSS Datasets,1
+tv,hc9c,HC9C : Televiseur,Cameroon MICS 2006 SPSS Datasets,1
+attended,ed2,ED2 : A-t-il/elle frequente l'ecole,Central African Republic MICS 2006 SPSS Datasets,1
+car,hc10e,HC10E : Voiture/Camion,Central African Republic MICS 2006 SPSS Datasets,1
+fridge,hc9f,HC9F : Refrigerateur,Central African Republic MICS 2006 SPSS Datasets,0
+grade,ed3b,ED3B : Derniere classe achevee a ce niveau,Central African Republic MICS 2006 SPSS Datasets,1
+phone,hc9e,HC9E : Telephone fixe,Central African Republic MICS 2006 SPSS Datasets,0
+school,ed3a,ED3A : Plus haut niveau  d'etudes atteint,Central African Republic MICS 2006 SPSS Datasets,1
+share.toilets,ws8,WS8 : Partagez-vous ces toilettes avec d'autres menages,Central African Republic MICS 2006 SPSS Datasets,1
+toilets,ws7,WS7 : Type de toilettes,Central African Republic MICS 2006 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Central African Republic MICS 2006 SPSS Datasets,0
+attended,ed3,ED3 : Est allé à l'école ou a fait l'école maternelle,Central African Republic_MICS4_Datasets,1
+car,hc9f,HC9F : Voiture / Camion,Central African Republic_MICS4_Datasets,1
+fridge,hc8e,HC8E : Réfrigérateur,Central African Republic_MICS4_Datasets,1
+grade,ed4b,ED4B : Derniere classe achevee a ce niveau,Central African Republic_MICS4_Datasets,1
+phone,hc8d,HC8D : Téléphone fixe,Central African Republic_MICS4_Datasets,0
+school,ed4a,ED4A : Plus haut niveau  d'etudes atteint,Central African Republic_MICS4_Datasets,1
+share.toilets,ws9,WS9 : Partage des toilettes avec  d'autres personnes non membres du ménage,Central African Republic_MICS4_Datasets,1
+toilets,ws8,WS8 : Type de toilettes,Central African Republic_MICS4_Datasets,1
+tv,hc8c,HC8C : Télévision,Central African Republic_MICS4_Datasets,1
+attended,ed3,ED3 : A fréquenté l'école ou l'école maternelle,Chad_MICS4_Datasets,1
+car,hc9f,HC9F : Voiture / Camion,Chad_MICS4_Datasets,1
+fridge,hc8e,HC8E : Réfrigérateur,Chad_MICS4_Datasets,1
+grade,ed4b,ED4B : Dernière classe achevée a ce niveau,Chad_MICS4_Datasets,1
+phone,hc8d,HC8D : Téléphone fixe,Chad_MICS4_Datasets,0
+school,ed4a,ED4A : Plus haut niveau d'éducation fréquenté,Chad_MICS4_Datasets,1
+share.toilets,ws9,WS9 : Toilettes partagées,Chad_MICS4_Datasets,1
+toilets,ws8,WS8 : Type de toilettes,Chad_MICS4_Datasets,1
+tv,hc8c,HC8C : Télévision,Chad_MICS4_Datasets,1
+attended,ed3,ED3 : Alguna vez asistió a la escuela o el pre-escolar,Costa Rica_MICS4_Datasets,1
+car,hc8g,HC8G : Carro particular,Costa Rica_MICS4_Datasets,1
+car,hc9f,HC9F : Auto o camioneta,Costa Rica_MICS4_Datasets,1
+fridge,hc8e,HC8E : Refrigerador,Costa Rica_MICS4_Datasets,0
+grade,ed4b,ED4B : Grado más alto de educación al que asistió,Costa Rica_MICS4_Datasets,1
+phone,hc8d,HC8D : Teléfono fijo,Costa Rica_MICS4_Datasets,1
+school,ed4a,ED4A : Nivel de educación más alto al que asistió,Costa Rica_MICS4_Datasets,1
+share.toilets,ws9,WS9 : Comparte el servicio con personas fuera de la familia,Costa Rica_MICS4_Datasets,1
+toilets,ws8,WS8 : Tipo de servicio sanitario,Costa Rica_MICS4_Datasets,1
+tv,hc8c,HC8C : Televisión convencional,Costa Rica_MICS4_Datasets,1
+tv,hc8c1,"HC8C1 : Pantalla de TV(Plasma, LCD, LED)",Costa Rica_MICS4_Datasets,1
+tv,hc8c2,HC8C2 : Televisión por cable o satélite,Costa Rica_MICS4_Datasets,1
+attended,ed3,ED3 : A fréquenté l'école ou l'école maternelle,Democratic Republic of Congo_MICS4_Datasets,1
+car,hc9f,HC9F : Voiture / Camion,Democratic Republic of Congo_MICS4_Datasets,1
+fridge,hc8e,HC8E : Réfrigérateur,Democratic Republic of Congo_MICS4_Datasets,1
+grade,ed4b,ED4B : Dernière classe achevée a ce niveau,Democratic Republic of Congo_MICS4_Datasets,1
+phone,hc8d,HC8D : Téléphone fixe,Democratic Republic of Congo_MICS4_Datasets,0
+school,ed4a,ED4A : Plus haut niveau d'éducation fréquenté,Democratic Republic of Congo_MICS4_Datasets,1
+share.toilets,ws9,WS9 : Toilettes partagées,Democratic Republic of Congo_MICS4_Datasets,1
+toilets,ws8,WS8 : Type de toilettes,Democratic Republic of Congo_MICS4_Datasets,1
+tv,hc8c,HC8C : Télévision,Democratic Republic of Congo_MICS4_Datasets,1
+attended,ed2,ED2 : A-t-il/elle frequente l'ecole,Djibouti MICS 2006 SPSS Datasets,1
+car,hc10e,HC10E : Voiture/Camion,Djibouti MICS 2006 SPSS Datasets,1
+fridge,hc9f,HC9F : Refrigerateur,Djibouti MICS 2006 SPSS Datasets,0
+grade,ed3b,ED3B : Derniere classe achevee a ce niveau,Djibouti MICS 2006 SPSS Datasets,1
+phone,hc9e,HC9E : Telephone fixe,Djibouti MICS 2006 SPSS Datasets,0
+school,ed3a,ED3A : Plus haut niveau  d'etudes atteint,Djibouti MICS 2006 SPSS Datasets,1
+share.toilets,ws8,WS8 : Partagez-vous ces toilettes avec d'autres menages,Djibouti MICS 2006 SPSS Datasets,1
+toilets,ws7,WS7 : Type de toilettes,Djibouti MICS 2006 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Djibouti MICS 2006 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Egypt (Sub-national)_MICS5_Datasets,0
+car,hc9e,HC9E : Car or truck,Egypt (Sub-national)_MICS5_Datasets,0
+fridge,hc8l,HC8L : Refrigerator,Egypt (Sub-national)_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Egypt (Sub-national)_MICS5_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Egypt (Sub-national)_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Egypt (Sub-national)_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Egypt (Sub-national)_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Egypt (Sub-national)_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Egypt (Sub-national)_MICS5_Datasets,0
+attended,ed2,ed2 : Ever attended school,Gambia MICS 2005-6 SPSS Datasets,0
+car,hc10e,hc10e : Car or truck,Gambia MICS 2005-6 SPSS Datasets,0
+fridge,hc9f,hc9f : Refrigerator,Gambia MICS 2005-6 SPSS Datasets,0
+grade,ed3b,ed3b : Highest grade at level,Gambia MICS 2005-6 SPSS Datasets,0
+phone,hc9e,hc9e : Non-mobile phone,Gambia MICS 2005-6 SPSS Datasets,0
+school,ed3a,ed3a : Highest level of school attended,Gambia MICS 2005-6 SPSS Datasets,0
+share.toilets,ws8,ws8 : Toilet facility shared,Gambia MICS 2005-6 SPSS Datasets,0
+toilets,ws7,ws7 : Kind of toilet facility,Gambia MICS 2005-6 SPSS Datasets,1
+tv,hc9c,hc9c : Television,Gambia MICS 2005-6 SPSS Datasets,0
+attended,ed2,ED2 : Ever attended school,Georgia MICS 2005 SPSS Datasets,0
+car,hc10e,HC10E : Car or truck,Georgia MICS 2005 SPSS Datasets,0
+fridge,hc9f,HC9F : Refrigerator,Georgia MICS 2005 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Georgia MICS 2005 SPSS Datasets,0
+phone,hc9e,HC9E : Non-mobile phone,Georgia MICS 2005 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Georgia MICS 2005 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Georgia MICS 2005 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Georgia MICS 2005 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Georgia MICS 2005 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Ghana (Accra)_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Ghana (Accra)_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator / Freezer,Ghana (Accra)_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Ghana (Accra)_MICS4_Datasets,0
+phone,hc8d,HC8D : Land/Fixed telephone,Ghana (Accra)_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Ghana (Accra)_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Ghana (Accra)_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Ghana (Accra)_MICS4_Datasets,0
+tv,hc8c,HC8C : B&W television,Ghana (Accra)_MICS4_Datasets,0
+tv,hc8c1,HC8C1 : Colour television,Ghana (Accra)_MICS4_Datasets,0
+attended,ed2,ED2 : Ever attended school,Ghana MICS 2006 SPSS Datasets,0
+car,hc10d,HC10D : Car or truck,Ghana MICS 2006 SPSS Datasets,0
+fridge,hc9h,HC9H : Refrigerator,Ghana MICS 2006 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Ghana MICS 2006 SPSS Datasets,0
+phone,hc9g,HC9G : Fixed land line,Ghana MICS 2006 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Ghana MICS 2006 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Ghana MICS 2006 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Ghana MICS 2006 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Ghana MICS 2006 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Ghana_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Ghana_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator/Freezer,Ghana_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest class/year completed at that level,Ghana_MICS4_Datasets,1
+phone,hc8d,HC8D : Land/fixed phone,Ghana_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Ghana_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Ghana_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Ghana_MICS4_Datasets,0
+tv,hc8c,HC8C : Black & White Television,Ghana_MICS4_Datasets,0
+tv,hc8c1,HC8C1 : Colour Television,Ghana_MICS4_Datasets,0
+attended,ed2,ED2 : A-t-il/elle frequente l'ecole,Guinea-Bissau MICS 2006 SPSS Datasets,1
+car,hc10e,HC10E : Voiture/Camion,Guinea-Bissau MICS 2006 SPSS Datasets,1
+fridge,hc9f,HC9F : Refrigerateur,Guinea-Bissau MICS 2006 SPSS Datasets,0
+grade,ed3b,ED3B : Derniere classe achevee a ce niveau,Guinea-Bissau MICS 2006 SPSS Datasets,1
+phone,hc9e,HC9E : Telephone fixe,Guinea-Bissau MICS 2006 SPSS Datasets,0
+school,ed3a,ED3A : Plus haut niveau  d'etudes atteint,Guinea-Bissau MICS 2006 SPSS Datasets,1
+share.toilets,ws8,WS8 : Partagez-vous ces toilettes avec d'autres menages,Guinea-Bissau MICS 2006 SPSS Datasets,1
+toilets,ws7,WS7 : Type de toilettes,Guinea-Bissau MICS 2006 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Guinea-Bissau MICS 2006 SPSS Datasets,0
+attended,ed2,ED2 : Ever attended school,Guyana MICS 2006-07 SPSS Datasets,0
+car,hc10e,HC10E : Car or truck,Guyana MICS 2006-07 SPSS Datasets,0
+fridge,hc9f,HC9F : Refrigerator,Guyana MICS 2006-07 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Guyana MICS 2006-07 SPSS Datasets,0
+phone,hc9e,HC9E : Land Phone,Guyana MICS 2006-07 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Guyana MICS 2006-07 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Guyana MICS 2006-07 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Guyana MICS 2006-07 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Guyana MICS 2006-07 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Indonesia (Selected Districts of Papua)_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Indonesia (Selected Districts of Papua)_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Indonesia (Selected Districts of Papua)_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest Grade completed [ED4B 2 digits],Indonesia (Selected Districts of Papua)_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Indonesia (Selected Districts of Papua)_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Indonesia (Selected Districts of Papua)_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Indonesia (Selected Districts of Papua)_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Indonesia (Selected Districts of Papua)_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Indonesia (Selected Districts of Papua)_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Indonesia (Selected Districts of West Papua)_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Indonesia (Selected Districts of West Papua)_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Indonesia (Selected Districts of West Papua)_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest Grade completed [ED4B 2 digits],Indonesia (Selected Districts of West Papua)_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Indonesia (Selected Districts of West Papua)_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Indonesia (Selected Districts of West Papua)_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Indonesia (Selected Districts of West Papua)_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Indonesia (Selected Districts of West Papua)_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Indonesia (Selected Districts of West Papua)_MICS4_Datasets,0
+attended,ed2,ed2 : Ever attended school,Iraq MICS 2006 SPSS Datasets,0
+car,hc10e,hc10e : Car or truck,Iraq MICS 2006 SPSS Datasets,0
+grade,ed3b,ed3b : Highest grade at level,Iraq MICS 2006 SPSS Datasets,0
+phone,hc9f,hc9f : Phone,Iraq MICS 2006 SPSS Datasets,0
+school,ed3a,ed3a : Highest level of school attended,Iraq MICS 2006 SPSS Datasets,0
+share.toilets,ws8,ws8 : Toilet facility shared,Iraq MICS 2006 SPSS Datasets,0
+toilets,ws7,ws7 : Kind of toilet facility,Iraq MICS 2006 SPSS Datasets,1
+tv,hc9e,hc9e : Televesion,Iraq MICS 2006 SPSS Datasets,1
+fridge,hc10a,hc10a : Refregerator,Iraq MICS 2006 SPSS Datasets,2
+attended,ed3,ED3 : Ever attended school or pre-school,Iraq_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Iraq_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Iraq_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Iraq_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Iraq_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Iraq_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Iraq_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Iraq_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Iraq_MICS4_Datasets,0
+attended,ed2,ED2 : A-t-il/elle frequente l'ecole,Ivory Coast MICS 2006 SPSS Datasets,1
+car,hc10e,HC10E : Voiture/Camion,Ivory Coast MICS 2006 SPSS Datasets,1
+fridge,hc9f,HC9F : Refrigerateur,Ivory Coast MICS 2006 SPSS Datasets,0
+grade,ed3b,ED3B : Derniere classe achevee a ce niveau,Ivory Coast MICS 2006 SPSS Datasets,1
+phone,hc9e,HC9E : Telephone fixe,Ivory Coast MICS 2006 SPSS Datasets,0
+school,ed3a,ED3A : Plus haut niveau d'etudes atteint,Ivory Coast MICS 2006 SPSS Datasets,1
+share.toilets,ws8,WS8 : Partagez-vous ces toilettes avec d'autres menages,Ivory Coast MICS 2006 SPSS Datasets,1
+toilets,ws7a,ws7a : Type de toilettes,Ivory Coast MICS 2006 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Ivory Coast MICS 2006 SPSS Datasets,0
+attended,ed2,ED2 : Ever attended school,Jamaica MICS 2005 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Jamaica MICS 2005 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Jamaica MICS 2005 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Jamaica MICS 2005 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Jamaica MICS 2005 SPSS Datasets,1
+attended,ed3,ED3 : Ever attended school or pre-school,Jamaica_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Jamaica_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Jamaica_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Jamaica_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Jamaica_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Jamaica_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Jamaica_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Jamaica_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Jamaica_MICS4_Datasets,0
+attended,ed2,ED2 : Ever attended school,Kazakhstan MICS 2006 SPSS Datasets,0
+car,hc10e,HC10E : Car or truck,Kazakhstan MICS 2006 SPSS Datasets,0
+fridge,hc9f,HC9F : Refrigerator,Kazakhstan MICS 2006 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Kazakhstan MICS 2006 SPSS Datasets,0
+phone,hc9e,HC9E : Non-mobile phone,Kazakhstan MICS 2006 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Kazakhstan MICS 2006 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Kazakhstan MICS 2006 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Kazakhstan MICS 2006 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Kazakhstan MICS 2006 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Kazakhstan_MICS4_Datasets,0
+car,hc9f,HC9F : Light vehicle/truck/tractor,Kazakhstan_MICS4_Datasets,1
+fridge,hc8e,HC8E : Refrigerator,Kazakhstan_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Kazakhstan_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Kazakhstan_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Kazakhstan_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Kazakhstan_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Kazakhstan_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Kazakhstan_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Kenya (Bungoma County)_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,Kenya (Bungoma County)_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Kenya (Bungoma County)_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Kenya (Bungoma County)_MICS5_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Kenya (Bungoma County)_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Kenya (Bungoma County)_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Kenya (Bungoma County)_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Kenya (Bungoma County)_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Kenya (Bungoma County)_MICS5_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Kenya (Kakamega County)_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,Kenya (Kakamega County)_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Kenya (Kakamega County)_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Kenya (Kakamega County)_MICS5_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Kenya (Kakamega County)_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Kenya (Kakamega County)_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Kenya (Kakamega County)_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Kenya (Kakamega County)_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Kenya (Kakamega County)_MICS5_Datasets,0
+attended,ed2,ED2 : Ever attended school or any non-formal education,Kenya (Mombasa Informal Settlements)_MICS4_Datasets,0
+car,hc10e,HC10E : Car or truck,Kenya (Mombasa Informal Settlements)_MICS4_Datasets,0
+fridge,hc9g,HC9G : Refrigerator,Kenya (Mombasa Informal Settlements)_MICS4_Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Kenya (Mombasa Informal Settlements)_MICS4_Datasets,0
+phone,hc9f,HC9F : Non-mobile phone,Kenya (Mombasa Informal Settlements)_MICS4_Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Kenya (Mombasa Informal Settlements)_MICS4_Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Kenya (Mombasa Informal Settlements)_MICS4_Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Kenya (Mombasa Informal Settlements)_MICS4_Datasets,1
+tv,hc9c,HC9C : Color television,Kenya (Mombasa Informal Settlements)_MICS4_Datasets,0
+tv,hc9d,HC9D : B&W television,Kenya (Mombasa Informal Settlements)_MICS4_Datasets,0
+attended,ed2,ED2 : Ever attended school or any non-formal education,Kenya (Nyanza Province)_MICS4_Datasets,0
+car,hc10e,HC10E : Car or truck,Kenya (Nyanza Province)_MICS4_Datasets,0
+fridge,hc9g,HC9G : Refrigerator,Kenya (Nyanza Province)_MICS4_Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Kenya (Nyanza Province)_MICS4_Datasets,0
+phone,hc9f,HC9F : Non-mobile phone,Kenya (Nyanza Province)_MICS4_Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Kenya (Nyanza Province)_MICS4_Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Kenya (Nyanza Province)_MICS4_Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Kenya (Nyanza Province)_MICS4_Datasets,1
+tv,hc9c,HC9C : Color television,Kenya (Nyanza Province)_MICS4_Datasets,0
+tv,hc9d,HC9D : B&W television,Kenya (Nyanza Province)_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Kenya (Turkana County)_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,Kenya (Turkana County)_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Kenya (Turkana County)_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Kenya (Turkana County)_MICS5_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Kenya (Turkana County)_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Kenya (Turkana County)_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Kenya (Turkana County)_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Kenya (Turkana County)_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Kenya (Turkana County)_MICS5_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,"Kosovo under UNSC res. 1244 (Roma, Ashkali, and Egyptian Communities)_MICS5_Datasets",0
+car,hc9h,HC9H : Car,"Kosovo under UNSC res. 1244 (Roma, Ashkali, and Egyptian Communities)_MICS5_Datasets",1
+car,hc9i,HC9I : Truck,"Kosovo under UNSC res. 1244 (Roma, Ashkali, and Egyptian Communities)_MICS5_Datasets",1
+fridge,hc8e,HC8E : Refrigerator,"Kosovo under UNSC res. 1244 (Roma, Ashkali, and Egyptian Communities)_MICS5_Datasets",0
+grade,ed4b,ED4B : Highest grade/year completed at that level,"Kosovo under UNSC res. 1244 (Roma, Ashkali, and Egyptian Communities)_MICS5_Datasets",0
+phone,hc9l,HC9L : Phone with a touch screen or keyboard,"Kosovo under UNSC res. 1244 (Roma, Ashkali, and Egyptian Communities)_MICS5_Datasets",1
+school,ed4a,ED4A : Highest level of education attended,"Kosovo under UNSC res. 1244 (Roma, Ashkali, and Egyptian Communities)_MICS5_Datasets",0
+share.toilets,ws9,WS9 : Toilet facility shared,"Kosovo under UNSC res. 1244 (Roma, Ashkali, and Egyptian Communities)_MICS5_Datasets",0
+toilets,ws8,WS8 : Type of toilet facility,"Kosovo under UNSC res. 1244 (Roma, Ashkali, and Egyptian Communities)_MICS5_Datasets",0
+tv,hc8r,HC8R : Flat screen tv,"Kosovo under UNSC res. 1244 (Roma, Ashkali, and Egyptian Communities)_MICS5_Datasets",1
+attended,ed3,ED3 : Ever attended school or pre-school,Kosovo under UNSC res. 1244_MICS5_Datasets,0
+car,hc9h,HC9H : Car,Kosovo under UNSC res. 1244_MICS5_Datasets,1
+car,hc9i,HC9I : Truck,Kosovo under UNSC res. 1244_MICS5_Datasets,1
+fridge,hc8e,HC8E : Refrigerator,Kosovo under UNSC res. 1244_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest grade/year completed at that level,Kosovo under UNSC res. 1244_MICS5_Datasets,0
+phone,hc9l,HC9L : Phone with a touch screen or keyboard,Kosovo under UNSC res. 1244_MICS5_Datasets,1
+school,ed4a,ED4A : Highest level of education attended,Kosovo under UNSC res. 1244_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Kosovo under UNSC res. 1244_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Kosovo under UNSC res. 1244_MICS5_Datasets,0
+tv,hc8r,HC8R : Flat screen tv,Kosovo under UNSC res. 1244_MICS5_Datasets,1
+attended,ed2,ed2 : ED2. Has (name) ever attended school or preschool?,Kyrgyzstan MICS 2005-06 SPSS Datasets,0
+car,hc10e,hc10e : Car/truck?,Kyrgyzstan MICS 2005-06 SPSS Datasets,1
+fridge,hc9f,hc9f : Refrigerator?,Kyrgyzstan MICS 2005-06 SPSS Datasets,0
+grade,ed3b,ed3b : Grade,Kyrgyzstan MICS 2005-06 SPSS Datasets,1
+phone,hc9e,hc9e : Non-mobile telephone?,Kyrgyzstan MICS 2005-06 SPSS Datasets,0
+school,ed3a,ed3a : Level,Kyrgyzstan MICS 2005-06 SPSS Datasets,1
+share.toilets,ws8,ws8 : WS8. Do you share this facility with other hh.?,Kyrgyzstan MICS 2005-06 SPSS Datasets,1
+toilets,ws7,ws7 : WS7. What kind of toilet facility do members of your hh.usually use?,Kyrgyzstan MICS 2005-06 SPSS Datasets,1
+tv,hc9c,hc9c : television?,Kyrgyzstan MICS 2005-06 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Kyrgyzstan MICS5 Datasets,0
+car,hc9f,HC9F : Car,Kyrgyzstan MICS5 Datasets,1
+fridge,hc8e,HC8E : Refrigerator,Kyrgyzstan MICS5 Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Kyrgyzstan MICS5 Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Kyrgyzstan MICS5 Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Kyrgyzstan MICS5 Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Kyrgyzstan MICS5 Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Kyrgyzstan MICS5 Datasets,0
+tv,hc8c,HC8C : Television,Kyrgyzstan MICS5 Datasets,0
+attended,ed2,ED2 : Ever attended school,Lao PDR MICS 2006 SPSS Datasets,0
+car,hc10e,HC10E : Car or truck,Lao PDR MICS 2006 SPSS Datasets,0
+fridge,hc9l,HC9L : Refrigerator,Lao PDR MICS 2006 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Lao PDR MICS 2006 SPSS Datasets,0
+phone,hc9k,HC9K : Mobile or non-mobile telephone,Lao PDR MICS 2006 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Lao PDR MICS 2006 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Lao PDR MICS 2006 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Lao PDR MICS 2006 SPSS Datasets,1
+tv,hc9f,HC9F : B/w or Color TV,Lao PDR MICS 2006 SPSS Datasets,1
+attended,ed3,ED3 : Ever attended school or pre-school,Lao People's Democratic Republic_LSIS_Datasets,0
+car,hc9f,HC9F : Car or truck,Lao People's Democratic Republic_LSIS_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Lao People's Democratic Republic_LSIS_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Lao People's Democratic Republic_LSIS_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Lao People's Democratic Republic_LSIS_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Lao People's Democratic Republic_LSIS_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Lao People's Democratic Republic_LSIS_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Lao People's Democratic Republic_LSIS_Datasets,0
+tv,hc8c,HC8C : Television,Lao People's Democratic Republic_LSIS_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Lebanon (Palestinians)_MICS4_Datasets,0
+car,hc9e,HC9E : Car or truck,Lebanon (Palestinians)_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Lebanon (Palestinians)_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Lebanon (Palestinians)_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Lebanon (Palestinians)_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Lebanon (Palestinians)_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Lebanon (Palestinians)_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Lebanon (Palestinians)_MICS4_Datasets,0
+tv,hc8c,HC8C : Flat screen TV,Lebanon (Palestinians)_MICS4_Datasets,1
+attended,ed2,ED2 : Ever attended school,Macedonia MICS 2005 SPSS Datasets,0
+car,hc10e,HC10E : Car or truck,Macedonia MICS 2005 SPSS Datasets,0
+fridge,hc9f,HC9F : Refrigerator,Macedonia MICS 2005 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Macedonia MICS 2005 SPSS Datasets,0
+phone,hc9e,HC9E : Non-mobile phone,Macedonia MICS 2005 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Macedonia MICS 2005 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Macedonia MICS 2005 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Macedonia MICS 2005 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Macedonia MICS 2005 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,"Macedonia, The former Yugoslav Republic of (Roma Settlements)_MICS4_Datasets",0
+car,hc9f,HC9F : Car or truck,"Macedonia, The former Yugoslav Republic of (Roma Settlements)_MICS4_Datasets",0
+fridge,hc8f,HC8F : Refrigerator,"Macedonia, The former Yugoslav Republic of (Roma Settlements)_MICS4_Datasets",0
+grade,ed4b,ED4B : Highest grade completed at that level,"Macedonia, The former Yugoslav Republic of (Roma Settlements)_MICS4_Datasets",0
+phone,hc8e,HC8E : Non-mobile phone,"Macedonia, The former Yugoslav Republic of (Roma Settlements)_MICS4_Datasets",0
+school,ed4a,ED4A : Highest level of education attended,"Macedonia, The former Yugoslav Republic of (Roma Settlements)_MICS4_Datasets",0
+share.toilets,ws9,WS9 : Toilet facility shared,"Macedonia, The former Yugoslav Republic of (Roma Settlements)_MICS4_Datasets",0
+toilets,ws8,WS8 : Type of toilet facility,"Macedonia, The former Yugoslav Republic of (Roma Settlements)_MICS4_Datasets",0
+tv,hc8c,HC8C : TV set - CRT,"Macedonia, The former Yugoslav Republic of (Roma Settlements)_MICS4_Datasets",1
+tv,hc8d,HC8D : TV set - PLASMA/LCD,"Macedonia, The former Yugoslav Republic of (Roma Settlements)_MICS4_Datasets",1
+attended,ed3,ED3 : Ever attended school or pre-school,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets",0
+car,hc9f,HC9F : Car or truck,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets",0
+fridge,hc8f,HC8F : Refrigerator,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets",0
+grade,ed4b,ED4B : Highest grade completed at that level,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets",0
+phone,hc8e,HC8E : Non-mobile phone,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets",0
+school,ed4a,ED4A : Highest level of education attended,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets",0
+share.toilets,ws9,WS9 : Toilet facility shared,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets",0
+toilets,ws8,WS8 : Type of toilet facility,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets",0
+tv,hc8c,HC8C : TV set - CRT,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets",1
+tv,hc8d,HC8D : TV set - PLASMA/LCD,"Macedonia, The former Yugoslav Republic of_MICS4_Datasets",1
+attended,ed3,ED3 : Ecole formelle/maternelle,Madagascar (South)_ MICS4_Datasets,1
+car,hc9f,HC9F : Voiture / camion,Madagascar (South)_ MICS4_Datasets,1
+fridge,hc8e,HC8E : RefrigÃ©rateur,Madagascar (South)_ MICS4_Datasets,0
+grade,ed4bx,ED4BX : Classe,Madagascar (South)_ MICS4_Datasets,1
+phone,hc8d,HC8D : TÃ©lÃ©phone fixe,Madagascar (South)_ MICS4_Datasets,0
+school,ed4ax,ED4AX : Niveau,Madagascar (South)_ MICS4_Datasets,1
+share.toilets,ws9,WS9 : Partagez-vous ces toilettes avec d'autres personnes qui ne sont pas membres de votre mÃ©nage,Madagascar (South)_ MICS4_Datasets,1
+toilets,ws8,WS8 : Type de toilettes,Madagascar (South)_ MICS4_Datasets,1
+tv,hc8c,HC8C : TÃ©lÃ©vision,Madagascar (South)_ MICS4_Datasets,2
+attended,ed2,ED2 : Ever attended school,Malawi MICS 2006 SPSS Datasets,0
+car,hc10e,HC10E : Car or truck,Malawi MICS 2006 SPSS Datasets,0
+fridge,hc9f,HC9F : Refrigerator,Malawi MICS 2006 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Malawi MICS 2006 SPSS Datasets,0
+phone,hc9e,HC9E : Non-mobile phone,Malawi MICS 2006 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Malawi MICS 2006 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Malawi MICS 2006 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Malawi MICS 2006 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Malawi MICS 2006 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Malawi_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,Malawi_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Malawi_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest class completed at that level,Malawi_MICS5_Datasets,1
+phone,hc8d,HC8D : Non-mobile phone,Malawi_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of school attended,Malawi_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Malawi_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Malawi_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Malawi_MICS5_Datasets,0
+attended,ed2,ED2 : A-t-il/elle frequente l'ecole,Mauritania MICS 2007 SPSS Datasets,1
+car,hc10e,HC10E : Voiture/Camion,Mauritania MICS 2007 SPSS Datasets,1
+fridge,hc9f,HC9F : Refrigerateur,Mauritania MICS 2007 SPSS Datasets,0
+grade,ed3b,ED3B : Derniere classe achevee a ce niveau,Mauritania MICS 2007 SPSS Datasets,1
+phone,hc9e,HC9E : Telephone fixe,Mauritania MICS 2007 SPSS Datasets,0
+school,ed3a,ED3A : Plus haut niveau  d'etudes atteint,Mauritania MICS 2007 SPSS Datasets,1
+share.toilets,ws8,WS8 : Partagez-vous ces toilettes avec d'autres menages,Mauritania MICS 2007 SPSS Datasets,1
+toilets,ws7,WS7 : Type de toilettes,Mauritania MICS 2007 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Mauritania MICS 2007 SPSS Datasets,0
+attended,ed3,ED3 : A frequente l'ecole ou l'ecole maternelle,Mauritania_MICS4_Datasets,1
+car,hc9e,HC9E : Voiture / Camion,Mauritania_MICS4_Datasets,1
+fridge,hc8e,HC8E : Refrigerateur,Mauritania_MICS4_Datasets,0
+grade,ed4b,ED4B : Derni?re classe achevee a ce niveau,Mauritania_MICS4_Datasets,1
+phone,hc8d,HC8D : Telephone fixe,Mauritania_MICS4_Datasets,0
+school,ed4a,ED4A : Plus haut niveau d'education frequente,Mauritania_MICS4_Datasets,1
+share.toilets,ws9,WS9 : Toilettes partagees,Mauritania_MICS4_Datasets,1
+toilets,ws8,WS8 : Type de toilettes,Mauritania_MICS4_Datasets,1
+tv,hc8c,HC8C : Television,Mauritania_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Moldova_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Moldova_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Moldova_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Moldova_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Moldova_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Moldova_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Moldova_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Moldova_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Moldova_MICS4_Datasets,0
+attended,ed3,ED3 : Has ever attended school/ pre-school,Mongolia (Khuvsgul Aimag)_MICS4_Datasets,0
+fridge,hc8e,HC8E : Does your household have the following things: E - Refrigera,Mongolia (Khuvsgul Aimag)_MICS4_Datasets,0
+grade,ed4b,ED4B : What is the highest grade completed at this level of school,Mongolia (Khuvsgul Aimag)_MICS4_Datasets,0
+school,ed4a,ED4A : What is the highest level of school attended,Mongolia (Khuvsgul Aimag)_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Does your household share this toilet facility with others,Mongolia (Khuvsgul Aimag)_MICS4_Datasets,1
+toilets,ws8,WS8 : What type of toilet facility does your household usually use,Mongolia (Khuvsgul Aimag)_MICS4_Datasets,0
+tv,hc8c,HC8C : Does your household have the following things: C - Televisio,Mongolia (Khuvsgul Aimag)_MICS4_Datasets,1
+phone,hc8d,Phone,Mongolia (Khuvsgul Aimag)_MICS4_Datasets,2
+car,hc9f,Car or truck,Mongolia (Khuvsgul Aimag)_MICS4_Datasets,2
+attended,ed2,ED2 : ED2. Has he/she ever attended school or preschool?,Mongolia MICS 2005 SPSS Datasets,0
+car,hc10ea,HC10EA : HC10EA. Does any member of your HH own truck?,Mongolia MICS 2005 SPSS Datasets,1
+car,hc10eb,HC10EB : HC10EB. Does any member of your HH own car?,Mongolia MICS 2005 SPSS Datasets,1
+fridge,hc9f,HC9F : HC9F. Does your HH have refrigerator?,Mongolia MICS 2005 SPSS Datasets,0
+grade,ed3b,ED3B : ED3B. What is the highest grade he/she completed at this level?,Mongolia MICS 2005 SPSS Datasets,0
+phone,hc9e,HC9E : HC9E. Does your HH have non-mobile phone?,Mongolia MICS 2005 SPSS Datasets,0
+school,ed3a,ED3A : ED3A. What is the highest level of school he/she attended?,Mongolia MICS 2005 SPSS Datasets,0
+share.toilets,ws8,WS8 : WS8. Do you share this facility with other HHs?,Mongolia MICS 2005 SPSS Datasets,1
+toilets,ws7,WS7 : WS7. What kind of toilet facility do members of your HH usually use?,Mongolia MICS 2005 SPSS Datasets,1
+tv,hc9c,HC9C : HC9C. Does your HH have television?,Mongolia MICS 2005 SPSS Datasets,0
+attended,ed3,ED3 : Has ever attended school/ pre-school,Mongolia_MICS4_Datasets,0
+fridge,hc8_e,HC8_E : Does your household have the following things: E - Refrigera,Mongolia_MICS4_Datasets,0
+grade,ed4_b,ED4_B : What is the highest grade completed at this level of school,Mongolia_MICS4_Datasets,0
+school,ed4_a,ED4_A : What is the highest level of school attended,Mongolia_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Does your household share this toilet facility with others,Mongolia_MICS4_Datasets,1
+toilets,ws8,WS8 : What type of toilet facility does your household usually use,Mongolia_MICS4_Datasets,0
+tv,hc8_c,HC8_C : Does your household have the following things: C - Televisio,Mongolia_MICS4_Datasets,1
+phone,hc8_d,Phone,Mongolia_MICS4_Datasets,2
+car,hc9_f,Car or truck,Mongolia_MICS4_Datasets,2
+attended,ed3,ED3 : Ever attended school or pre-school,Mongolia_MICS5_Datasets,0
+car,hc8q,HC8Q : Car or truck,Mongolia_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Mongolia_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that school,Mongolia_MICS5_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Mongolia_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of school attended,Mongolia_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Mongolia_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Mongolia_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Mongolia_MICS5_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Montenegro (Roma Settlements)_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,Montenegro (Roma Settlements)_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Montenegro (Roma Settlements)_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Montenegro (Roma Settlements)_MICS5_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Montenegro (Roma Settlements)_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Montenegro (Roma Settlements)_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Montenegro (Roma Settlements)_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Montenegro (Roma Settlements)_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Montenegro (Roma Settlements)_MICS5_Datasets,0
+attended,ed2,ED2 : Ever attended school,Montenegro MICS 2005 SPSS Datasets,0
+car,hc10e,HC10E : Car,Montenegro MICS 2005 SPSS Datasets,1
+car,hc10f,HC10F : Truck,Montenegro MICS 2005 SPSS Datasets,1
+fridge,hc9e,HC9E : Refrigerator,Montenegro MICS 2005 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Montenegro MICS 2005 SPSS Datasets,0
+phone,hc9d,HC9D : Fixed phone,Montenegro MICS 2005 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Montenegro MICS 2005 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Montenegro MICS 2005 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Montenegro MICS 2005 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Montenegro MICS 2005 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Montenegro_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,Montenegro_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Montenegro_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Montenegro_MICS5_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Montenegro_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Montenegro_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Montenegro_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Montenegro_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Montenegro_MICS5_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Nepal (Mid-and Far-Western Regions)_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck or bus or Jeep,Nepal (Mid-and Far-Western Regions)_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Nepal (Mid-and Far-Western Regions)_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Nepal (Mid-and Far-Western Regions)_MICS4_Datasets,0
+phone,hc8d,HC8D : Landline phone,Nepal (Mid-and Far-Western Regions)_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Nepal (Mid-and Far-Western Regions)_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Nepal (Mid-and Far-Western Regions)_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Nepal (Mid-and Far-Western Regions)_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Nepal_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,Nepal_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Nepal_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest grade completed,Nepal_MICS5_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Nepal_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Nepal_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Nepal_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Nepal_MICS5_Datasets,0
+attended,ed2,ED2 : Ever attended school,Nigeria MICS 2007 SPSS Datasets,0
+car,hc10e,HC10E : Car or truck,Nigeria MICS 2007 SPSS Datasets,0
+fridge,hc9i,HC9I : Refrigerator,Nigeria MICS 2007 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Nigeria MICS 2007 SPSS Datasets,0
+phone,hc9g,HC9G : Land line phone,Nigeria MICS 2007 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Nigeria MICS 2007 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Nigeria MICS 2007 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Nigeria MICS 2007 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Nigeria MICS 2007 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Nigeria_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Nigeria_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Nigeria_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Nigeria_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Nigeria_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Nigeria_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Nigeria_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Nigeria_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Nigeria_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Pakistan (Balochistan)_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Pakistan (Balochistan)_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Pakistan (Balochistan)_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade at level,Pakistan (Balochistan)_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Pakistan (Balochistan)_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Pakistan (Balochistan)_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Pakistan (Balochistan)_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Pakistan (Balochistan)_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Pakistan (Balochistan)_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Pakistan (Punjab)_MICS4_Datasets,0
+car,hc9h,HC9H : Bus / truck,Pakistan (Punjab)_MICS4_Datasets,1
+car,hc9i,HC9I : Car / van,Pakistan (Punjab)_MICS4_Datasets,1
+fridge,hc8e,HC8E : Refrigerator / freezer,Pakistan (Punjab)_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Pakistan (Punjab)_MICS4_Datasets,0
+phone,hc8d,HC8D : Telephone (non-mobile),Pakistan (Punjab)_MICS4_Datasets,0
+phone,hc9b,HC9B : Non-mobile phone,Pakistan (Punjab)_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Pakistan (Punjab)_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Pakistan (Punjab)_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Pakistan (Punjab)_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Pakistan (Punjab)_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Pakistan (Punjab)_MICS5_Datasets,0
+car,hc9f,HC9F : Bus or truck,Pakistan (Punjab)_MICS5_Datasets,1
+car,hc9h,HC9H : Car or Van,Pakistan (Punjab)_MICS5_Datasets,1
+fridge,hc8e,HC8E : Refrigerator,Pakistan (Punjab)_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Pakistan (Punjab)_MICS5_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Pakistan (Punjab)_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Pakistan (Punjab)_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Pakistan (Punjab)_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Pakistan (Punjab)_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Pakistan (Punjab)_MICS5_Datasets,0
+attended,ed2,ED2 : Did the kid attend nursery,Palestinians in Lebanon MICS 2006 SPSS Datasets,1
+car,hc10e,HC10E : Car or truck,Palestinians in Lebanon MICS 2006 SPSS Datasets,0
+fridge,hc9f,HC9F : Refrigerator,Palestinians in Lebanon MICS 2006 SPSS Datasets,0
+grade,ed3b,ED3B : Grade in that level,Palestinians in Lebanon MICS 2006 SPSS Datasets,1
+phone,hc9e,HC9E : Non-mobile phone,Palestinians in Lebanon MICS 2006 SPSS Datasets,0
+school,ed3a,ED3A : Highest level attended,Palestinians in Lebanon MICS 2006 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Palestinians in Lebanon MICS 2006 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Palestinians in Lebanon MICS 2006 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Palestinians in Lebanon MICS 2006 SPSS Datasets,0
+attended,ed3,ED3 : Alguna vez asistiÃ³ a la escuela o el pre-escolar,Panama_MICS5_Datasets,1
+car,hc9f,HC9F : AutomÃ³vil o camiÃ³n,Panama_MICS5_Datasets,1
+fridge,hc8e,HC8E : Refrigeradora,Panama_MICS5_Datasets,0
+grade,ed4b,ED4B : Grado mÃ¡s alto de educaciÃ³n al que asistiÃ³,Panama_MICS5_Datasets,1
+phone,hc8d,HC8D : TelÃ©fono fijo,Panama_MICS5_Datasets,1
+school,ed4a,ED4A : Nivel de educaciÃ³n mÃ¡s alto al que asistiÃ³,Panama_MICS5_Datasets,1
+share.toilets,ws9,WS9 : Comparte el servicio con personas de otra vivienda,Panama_MICS5_Datasets,1
+toilets,ws8,WS8 : Tipo de servicio sanitario,Panama_MICS5_Datasets,1
+tv,hc8c,HC8C : Televisor,Panama_MICS5_Datasets,1
+attended,ed3,ED3 : Ever attended school or pre-school,Serbia (Roma Settlements)_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Serbia (Roma Settlements)_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Serbia (Roma Settlements)_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Serbia (Roma Settlements)_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Serbia (Roma Settlements)_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Serbia (Roma Settlements)_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Serbia (Roma Settlements)_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Serbia (Roma Settlements)_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Serbia (Roma Settlements)_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Serbia (Roma Settlements)_MICS5_Datasets,0
+car,hc9i,HC9I : Car,Serbia (Roma Settlements)_MICS5_Datasets,1
+car,hc9j,HC9J : Truck,Serbia (Roma Settlements)_MICS5_Datasets,1
+fridge,hc8e,HC8E : Refrigerator,Serbia (Roma Settlements)_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Serbia (Roma Settlements)_MICS5_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Serbia (Roma Settlements)_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Serbia (Roma Settlements)_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Serbia (Roma Settlements)_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Serbia (Roma Settlements)_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Serbia (Roma Settlements)_MICS5_Datasets,0
+attended,ed2,ED2 : Ever attended school,Serbia MICS 2005 SPSS Datasets,0
+car,hc10e,HC10E : Car,Serbia MICS 2005 SPSS Datasets,1
+car,hc10f,HC10F : Truck,Serbia MICS 2005 SPSS Datasets,1
+fridge,hc9e,HC9E : Refrigerator,Serbia MICS 2005 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Serbia MICS 2005 SPSS Datasets,0
+phone,hc9d,HC9D : Non-Mobile Telephone,Serbia MICS 2005 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Serbia MICS 2005 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Serbia MICS 2005 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Serbia MICS 2005 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Serbia MICS 2005 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Serbia_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Serbia_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Serbia_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Serbia_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Serbia_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Serbia_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Serbia_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Serbia_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Serbia_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Serbia_MICS5_Datasets,0
+car,hc9i,HC9I : Car,Serbia_MICS5_Datasets,1
+car,hc9j,HC9J : Truck,Serbia_MICS5_Datasets,1
+fridge,hc8e,HC8E : Refrigerator,Serbia_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Serbia_MICS5_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Serbia_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Serbia_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Serbia_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Serbia_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Serbia_MICS5_Datasets,0
+attended,ed2,ED2 : Ever attended school,Sierra Leone MICS 2005 SPSS Datasets,0
+car,hc10e,HC10E : Car or truck,Sierra Leone MICS 2005 SPSS Datasets,0
+fridge,hc9f,HC9F : Refrigerator,Sierra Leone MICS 2005 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Sierra Leone MICS 2005 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Sierra Leone MICS 2005 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Sierra Leone MICS 2005 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Sierra Leone MICS 2005 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Sierra Leone MICS 2005 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Sierra Leone_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Sierra Leone_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Sierra Leone_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Sierra Leone_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Sierra Leone_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Sierra Leone_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Sierra Leone_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Sierra Leone_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Sierra Leone_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Somalia (Northeast Zone)_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Somalia (Northeast Zone)_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Somalia (Northeast Zone)_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Somalia (Northeast Zone)_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile telephone,Somalia (Northeast Zone)_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Somalia (Northeast Zone)_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Somalia (Northeast Zone)_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Somalia (Northeast Zone)_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Somalia (Northeast Zone)_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Somalia (Somaliland)_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Somalia (Somaliland)_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Somalia (Somaliland)_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Somalia (Somaliland)_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile telephone,Somalia (Somaliland)_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Somalia (Somaliland)_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Somalia (Somaliland)_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Somalia (Somaliland)_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Somalia (Somaliland)_MICS4_Datasets,0
+attended,ed2,ED2 : Ever attended school,Somalia MICS 2006 SPSS Datasets,0
+car,hc10e,HC10E : Car or truck,Somalia MICS 2006 SPSS Datasets,0
+fridge,hc9f,HC9F : Refrigerator,Somalia MICS 2006 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Somalia MICS 2006 SPSS Datasets,0
+phone,hc9e,HC9E : Non-mobile phone,Somalia MICS 2006 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Somalia MICS 2006 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Somalia MICS 2006 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Somalia MICS 2006 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Somalia MICS 2006 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,South Sudan_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,South Sudan_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,South Sudan_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,South Sudan_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,South Sudan_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,South Sudan_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,South Sudan_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,South Sudan_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,South Sudan_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,St.Lucia_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,St.Lucia_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,St.Lucia_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,St.Lucia_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone/Fixed Line,St.Lucia_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,St.Lucia_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,St.Lucia_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,St.Lucia_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,St.Lucia_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,State of Palestine_MICS4_Datasets,0
+car,hc8s,HC8S : Does your household have Private car,State of Palestine_MICS4_Datasets,1
+fridge,hc8e,HC8E : Does your household have Refrigerator,State of Palestine_MICS4_Datasets,0
+grade,ed4a,ED4A : How many schooling years did (name) successfully complete,State of Palestine_MICS4_Datasets,1
+phone,hc8d,HC8D : Does your household have Telephone line,State of Palestine_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,State of Palestine_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,State of Palestine_MICS4_Datasets,0
+tv,hc8c,HC8C : Does your household have Television,State of Palestine_MICS4_Datasets,0
+school,ed4,"""What is (name)'s educational status?""",State of Palestine_MICS4_Datasets,2
+attended,ed3,ED3 : Ever attended school or pre-school,State of Palestine_MICS5_Datasets,0
+car,hc9f,HC9F : A car or Truck,State of Palestine_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,State of Palestine_MICS5_Datasets,0
+grade,ed4bp,ED4BP : Highest grade completed at that level  [survey specific],State of Palestine_MICS5_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,State of Palestine_MICS5_Datasets,0
+school,ed4ap,ED4AP : Highest level of education attended [survey specific],State of Palestine_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,State of Palestine_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,State of Palestine_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,State of Palestine_MICS5_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Sudan_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Sudan_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Sudan_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Sudan_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Sudan_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Sudan_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Sudan_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Sudan_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Sudan_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Sudan_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,Sudan_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Sudan_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Sudan_MICS5_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Sudan_MICS5_Datasets,0
+school,ed4a,ED4A : What is the highest educational level (name) has attended?,Sudan_MICS5_Datasets,1
+share.toilets,ws9,WS9 : Toilet facility shared,Sudan_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Sudan_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Sudan_MICS5_Datasets,0
+attended,ed2,ed2 : Ever attended school,Suriname MICS 2006 SPSS Datasets,0
+car,hc10e,hc10e : Car or truck,Suriname MICS 2006 SPSS Datasets,0
+fridge,hc9f,hc9f : Refrigerator,Suriname MICS 2006 SPSS Datasets,0
+grade,ed3b,ed3b : Highest grade at level,Suriname MICS 2006 SPSS Datasets,0
+phone,hc9e,hc9e : Non-mobile phone,Suriname MICS 2006 SPSS Datasets,0
+school,ed3a,ed3a : Highest level of school attended,Suriname MICS 2006 SPSS Datasets,0
+share.toilets,ws8,ws8 : Toilet facility shared,Suriname MICS 2006 SPSS Datasets,0
+toilets,ws7,ws7 : Kind of toilet facility,Suriname MICS 2006 SPSS Datasets,1
+tv,hc9c,hc9c : Television,Suriname MICS 2006 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Suriname_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Suriname_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Suriname_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Suriname_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Suriname_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Suriname_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Suriname_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Suriname_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Suriname_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Swaziland_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Swaziland_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Swaziland_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Swaziland_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Swaziland_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Swaziland_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Swaziland_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Swaziland_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Swaziland_MICS4_Datasets,0
+attended,ed2,ed2 : Ever attended school,Syria MICS 2006 SPSS Datasets,0
+car,hc10d,hc10d : Car,Syria MICS 2006 SPSS Datasets,1
+car,hc10e,hc10e : truck,Syria MICS 2006 SPSS Datasets,1
+fridge,hc9f,hc9f : Refrigerator,Syria MICS 2006 SPSS Datasets,0
+grade,ed3b,ed3b : Highest grade at level,Syria MICS 2006 SPSS Datasets,0
+phone,hc9e,hc9e : Non-mobile phone,Syria MICS 2006 SPSS Datasets,0
+school,ed3a,ed3a : Highest level of school attended,Syria MICS 2006 SPSS Datasets,0
+share.toilets,ws8,ws8 : Toilet facility shared,Syria MICS 2006 SPSS Datasets,0
+toilets,ws7,ws7 : Kind of toilet facility,Syria MICS 2006 SPSS Datasets,1
+tv,hc9c,hc9c : Television,Syria MICS 2006 SPSS Datasets,0
+attended,ed2,ED2 : Ever attended school,Tajikistan MICS 2005 SPSS Datasets,0
+car,hc10e,HC10E : Car or truck,Tajikistan MICS 2005 SPSS Datasets,0
+fridge,hc9f,HC9F : Refrigerator,Tajikistan MICS 2005 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Tajikistan MICS 2005 SPSS Datasets,0
+phone,hc9e,HC9E : Non-mobile phone,Tajikistan MICS 2005 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Tajikistan MICS 2005 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Tajikistan MICS 2005 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Tajikistan MICS 2005 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Tajikistan MICS 2005 SPSS Datasets,0
+attended,ed2,ed2 : Ever attended school,Thailand MICS 2005-2006 SPSS Datasets,0
+car,hc10e,hc10e : Car or truck,Thailand MICS 2005-2006 SPSS Datasets,0
+fridge,hc9f,hc9f : Refrigerator,Thailand MICS 2005-2006 SPSS Datasets,0
+grade,ed3b,ed3b : Highest grade at level,Thailand MICS 2005-2006 SPSS Datasets,0
+phone,hc9e,hc9e : Non-mobile phone,Thailand MICS 2005-2006 SPSS Datasets,0
+school,ed3a,ed3a : Highest level of school attended,Thailand MICS 2005-2006 SPSS Datasets,0
+share.toilets,ws8,ws8 : Toilet facility shared,Thailand MICS 2005-2006 SPSS Datasets,0
+toilets,ws7,ws7 : Kind of toilet facility,Thailand MICS 2005-2006 SPSS Datasets,1
+tv,hc9c,hc9c : Television,Thailand MICS 2005-2006 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Thailand_MICS4_Datasets,0
+car,hc9f,HC9F : Car/ truck,Thailand_MICS4_Datasets,1
+fridge,hc8e,HC8E : Refrigerator,Thailand_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed,Thailand_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Thailand_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of school,Thailand_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Thailand_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Thailand_MICS4_Datasets,0
+tv,hc8c1,HC8C1 : Television (Plain monitor),Thailand_MICS4_Datasets,0
+tv,hc8c2,HC8C2 : Television (LCD/LED/Plasma monitor),Thailand_MICS4_Datasets,0
+attended,ed2,ed2 : A-t-il/elle frequente l'ecole,Togo MICS 2006 SPSS Datasets,1
+car,hc10e,hc10e : Voiture/Camion,Togo MICS 2006 SPSS Datasets,1
+fridge,hc9f,hc9f : Refrigerateur,Togo MICS 2006 SPSS Datasets,0
+grade,ed3b,ed3b : Derniere classe achevee a ce niveau,Togo MICS 2006 SPSS Datasets,1
+phone,hc9e,hc9e : Telephone fixe,Togo MICS 2006 SPSS Datasets,0
+school,ed3a,ed3a : Plus haut niveau  d'etudes atteint,Togo MICS 2006 SPSS Datasets,1
+share.toilets,ws8,ws8 : Partagez-vous ces toilettes avec d'autres menages,Togo MICS 2006 SPSS Datasets,1
+toilets,ws7,ws7 : Type de toilettes,Togo MICS 2006 SPSS Datasets,1
+tv,hc9c,hc9c : Television,Togo MICS 2006 SPSS Datasets,0
+attended,ed3,ED3 : A fréquenté l'école ou l'école maternelle,Togo_MICS4_Datasets,1
+car,hc9f,HC9F : Voiture / Camion,Togo_MICS4_Datasets,1
+fridge,hc8e,HC8E : Réfrigérateur,Togo_MICS4_Datasets,1
+grade,ed4b,ED4B : Dernière classe achevée a ce niveau,Togo_MICS4_Datasets,1
+phone,hc8d,HC8D : Téléphone fixe,Togo_MICS4_Datasets,0
+school,ed4a,ED4A : Plus haut niveau d'éducation fréquenté,Togo_MICS4_Datasets,1
+share.toilets,ws9,WS9 : Toilettes partagées,Togo_MICS4_Datasets,1
+toilets,ws8,WS8 : Type de toilettes,Togo_MICS4_Datasets,1
+tv,hc8c,HC8C : Télévision,Togo_MICS4_Datasets,1
+attended,ed2,ED2 : Ever attended school,Trinidad and Tobago MICS 2006 SPSS Datasets,0
+car,hc10b,HC10B : Car or Truck,Trinidad and Tobago MICS 2006 SPSS Datasets,0
+fridge,hc9e,HC9E : Refrigerator,Trinidad and Tobago MICS 2006 SPSS Datasets,0
+grade,ed3b,ED3B : Grade of education,Trinidad and Tobago MICS 2006 SPSS Datasets,1
+phone,hc9d,HC9D : Non-Mobile Telephone,Trinidad and Tobago MICS 2006 SPSS Datasets,0
+school,ed3a,ED3A : Level of education,Trinidad and Tobago MICS 2006 SPSS Datasets,1
+share.toilets,ws8,WS8 : Toilet facility shared,Trinidad and Tobago MICS 2006 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Trinidad and Tobago MICS 2006 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Trinidad and Tobago MICS 2006 SPSS Datasets,0
+attended,ed3,ED3 : A fréquenté l'école ou l'école maternelle,Tunisia_MICS4_Datasets,1
+car,hc9f,HC9F : Voiture / Camion,Tunisia_MICS4_Datasets,1
+fridge,hc8e,HC8E : Réfrigérateur,Tunisia_MICS4_Datasets,1
+grade,ed4b,ED4B : Dernière classe achevée a ce niveau,Tunisia_MICS4_Datasets,1
+phone,hc8d,HC8D : Téléphone fixe,Tunisia_MICS4_Datasets,0
+school,ed4a,ED4A : Plus haut niveau d'éducation fréquenté,Tunisia_MICS4_Datasets,1
+share.toilets,ws9,WS9 : Toilettes partagées,Tunisia_MICS4_Datasets,1
+toilets,ws8,WS8 : Type de toilettes,Tunisia_MICS4_Datasets,1
+tv,hc8c,HC8C : Télévision,Tunisia_MICS4_Datasets,1
+attended,ed2,ED2 : Ever attended school,Turkmenistan_MICS3_Datasets,0
+car,hc10e,HC10E : Car or truck,Turkmenistan_MICS3_Datasets,0
+fridge,hc9f,HC9F : Refrigerator,Turkmenistan_MICS3_Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Turkmenistan_MICS3_Datasets,0
+phone,hc9e,HC9E : Non-mobile phone,Turkmenistan_MICS3_Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Turkmenistan_MICS3_Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Turkmenistan_MICS3_Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Turkmenistan_MICS3_Datasets,1
+tv,hc9c,HC9C : Television,Turkmenistan_MICS3_Datasets,0
+attended,ed2,ED2 : Ever attended school,Ukraine MICS 2005 SPSS Datasets,0
+car,hc10e,HC10E : Car or truck,Ukraine MICS 2005 SPSS Datasets,0
+fridge,hc9f,HC9F : Refrigerator,Ukraine MICS 2005 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Ukraine MICS 2005 SPSS Datasets,0
+phone,hc9e,HC9E : Non-mobile phone,Ukraine MICS 2005 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Ukraine MICS 2005 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Ukraine MICS 2005 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Ukraine MICS 2005 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Ukraine MICS 2005 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Ukraine_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Ukraine_MICS4_Datasets,0
+fridge,hc8f,HC8F : Refrigerator,Ukraine_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Ukraine_MICS4_Datasets,0
+phone,hc8e,HC8E : Non mobile telephone,Ukraine_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Ukraine_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Ukraine_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Ukraine_MICS4_Datasets,0
+tv,hc8c,HC8C : CRT/kyneskope NV set,Ukraine_MICS4_Datasets,1
+tv,hc8d,HC8D : Flatscreen NV set,Ukraine_MICS4_Datasets,1
+attended,ed3,ED3 : Alguna vez asistiÃ³ a la escuela o el pre-escolar,Uruguay_MICS4_Datasets,1
+car,hc9f,HC9F : AutomÃ³vil / Camioneta,Uruguay_MICS4_Datasets,1
+fridge,hc8e,HC8E : Refrigerador,Uruguay_MICS4_Datasets,0
+grade,ed4b,ED4B : Grado mÃ¡s alto de educaciÃ³n que completÃ³,Uruguay_MICS4_Datasets,1
+phone,hc8d,HC8D : TelÃ©fono fijo,Uruguay_MICS4_Datasets,1
+school,ed4a,ED4A : Nivel de educaciÃ³n mÃ¡s alto al que asistiÃ³,Uruguay_MICS4_Datasets,1
+share.toilets,ws9,WS9 : Comparte el servicio con personas fuera de la familia,Uruguay_MICS4_Datasets,1
+toilets,ws8,WS8 : Tipo de servicio sanitario,Uruguay_MICS4_Datasets,1
+tv,hc8c,HC8C : TelevisiÃ³n convencional,Uruguay_MICS4_Datasets,1
+tv,hc8q,HC8Q : ConexiÃ³n a TV por abonados,Uruguay_MICS4_Datasets,1
+attended,ed2,ED2 : Ever attended school,Uzbekistan MICS 2006 SPSS Datasets,0
+car,hc10e,HC10E : Car or truck,Uzbekistan MICS 2006 SPSS Datasets,0
+fridge,hc9f,HC9F : Refrigerator,Uzbekistan MICS 2006 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Uzbekistan MICS 2006 SPSS Datasets,0
+phone,hc9e,HC9E : Non-mobile phone,Uzbekistan MICS 2006 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Uzbekistan MICS 2006 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Uzbekistan MICS 2006 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Uzbekistan MICS 2006 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Uzbekistan MICS 2006 SPSS Datasets,0
+attended,ed2,ed2 : Ever attended school,Vanuatu MICS 2007 SPSS Datasets,0
+car,hc10e,hc10e : Car or truck,Vanuatu MICS 2007 SPSS Datasets,0
+grade,ed3b,ed3b : Highest grade at level,Vanuatu MICS 2007 SPSS Datasets,0
+phone,hc9e,hc9e : Non-mobile phone,Vanuatu MICS 2007 SPSS Datasets,0
+school,ed3a,ed3a : Highest level of school attended,Vanuatu MICS 2007 SPSS Datasets,0
+share.toilets,ws8,ws8 : Toilet facility shared,Vanuatu MICS 2007 SPSS Datasets,0
+toilets,ws7,ws7 : Kind of toilet facility,Vanuatu MICS 2007 SPSS Datasets,1
+tv,hc9c,hc9c : Television,Vanuatu MICS 2007 SPSS Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Viet Nam_MICS5_Datasets,0
+car,hc8p,HC8P : Car,Viet Nam_MICS5_Datasets,1
+fridge,hc8e,HC8E : Refrigerator,Viet Nam_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Viet Nam_MICS5_Datasets,0
+phone,hc8d,HC8D : Fixed phone,Viet Nam_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Viet Nam_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Viet Nam_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Viet Nam_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Viet Nam_MICS5_Datasets,0
+attended,ed2,ed2 : Ever attended school,Vietnam_Datasets,0
+fridge,hc9_12,hc9_12 : Refridgerator,Vietnam_Datasets,0
+grade,ed3b,ed3b : Highest grade at level,Vietnam_Datasets,0
+phone,hc9_10,hc9_10 : Non-mobile phone ,Vietnam_Datasets,0
+school,ed3a,ed3a : Highest level of school attended,Vietnam_Datasets,0
+share.toilets,ws8,ws8 : Toilet facility shared,Vietnam_Datasets,0
+toilets,ws7,ws7 : Kind of toilet facility,Vietnam_Datasets,1
+tv,hc9_02,hc9_02 : Black and white TV ,Vietnam_Datasets,1
+tv,hc9_03,hc9_03 : Color TV ,Vietnam_Datasets,1
+car,hc9_19,Automobile,Vietnam_Datasets,2
+attended,ed3,ED3 : Ever attended school or pre-school,Vietnam_MICS4_Datasets,0
+car,hc9f,HC9F : Car or truck,Vietnam_MICS4_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Vietnam_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Vietnam_MICS4_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Vietnam_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Vietnam_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Vietnam_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Vietnam_MICS4_Datasets,0
+tv,hc8c,HC8C : Television,Vietnam_MICS4_Datasets,0
+attended,ed2,ED2 : Ever attended school,Yemen MICS 2006 SPSS Datasets,0
+car,hc10e,HC10E : Car or truck,Yemen MICS 2006 SPSS Datasets,0
+fridge,hc9f,HC9F : Refrigerator,Yemen MICS 2006 SPSS Datasets,0
+grade,ed3b,ED3B : Highest grade at level,Yemen MICS 2006 SPSS Datasets,0
+phone,hc9e,HC9E : Non-mobile phone,Yemen MICS 2006 SPSS Datasets,0
+school,ed3a,ED3A : Highest level of school attended,Yemen MICS 2006 SPSS Datasets,0
+share.toilets,ws8,WS8 : Toilet facility shared,Yemen MICS 2006 SPSS Datasets,0
+toilets,ws7,WS7 : Kind of toilet facility,Yemen MICS 2006 SPSS Datasets,1
+tv,hc9c,HC9C : Television,Yemen MICS 2006 SPSS Datasets,0
+attended,ed2,ed2 : ever attended school,Zimbabwe_Datasets,0
+car,hc10d,hc10d : car/truck,Zimbabwe_Datasets,1
+grade,ed3b,ed3b : highest grade at level,Zimbabwe_Datasets,0
+phone,hc9e,hc9e : non-mobile telephone,Zimbabwe_Datasets,0
+school,ed3a,ed3a : highest level of school attended,Zimbabwe_Datasets,0
+share.toilets,ws8,ws8 : toilet facility shared,Zimbabwe_Datasets,0
+toilets,ws7,ws7 : kind of toilet facility,Zimbabwe_Datasets,1
+tv,hc9c,hc9c : television,Zimbabwe_Datasets,0
+fridge,hc9f,Refregrator,Zimbabwe_Datasets,2
+attended,ed3,ED3 : Ever attended school or pre-school,Zimbabwe_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,Zimbabwe_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Zimbabwe_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest grade completed at that level,Zimbabwe_MICS5_Datasets,0
+phone,hc8d,HC8D : Non-mobile phone,Zimbabwe_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of education attended,Zimbabwe_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Zimbabwe_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Zimbabwe_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Zimbabwe_MICS5_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Argentina_MICS4_Datasets,0
+fridge,hc8c,HC8E : Refrigerator,Argentina_MICS4_Datasets,0
+fridge,hc8d,HC8E : Refrigerator,Argentina_MICS4_Datasets,0
+grade,ed4b,ED4B : Highest class completed at that level,Argentina_MICS4_Datasets,1
+phone,hc8m,HC8D : Non-mobile phone,Argentina_MICS4_Datasets,0
+school,ed4a,ED4A : Highest level of school attended,Argentina_MICS4_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Argentina_MICS4_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Argentina_MICS4_Datasets,0
+tv,hc8a,HC8C : Television,Argentina_MICS4_Datasets,0
+tv,hc8b,HC8C : Television,Argentina_MICS4_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Cameroon_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,Cameroon_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Cameroon_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest class completed at that level,Cameroon_MICS5_Datasets,1
+phone,hc8d,HC8D : Non-mobile phone,Cameroon_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of school attended,Cameroon_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Cameroon_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Cameroon_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Cameroon_MICS5_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Cuba_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest class completed at that level,Cuba_MICS5_Datasets,1
+school,ed4a,ED4A : Highest level of school attended,Cuba_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Cuba_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Cuba_MICS5_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Dominican Republic_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,Dominican Republic_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Dominican Republic_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest class completed at that level,Dominican Republic_MICS5_Datasets,1
+phone,hc8d,HC8D : Non-mobile phone,Dominican Republic_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of school attended,Dominican Republic_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Dominican Republic_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Dominican Republic_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Dominican Republic_MICS5_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,El Salvador_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,El Salvador_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,El Salvador_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest class completed at that level,El Salvador_MICS5_Datasets,1
+phone,hc8d,HC8D : Non-mobile phone,El Salvador_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of school attended,El Salvador_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,El Salvador_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,El Salvador_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,El Salvador_MICS5_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Guinea Bissau_MICS5_Datasets,0
+car,hc9g,HC9F : Car or truck,Guinea Bissau_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Guinea Bissau_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest class completed at that level,Guinea Bissau_MICS5_Datasets,1
+phone,hc8d,HC8D : Non-mobile phone,Guinea Bissau_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of school attended,Guinea Bissau_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Guinea Bissau_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Guinea Bissau_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Guinea Bissau_MICS5_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Guyana_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,Guyana_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Guyana_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest class completed at that level,Guyana_MICS5_Datasets,1
+phone,hc8d,HC8D : Non-mobile phone,Guyana_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of school attended,Guyana_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Guyana_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Guyana_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Guyana_MICS5_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Kazakhstan_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,Kazakhstan_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Kazakhstan_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest class completed at that level,Kazakhstan_MICS5_Datasets,1
+phone,hc8d,HC8D : Non-mobile phone,Kazakhstan_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of school attended,Kazakhstan_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Kazakhstan_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Kazakhstan_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Kazakhstan_MICS5_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Mexico_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,Mexico_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Mexico_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest class completed at that level,Mexico_MICS5_Datasets,1
+phone,hc8d,HC8D : Non-mobile phone,Mexico_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of school attended,Mexico_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Mexico_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Mexico_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Mexico_MICS5_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Sao Tome and Principe_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,Sao Tome and Principe_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Sao Tome and Principe_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest class completed at that level,Sao Tome and Principe_MICS5_Datasets,1
+phone,hc8d,HC8D : Non-mobile phone,Sao Tome and Principe_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of school attended,Sao Tome and Principe_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Sao Tome and Principe_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Sao Tome and Principe_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Sao Tome and Principe_MICS5_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Swaziland_MICS5_Datasets,0
+car,hc9f,HC9F : Car or truck,Swaziland_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Swaziland_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest class completed at that level,Swaziland_MICS5_Datasets,1
+phone,hc8d,HC8D : Non-mobile phone,Swaziland_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of school attended,Swaziland_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Swaziland_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Swaziland_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Swaziland_MICS5_Datasets,0
+attended,ed3,ED3 : Ever attended school or pre-school,Turkmenistan_MICS5_Datasets,0
+car,hc9i,HC9F : Car or truck,Turkmenistan_MICS5_Datasets,0
+car,hc9h,HC9F : Car or truck,Turkmenistan_MICS5_Datasets,0
+fridge,hc8e,HC8E : Refrigerator,Turkmenistan_MICS5_Datasets,0
+grade,ed4b,ED4B : Highest class completed at that level,Turkmenistan_MICS5_Datasets,1
+phone,hc8d,HC8D : Non-mobile phone,Turkmenistan_MICS5_Datasets,0
+school,ed4a,ED4A : Highest level of school attended,Turkmenistan_MICS5_Datasets,0
+share.toilets,ws9,WS9 : Toilet facility shared,Turkmenistan_MICS5_Datasets,0
+toilets,ws8,WS8 : Type of toilet facility,Turkmenistan_MICS5_Datasets,0
+tv,hc8c,HC8C : Television,Turkmenistan_MICS5_Datasets,0
+tv,hc8f,HC8C : Television,Turkmenistan_MICS5_Datasets,0

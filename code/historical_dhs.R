@@ -81,13 +81,10 @@ psum <- function(...,na.rm=TRUE) {
 
 ####Run function####
 # set our working directory, change this if using on another machine
-wd <- "~/Survey Microdata/DHSauto"
+wd <- "~/git/p20_private_data/project_data/"
 setwd(wd)
 
-# List out all the directories in our wd, this is where our data is contained
-dirs<- list.dirs(wd)
-
-rdatas <- list.files(path=dirs,pattern="*.RData",full.names=TRUE)
+rdatas <- list.files(paste0(wd,"DHS auto"),pattern="*.RData",ignore.case=T,full.names=TRUE)
 
 
 dataList <- list()
@@ -110,7 +107,7 @@ for(i in 1:length(rdatas)){
     
     ###Maternal
     ir_patha <- paste0(country,"ir",phase)
-    ir_path <- paste0(toupper(ir_patha),"DT/",tolower(ir_patha),"fl.RData")
+    ir_path <- paste0("DHS auto/",tolower(ir_patha),"fl.RData")
     load(ir_path)
     ir <- data.frame(data)
     remove(data)
@@ -140,7 +137,7 @@ for(i in 1:length(rdatas)){
     
     
     pr_patha <- paste0(country,"pr",phase)
-    pr_path <- paste0(toupper(pr_patha),"DT/",tolower(pr_patha),"fl.RData")
+    pr_path <- paste0("DHS auto/",tolower(pr_patha),"fl.RData")
     load(pr_path)
     pr <- data.frame(data)
     remove(data)
@@ -174,7 +171,7 @@ for(i in 1:length(rdatas)){
     names(pr)[which(names(pr)=="hv271")] <- "wealth"}
     if(!any(names(pr)=="wealth")){
       wi_patha <- paste0(country,"wi",phase)
-      wi_path <- paste0(toupper(wi_patha),"DT/",tolower(wi_patha),"fl.RData")
+      wi_path <- paste0("DHS auto/",tolower(wi_patha),"fl.RData")
       load(wi_path)
       wi <- data.frame(data)
       remove(data)
@@ -278,7 +275,7 @@ for(i in 1:length(rdatas)){
     ###Registration for Togo
     if(country=="tg"){
       pr$birth.cert <- NULL
-      kr_path <- paste0(country,"kr",phase,"fl.RData")
+      kr_path <- paste0("DHS auto/",country,"kr",phase,"fl.RData")
       load(kr_path)
       kr <- data.frame(dat)
       remove(dat)
@@ -373,10 +370,9 @@ for(i in 1:length(rdatas)){
 #   In readChar(con, 5L, useBytes = TRUE) :
 #   cannot open compressed file 'BJIR41DT/bjir41fl.RData', probable reason 'No such file or directory'
 
-setwd("C:/Users/Zach/Documents/Survey Microdata/MICS")
-varNames <- read.csv("mics_meta_vars_complete.csv",as.is=TRUE,na.strings="")
-classes <- read.csv("global_mics_classes.csv",as.is=TRUE,na.strings="NAN")
-maternal.varNames <- read.csv("mics_child_vars.csv",as.is=TRUE,na.strings="")
+varNames <- read.csv("~/git/p20_indicator_time_trends/data/mics_meta_vars_complete.csv",as.is=TRUE,na.strings="")
+classes <- read.csv("~/git/p20_indicator_time_trends/data/global_mics_classes.csv",as.is=TRUE,na.strings="NAN")
+maternal.varNames <- read.csv("~/git/p20_indicator_time_trends/data/mics_child_vars.csv",as.is=TRUE,na.strings="")
 
 birth.missing <- c("",9,"?","missing","manquant","omidito","non concerne",NA,"NA")
 
@@ -399,13 +395,8 @@ code.skilled <- function(skilled.column,skilled=TRUE){
   return(sapply(skilled.column,recode.birth.vars,skilled))
 }
 
-wd <- "C:/Users/Zach/Documents/Survey Microdata/MICS"
-setwd(wd)
-
 # List out all the directories in our wd, this is where our data is contained
 dirs <- list.dirs(wd,full.names=TRUE)
-
-# dir <- "C:/Users/Alex/Documents/Data/P20/MICS/Algeria_MICS4_Datasets"
 
 for(i in 2:length(dirs)){
   dir <- dirs[i]
@@ -722,8 +713,7 @@ for(i in 2:length(dirs)){
     
     if(hrBase=="Djibouti MICS 2006 SPSS Datasets"){
       #Make a wealth index
-      source("C:/git/alexm-util/DevInit/R/P20/wealth_pca.R")
-      
+
       catvars = c(
         "ws1" #Drinking water
         ,"ws2" #Other water
@@ -1073,8 +1063,7 @@ data.total$stunting <- factor(data.total$stunting
                                 ,"Implausibly high"
                               ))
 
-setwd("C:/Users/Alex/Documents/Data/PNAD/Dados_20170517/Dados/")
-load("dados.RData")
+load("~/git/p20_private_data/project_data/Other/Dados_20170517.RData")
 
 names(pr)[which(names(pr)=="V0301")] <- "line"
 names(pr)[which(names(pr)=="V0102")] <- "cluster"
@@ -1305,11 +1294,8 @@ data$filename <- "Brazil"
 brazil.data.total <- data
 data.total <- rbind(brazil.data.total,data.total,fill=TRUE)
 
-wd <- "C:/Users/Alex/Documents/Data/P20/CFPS"
-setwd(wd)
-
-load("dat2014.RData")
-load("wealth.RData")
+load("~/git/p20_private_data/project_data/Other/CFPS/dat2014.RData")
+load("~/git/p20_private_data/project_data/Other/CFPS/wealth.RData")
 
 hr <- dat
 ir <- famros
@@ -1421,7 +1407,7 @@ ch <- ch[complete.cases(ch[c("weight.kg","height.cm","age.months","gender","weig
 keep <- c("cluster","household","pid","weight.kg","height.cm","age.months","gender","weights")
 ch <- ch[keep]
 
-igu.dir <- "C:/Users/Alex/Documents/Data/P20/igrowup_R/"
+igu.dir <- "~/git/p20_indicator_time_trends/code/igrowup_R"
 weianthro<-read.table(paste0(igu.dir,"/weianthro.txt"),header=T,sep="",skip=0)
 lenanthro<-read.table(paste0(igu.dir,"/lenanthro.txt"),header=T,sep="",skip=0)
 bmianthro<-read.table(paste0(igu.dir,"/bmianthro.txt"),header=T,sep="",skip=0)
@@ -1563,7 +1549,7 @@ ir$filename <- "China"
 china.data.total <- ir
 data.total <- rbind(china.data.total,data.total,fill=TRUE)
 
-wd <- "C:/Users/Alex/Documents/Data/P20/Meta"
+wd <- "~/git/p20_private_data/project_data"
 setwd(wd)
 
 save(data.total,file="total_tab_data.RData")
