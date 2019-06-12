@@ -44,7 +44,7 @@ mort = function(br){
     al = segment[["al"]]
     au = segment[["au"]]
     dsn = update(dsn, mort_tmp=(b7>=al & b7<=au))
-    dsn = update(dsn, surv_tmp=(is.na(b7) | b7>al))
+    dsn = update(dsn, surv_tmp=(is.na(b7) | b7>=al))
     cohortA <- subset(dsn,age.months>=(tl-au) & age.months<(tl-al))
     cohortB <- subset(dsn,age.months>=(tl-al) & age.months<=(tu-au))
     cohortC <- subset(dsn,age.months>(tu-au) & age.months<=(tu-al))
