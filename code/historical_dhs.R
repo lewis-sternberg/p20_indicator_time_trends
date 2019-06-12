@@ -252,8 +252,17 @@ for(i in 1:length(rdatas)){
     br = merge(br,pr.pov,by=c("cluster","household"),all.x=T)
     br.p20 = subset(br,p20==T)
     br.u80 = subset(br,!p20)
-    p20.mort = mort(br.p20)$mortality
-    u80.mort = mort(br.u80)$mortality
+    if(nrow(br.p20)>1){
+      p20.mort = mort(br.p20)$mortality
+    }else{
+      p20.mort = NA
+    }
+    if(nrow(br.u80)>1){
+      u80.mort = mort(br.u80)$mortality
+    }else{
+      u80.mort = NA
+    }
+
     mort_dat = data.frame(p20=c(T,F),variable=c("mortality","mortality"),value=c(p20.mort,u80.mort))
     
     dsn = svydesign(
@@ -262,21 +271,29 @@ for(i in 1:length(rdatas)){
       ,weights=~weights
     )
     pov.stunting.tab = svytable(~stunting+p20,dsn)
-    if(sum(dim(pov.stunting.tab))>0){
-      p20.stunting = pov.stunting.tab[1,1]/sum(pov.stunting.tab[0,1],pov.stunting.tab[1,1],na.rm=T)
-      u80.stunting = pov.stunting.tab[1,0]/sum(pov.stunting.tab[0,0],pov.stunting.tab[1,0],na.rm=T)
-      stunt_dat = data.frame(p20=c(T,F),variable=c("stunting","stunting"),value=c(p20.stunting,u80.stunting))
+    if("TRUE" %in% colnames(pov.stunting.tab)){
+      p20.stunting = pov.stunting.tab["1","TRUE"]/sum(pov.stunting.tab["0","TRUE"],pov.stunting.tab["1","TRUE"],na.rm=T)
     }else{
-      stunt_dat = data.frame(p20=c(T,F),variable=c("stunting","stunting"),value=c(NA,NA))
+      p20.stunting = NA
     }
+    if("FALSE" %in% colnames(pov.stunting.tab)){
+      u80.stunting = pov.stunting.tab["1","FALSE"]/sum(pov.stunting.tab["0","FALSE"],pov.stunting.tab["1","FALSE"],na.rm=T)
+    }else{
+      u80.stunting = NA
+    }
+    stunt_dat = data.frame(p20=c(T,F),variable=c("stunting","stunting"),value=c(p20.stunting,u80.stunting))
     pov.reg.tab = svytable(~birth.reg+p20,dsn)
-    if(sum(dim(pov.reg.tab))>0){
-      p20.reg = pov.reg.tab[1,1]/sum(pov.reg.tab[0,1],pov.reg.tab[1,1],na.rm=T)
-      u80.reg = pov.reg.tab[1,0]/sum(pov.reg.tab[0,0],pov.reg.tab[1,0],na.rm=T)
-      reg_dat = data.frame(p20=c(T,F),variable=c("registration","registration"),value=c(p20.reg,u80.reg))
+    if("TRUE" %in% colnames(pov.reg.tab)){
+      p20.reg = pov.reg.tab["1","TRUE"]/sum(pov.reg.tab["0","TRUE"],pov.reg.tab["1","TRUE"],na.rm=T)
     }else{
-      reg_dat = data.frame(p20=c(T,F),variable=c("registration","registration"),value=c(NA,NA))
+      p20.reg = NA
     }
+    if("FALSE" %in% colnames(pov.reg.tab)){
+      u80.reg = pov.reg.tab["1","FALSE"]/sum(pov.reg.tab["0","FALSE"],pov.reg.tab["1","FALSE"],na.rm=T)
+    }else{
+      u80.reg = NA
+    }
+    reg_dat = data.frame(p20=c(T,F),variable=c("registration","registration"),value=c(p20.reg,u80.reg))
     dat = rbind(mort_dat,stunt_dat,reg_dat)
     dat$filename <- povcal_filename
     if(length(iso3)>0){
@@ -295,3 +312,4 @@ for(i in 1:length(rdatas)){
 
 data.total <- rbindlist(dataList)
 save(data.total,file="~/git/p20_private_data/project_data/historical_dhs.RData")
+fwrite(data.total,"~/git/p20_private_data/project_data/historical_dhs.csv")
