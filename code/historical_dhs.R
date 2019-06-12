@@ -1,5 +1,5 @@
 ####Function and setup####
-list.of.packages <- c("Hmisc","plyr","foreign","data.table","varhandle","zoo")
+list.of.packages <- c("Hmisc","plyr","foreign","data.table","varhandle","zoo","survey")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 lapply(list.of.packages, require, character.only=T)
@@ -101,6 +101,9 @@ for(i in 1:length(rdatas)){
   povcal_filename <- paste0(country,recode,phase,"dt")
   if(povcal_filename %in% tolower(povcalcuts$filename)){
     message(povcal_filename)
+    povcal_subset = subset(povcalcuts,filename==povcal_filename)
+    iso3 = povcal_subset$iso3
+    survey_year = povcal_subset$year
     
     br_patha <- paste0(country,"br",phase)
     br_path <- paste0("DHS auto/",tolower(br_patha),"fl.RData")
@@ -212,6 +215,10 @@ for(i in 1:length(rdatas)){
     #3 - registered, no certificate
     #6 - other
     #8 - dk
+    pr$birth.reg = NA
+    pr$birth.reg[which(pr$birth.cert %in% c(0,6,8,9))] = 0
+    pr$birth.reg[which(pr$birth.cert %in% c(1,2,3))] = 1
+
     
     # Stunting
     names(pr)[which(names(pr)=="hc70")] <- "child.height.age"
@@ -222,12 +229,12 @@ for(i in 1:length(rdatas)){
     }
     pr$child.height.age[which(pr$child.height.age>80)] <- NA
     pr$stunting <- NA
-    pr$stunting[which(pr$child.height.age > (-6) & pr$child.height.age<= (-3))] <- "Severely stunted"
-    pr$stunting[which(pr$child.height.age > (-3) & pr$child.height.age<= (-2))] <- "Stunted, but not severely"
-    pr$stunting[which(pr$child.height.age > (-2) & pr$child.height.age< (6))] <- "Not stunted"
+    pr$stunting[which(pr$child.height.age > (-6) & pr$child.height.age<= (-3))] <- 1
+    pr$stunting[which(pr$child.height.age > (-3) & pr$child.height.age<= (-2))] <- 1
+    pr$stunting[which(pr$child.height.age > (-2) & pr$child.height.age< (6))] <- 0
     
     keep <- c(
-      "wealth","weights","urban","region","educ","age","sex","cluster","household","head.sex","head.age","p20","ext","birth.cert","stunting"
+      "wealth","weights","urban","region","educ","age","sex","cluster","household","head.sex","head.age","p20","ext","birth.reg","stunting"
     )
     prNames <- names(pr)
     namesDiff <- setdiff(keep,prNames)
@@ -237,8 +244,47 @@ for(i in 1:length(rdatas)){
         message(paste("Missing variable",namesDiff[y]))
       } 
     }
-    data <- pr[,keep]
-    data$filename <- povcal_filename
+    pr <- pr[,keep]
+    names(br)[which(names(br)=="v001")] <- "cluster"
+    names(br)[which(names(br)=="v002")] <- "household"
+    pr.pov = data.table(pr)[,.(p20=mean(p20,na.rm=T)),by=.(cluster,household)]
+    
+    br = merge(br,pr.pov,by=c("cluster","household"),all.x=T)
+    br.p20 = subset(br,p20==T)
+    br.u80 = subset(br,!p20)
+    p20.mort = mort(br.p20)$mortality
+    u80.mort = mort(br.u80)$mortality
+    mort_dat = data.frame(p20=c(T,F),variable=c("mortality","mortality"),value=c(p20.mort,u80.mort))
+    
+    dsn = svydesign(
+      data=pr
+      ,ids=~1
+      ,weights=~weights
+    )
+    pov.stunting.tab = svytable(~stunting+p20,dsn)
+    if(sum(dim(pov.stunting.tab))>0){
+      p20.stunting = pov.stunting.tab[1,1]/sum(pov.stunting.tab[0,1],pov.stunting.tab[1,1],na.rm=T)
+      u80.stunting = pov.stunting.tab[1,0]/sum(pov.stunting.tab[0,0],pov.stunting.tab[1,0],na.rm=T)
+      stunt_dat = data.frame(p20=c(T,F),variable=c("stunting","stunting"),value=c(p20.stunting,u80.stunting))
+    }else{
+      stunt_dat = data.frame(p20=c(T,F),variable=c("stunting","stunting"),value=c(NA,NA))
+    }
+    pov.reg.tab = svytable(~birth.reg+p20,dsn)
+    if(sum(dim(pov.reg.tab))>0){
+      p20.reg = pov.reg.tab[1,1]/sum(pov.reg.tab[0,1],pov.reg.tab[1,1],na.rm=T)
+      u80.reg = pov.reg.tab[1,0]/sum(pov.reg.tab[0,0],pov.reg.tab[1,0],na.rm=T)
+      reg_dat = data.frame(p20=c(T,F),variable=c("registration","registration"),value=c(p20.reg,u80.reg))
+    }else{
+      reg_dat = data.frame(p20=c(T,F),variable=c("registration","registration"),value=c(NA,NA))
+    }
+    dat = rbind(mort_dat,stunt_dat,reg_dat)
+    dat$filename <- povcal_filename
+    dat$iso3 = iso3
+    dat$survey_year = survey_year
+
+    dataList[[dataIndex]] <- dat
+    dataIndex <- dataIndex + 1
+
   }
 }
 
