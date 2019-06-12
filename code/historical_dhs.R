@@ -253,17 +253,32 @@ for(i in 1:length(rdatas)){
     br.p20 = subset(br,p20==T)
     br.u80 = subset(br,!p20)
     if(nrow(br.p20)>1){
-      p20.mort = mort(br.p20)$mortality
+      p20.mort.list = mort(br.p20)
+      p20.mort = p20.mort.list$mortality
+      p20.mort.numerator = p20.mort.list$total_morts
+      p20.mort.denominator = p20.mort.list$total_survs
     }else{
       p20.mort = NA
+      p20.mort.numerator = NA
+      p20.mort.denominator = NA
     }
     if(nrow(br.u80)>1){
-      u80.mort = mort(br.u80)$mortality
+      u80.mort.list = mort(br.u80)
+      u80.mort = u80.mort.list$mortality
+      u80.mort.numerator = u80.mort.list$total_morts
+      u80.mort.denominator = u80.mort.list$total_survs
     }else{
       u80.mort = NA
+      u80.mort.numerator = NA
+      u80.mort.denominator = NA
     }
 
-    mort_dat = data.frame(p20=c(T,F),variable=c("mortality","mortality"),value=c(p20.mort,u80.mort))
+    mort_dat = data.frame(
+      p20=c(rep(T,3),rep(F,3)),
+      variable=c(rep("mortality",6)),
+      type=rep(c("statistic","numerator","denominator"),2),
+      value=c(p20.mort,p20.mort.numerator,p20.mort.denominator,u80.mort,u80.mort.numerator,u80.mort.denominator)
+    )
     
     dsn = svydesign(
       data=pr
@@ -273,27 +288,53 @@ for(i in 1:length(rdatas)){
     pov.stunting.tab = svytable(~stunting+p20,dsn)
     if("TRUE" %in% colnames(pov.stunting.tab)){
       p20.stunting = pov.stunting.tab["1","TRUE"]/sum(pov.stunting.tab["0","TRUE"],pov.stunting.tab["1","TRUE"],na.rm=T)
+      p20.stunting.numerator = pov.stunting.tab["1","TRUE"]
+      p20.stunting.denominator = sum(pov.stunting.tab["0","TRUE"],pov.stunting.tab["1","TRUE"],na.rm=T)
     }else{
       p20.stunting = NA
+      p20.stunting.numerator = NA
+      p20.stunting.denominator = NA
     }
     if("FALSE" %in% colnames(pov.stunting.tab)){
       u80.stunting = pov.stunting.tab["1","FALSE"]/sum(pov.stunting.tab["0","FALSE"],pov.stunting.tab["1","FALSE"],na.rm=T)
+      u80.stunting.numerator = pov.stunting.tab["1","FALSE"]
+      u80.stunting.denominator = sum(pov.stunting.tab["0","FALSE"],pov.stunting.tab["1","FALSE"],na.rm=T)
     }else{
       u80.stunting = NA
+      u80.stunting.numerator = NA
+      u80.stunting.denominator = NA
     }
-    stunt_dat = data.frame(p20=c(T,F),variable=c("stunting","stunting"),value=c(p20.stunting,u80.stunting))
+    stunt_dat = data.frame(
+      p20=c(rep(T,3),rep(F,3)),
+      variable=c(rep("stunting",6)),
+      type=rep(c("statistic","numerator","denominator"),2),
+      value=c(p20.stunting,p20.stunting.numerator,p20.stunting.denominator,u80.stunting,u80.stunting.numerator,u80.stunting.denominator)
+    )
     pov.reg.tab = svytable(~birth.reg+p20,dsn)
     if("TRUE" %in% colnames(pov.reg.tab)){
       p20.reg = pov.reg.tab["1","TRUE"]/sum(pov.reg.tab["0","TRUE"],pov.reg.tab["1","TRUE"],na.rm=T)
+      p20.reg.numerator = pov.reg.tab["1","TRUE"]
+      p20.reg.denominator = sum(pov.reg.tab["0","TRUE"],pov.reg.tab["1","TRUE"],na.rm=T)
     }else{
       p20.reg = NA
+      p20.reg.numerator = NA
+      p20.reg.denominator = NA
     }
     if("FALSE" %in% colnames(pov.reg.tab)){
       u80.reg = pov.reg.tab["1","FALSE"]/sum(pov.reg.tab["0","FALSE"],pov.reg.tab["1","FALSE"],na.rm=T)
+      u80.reg.numerator = pov.reg.tab["1","FALSE"]
+      u80.reg.denominator = sum(pov.reg.tab["0","FALSE"],pov.reg.tab["1","FALSE"],na.rm=T)
     }else{
       u80.reg = NA
+      u80.reg.numerator = NA
+      u80.reg.denominator = NA
     }
-    reg_dat = data.frame(p20=c(T,F),variable=c("registration","registration"),value=c(p20.reg,u80.reg))
+    reg_dat = data.frame(
+      p20=c(rep(T,3),rep(F,3)),
+      variable=c(rep("registration",6)),
+      type=rep(c("statistic","numerator","denominator"),2),
+      value=c(p20.reg,p20.reg.numerator,p20.reg.denominator,u80.reg,u80.reg.numerator,u80.reg.denominator)
+    )
     dat = rbind(mort_dat,stunt_dat,reg_dat)
     dat$filename <- povcal_filename
     if(length(iso3)>0){

@@ -17,6 +17,8 @@ mort = function(br){
   )
   
   probs <- c()
+  total_morts = 0
+  total_survs = 0
   mort_ses <- c()
   surv_ses <- c()
   #Time-lower and time-upper also need to be expressed as time period, with 0 being the survey
@@ -107,6 +109,8 @@ mort = function(br){
     }
     morts = mortalities["mort_tmpTRUE"]
     survs = survivals["surv_tmpTRUE"]
+    total_morts = total_morts + morts
+    total_survs = total_survs + survs
     prob <- 1-(morts/survs)
     if(is.nan(prob)){
       prob <- 1
@@ -120,6 +124,8 @@ mort = function(br){
   return(list(
     mortality=mortality,
     probs=probs,
+    total_morts=total_morts,
+    total_survs=total_survs,
     mort_ses=mort_ses,
     surv_ses=surv_ses
   ))
