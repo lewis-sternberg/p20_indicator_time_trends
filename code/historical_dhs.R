@@ -279,8 +279,13 @@ for(i in 1:length(rdatas)){
     }
     dat = rbind(mort_dat,stunt_dat,reg_dat)
     dat$filename <- povcal_filename
-    dat$iso3 = iso3
-    dat$survey_year = survey_year
+    if(length(iso3)>0){
+      dat$iso3 = iso3
+      dat$survey_year = survey_year 
+    }else{
+      dat$iso3 = NA
+      dat$survey_year = NA
+    }
 
     dataList[[dataIndex]] <- dat
     dataIndex <- dataIndex + 1
