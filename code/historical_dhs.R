@@ -132,7 +132,7 @@ for(i in 1:nrow(povcalcuts)){
       names(pr)[which(names(pr)=="hv271")] <- "wealth"
     }else{
       wi_patha <- paste0(country,"wi",phase)
-      wi_path <- paste0("data/",tolower(wi_patha),"fl.RData")
+      wi_path <- paste0(tolower(wi_patha),"fl.RData")
       if(file.exists(wi_path)){
         load(wi_path)
         wi <- data.frame(data)
