@@ -302,7 +302,7 @@ for(i in 1:nrow(povcalcuts)){
     names(br)[which(names(br)=="v001")] <- "cluster"
     names(br)[which(names(br)=="v002")] <- "household"
     pr.pov = data.table(pr)[,.(p20=mean(p20,na.rm=T)),by=.(cluster,household)]
-    rm(pr)
+    rm(pr, dsn)
     gc()
     
     br <- as.data.table(br)
