@@ -38,18 +38,28 @@ dhsmeta=dhsmeta[which(!is.na(dhsmeta$dhs_cc)),]
 
 dhsmeta2 <- unique(dhsmeta[,c("CountryName","surveyyr","filename")])
 povcalyears=c(1981,1984,1987,1990,1993,1996,1999,2002,2005,2008,2010,2011,2012,2013,2015)
-grid = expand.grid(filename=unique(dhsmeta2$filename), RequestYear=povcalyears)
+grid = expand.grid(filename=unique(dhsmeta2$filename), surveyyr=unique(dhsmeta2$surveyyr), RequestYear=povcalyears)
 dhsmeta2 = merge(grid,dhsmeta2,all=T)
 dhsmeta2$diff = abs(dhsmeta2$surveyyr - dhsmeta2$RequestYear)
-dhsmeta2 = data.table(dhsmeta2)[,.SD[which.min(.SD$diff),],by=.(CountryName,RequestYear)]
+dhsmeta2$diff.sign = sign(dhsmeta2$surveyyr - dhsmeta2$RequestYear)
+pos.dhsmeta2 = subset(dhsmeta2,diff.sign %in% c(0,1))
+neg.dhsmeta2 = subset(dhsmeta2,diff.sign %in% c(0,-1))
+pos.dhsmeta2 = data.table(pos.dhsmeta2)[,.SD[which.min(.SD$diff),],by=.(CountryName,RequestYear)]
+neg.dhsmeta2 = data.table(neg.dhsmeta2)[,.SD[which.min(.SD$diff),],by=.(CountryName,RequestYear)]
+neg.dhsmeta2 = subset(neg.dhsmeta2,diff!=0)
+dhsmeta2 = rbind(pos.dhsmeta2,neg.dhsmeta2)
+dhsmeta2[,year.weight:=(sum(.SD$diff)-.SD$diff)/sum(.SD$diff),by=.(CountryName,RequestYear)]
 dhsmeta2$diff = NULL
+dhsmeta2$diff.sign = NULL
+dhsmeta2$year.weight[which(dhsmeta2$year.weight==0)] = 1
+dhsmeta2$year.weight[which(is.nan(dhsmeta2$year.weight))] = 1
 
 povcalcuts <- join(dhsmeta2,povcalcuts,by=c("CountryName","RequestYear"))
 
 names(povcalcuts)[which(names(povcalcuts)=="CountryCode")] <- "iso3"
 povcalcuts$hc<- povcalcuts$P20Headcount/100
 povcalcuts$extreme <- povcalcuts$ExtPovHC/100
-keep <- c("iso3","RequestYear","surveyyr","hc","PovGap","filename","extreme")
+keep <- c("iso3","RequestYear","surveyyr","hc","PovGap","filename","extreme","year.weight")
 povcalcuts <- povcalcuts[,keep, with=F]
 povcalcuts = subset(povcalcuts, !is.na(hc))
 povcalcuts = povcalcuts[order(povcalcuts$filename,povcalcuts$RequestYear),]
@@ -142,6 +152,7 @@ for(i in 1:nrow(povcalcuts)){
       }
       names(wi)[which(names(wi)=="whhid")] <-"hhid"
       pr<- join(pr,wi,by="hhid")
+      rm(wi)
       names(pr)[which(names(pr)=="wlthindf")] <-"wealth"
     }
     
@@ -344,6 +355,7 @@ for(i in 1:nrow(povcalcuts)){
     dat$povcal_year = povcal_subset$RequestYear
     dat$survey_year = povcal_subset$surveyyr
     dat$filename = povcal_subset$filename
+    dat$year.weight = povcal_subset$year.weight
 
     dataList[[dataIndex]] <- dat
     dataIndex <- dataIndex + 1
