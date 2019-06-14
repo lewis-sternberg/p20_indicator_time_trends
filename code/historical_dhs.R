@@ -10,8 +10,8 @@ if(Sys.info()[["user"]]=="alex"){
   wd <- "~/git/p20_indicator_time_trends"
   wd2 <- "~/git/p20_private_data/project_data/DHS auto"
 }else if(Sys.info()[["user"]]=="dan-w"){
-  wd <- "C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/p20_indicator_time_trends"
-  wd2 <- "C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/p20_indicator_time_trends/data"
+  wd <- "C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/gap-narrative"
+  wd2 <- "C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/gap-narrative/data"
 }else{
   wd <- "E:/DHSauto"
   wd2 <- "~/git/p20_private_data/project_data/"
@@ -105,17 +105,24 @@ for(i in 1:nrow(povcalcuts)){
     if(rdata_name != previous_rdata){
       if(exists("pr")){rm(pr)}
       if(exists("br")){rm(br)}
+      if(exists("pr.original")){rm(pr.original)}
+      if(exists("br.original")){rm(br.original)}
       br_patha <- paste0(country,"br",phase)
       br_path <- paste0(tolower(br_patha),"fl.RData")
       load(br_path)
       br <- data.frame(data)
+      br.original = copy(br)
       remove(data)
       
       pr_patha <- paste0(country,"pr",phase)
       pr_path <- paste0(tolower(pr_patha),"fl.RData")
       load(pr_path)
       pr <- data.frame(data)
+      pr.original = copy(pr)
       remove(data)
+    }else{
+      pr = copy(pr.original)
+      br = copy(br.original)
     }
   
     names(pr)[which(names(pr)=="hv001")] <- "cluster"
