@@ -52,6 +52,7 @@ povcalcuts$extreme <- povcalcuts$ExtPovHC/100
 keep <- c("iso3","RequestYear","surveyyr","hc","PovGap","filename","extreme")
 povcalcuts <- povcalcuts[,keep, with=F]
 povcalcuts = subset(povcalcuts, !is.na(hc))
+povcalcuts = povcalcuts[order(povcalcuts$iso3,povcalcuts$RequestYear),]
 
 weighted.percentile <- function(x,w,prob,na.rm=TRUE){
   df <- data.frame(x,w)
@@ -87,9 +88,10 @@ rdatas = substr(rdatas,1,nchar(rdatas)-6)
 
 dataList <- list()
 dataIndex <- 1
-
+pb = txtProgressBar(max=nrow(povcalcuts),style=3)
 # Loop through every povcalcut
 for(i in 1:nrow(povcalcuts)){
+  setTxtProgressBar(pb, i)
   povcal_subset = povcalcuts[i,]
   # Pull some coded info out of the dir name
   country <- tolower(substr(povcal_subset$filename,1,2))
@@ -98,10 +100,6 @@ for(i in 1:nrow(povcalcuts)){
   subphase <- substr(povcal_subset$filename,5,5)
   rdata_name = paste0(country,recode,phase,"fl")
   if(rdata_name %in% rdatas){
-    message(rdata_name)
-    iso3 = povcal_subset$iso3
-    povcal_year = povcal_subset$RequestYear
-    survey_year = povcal_subset$surveyyr
     
     br_patha <- paste0(country,"br",phase)
     br_path <- paste0(tolower(br_patha),"fl.RData")
@@ -152,10 +150,8 @@ for(i in 1:nrow(povcalcuts)){
     }
     
     # Poverty
-    filename=paste0(country,recode,phase,"dt")
-    povcalcuts$filename=tolower(povcalcuts$filename)
-    povcalcut <- subset(povcalcuts,filename==povcal_filename)$hc
-    extcut <- subset(povcalcuts,filename==povcal_filename)$extreme
+    povcalcut <- povcal_subset$hc
+    extcut <- povcal_subset$extreme
     cuts <- c(povcalcut,extcut)
     povperc <- weighted.percentile(pr$wealth,pr$weights,prob=cuts)
     
@@ -335,20 +331,16 @@ for(i in 1:nrow(povcalcuts)){
       value=c(p20.reg,p20.reg.numerator,p20.reg.denominator,u80.reg,u80.reg.numerator,u80.reg.denominator)
     )
     dat = rbind(mort_dat,stunt_dat,reg_dat)
-    dat$filename <- povcal_filename
-    if(length(iso3)>0){
-      dat$iso3 = iso3
-      dat$survey_year = year 
-    }else{
-      dat$iso3 = NA
-      dat$survey_year = NA
-    }
+    dat$iso3 = povcal_subset$iso3
+    dat$povcal_year = povcal_subset$RequestYear
+    dat$survey_year = povcal_subset$surveyyr
+    dat$filename = povcal_subset$filename
 
     dataList[[dataIndex]] <- dat
     dataIndex <- dataIndex + 1
   }
 }
-
+close(pb)
 data.total <- rbindlist(dataList)
 save(data.total,file="historical_dhs.RData")
 fwrite(data.total,"historical_dhs.csv")
