@@ -9,7 +9,7 @@ lapply(list.of.packages, require, character.only=T)
 if(Sys.info()[["user"]]=="alex"){
   wd <- "~/git/p20_indicator_time_trends"
   wd2 <- "~/git/p20_private_data/project_data/DHS auto"
-} if(Sys.info()[["user"]]=="dan-w"){
+}else if(Sys.info()[["user"]]=="dan-w"){
   wd <- "C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/gap-narrative"
   wd2 <- "C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/gap-narrative/data"
 }else{
