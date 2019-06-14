@@ -10,8 +10,8 @@ if(Sys.info()[["user"]]=="alex"){
   wd <- "~/git/p20_indicator_time_trends"
   wd2 <- "~/git/p20_private_data/project_data/DHS auto"
 }else if(Sys.info()[["user"]]=="dan-w"){
-  wd <- "C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/gap-narrative"
-  wd2 <- "C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/gap-narrative/data"
+  wd <- "C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/p20_indicator_time_trends"
+  wd2 <- "C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/p20_indicator_time_trends/data"
 }else{
   wd <- "E:/DHSauto"
   wd2 <- "~/git/p20_private_data/project_data/"
