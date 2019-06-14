@@ -363,5 +363,12 @@ for(i in 1:nrow(povcalcuts)){
 }
 close(pb)
 data.total <- rbindlist(dataList)
+data.total = data.total[,.(
+  value=sum(.SD$value*.SD$year.weight,na.rm=T)/sum(.SD$year.weight),
+  survey_year=paste(.SD$survey_year,collapse=";")
+  )
+  ,by=.(p20,variable,type,iso3,povcal_year)
+]
+
 save(data.total,file="../historical_dhs.RData")
 fwrite(data.total,"../historical_dhs.csv")
