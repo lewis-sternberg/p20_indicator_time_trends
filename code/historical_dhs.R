@@ -5,23 +5,20 @@ if(length(new.packages)) install.packages(new.packages)
 lapply(list.of.packages, require, character.only=T)
 
 #Taken from https://raw.githubusercontent.com/akmiller01/alexm-util/master/DevInit/R/P20/2013_tab_data2.R
-# wd <- "E:/DHSauto"
-wd<- "~/git/p20_indicator_time_trends"
-setwd(wd)
+setwd("C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/gap-narrative")
+wd<- getwd()
 
 source("code/child_mort.R")
 povcalcuts <- fread("https://raw.githubusercontent.com/ZChristensen/poverty_trends/master/data/P20incometrends.csv")
 dhsmeta<- fread("https://raw.githubusercontent.com/ZChristensen/p20_indicator_time_trends/master/data/dhs_meta_data20190524.csv")
 dhsmeta<- subset(dhsmeta, Recode.Structure.!="DHS-I")
 
-
-dhsmeta$RequestYear=NA
-povcalyears=c(1981,1984,1987,1990,1993,1996,1999,2002,2005,2008,2010,2011,2012,2013,2015)
-for(i in povcalyears){
-  dhsmeta$RequestYear[which(dhsmeta$surveyyr>=i)]=i
-  i=i+1
-}
-
+#dhsmeta$RequestYear=NA
+#povcalyears=c(1981,1984,1987,1990,1993,1996,1999,2002,2005,2008,2010,2011,2012,2013,2015)
+#for(i in povcalyears){
+#  dhsmeta$RequestYear[which(dhsmeta$surveyyr>=i)]=i
+#  i=i+1
+#}
 
 dhsmeta$Country.[which(dhsmeta$Country.=="Cape Verde")]<-"Cabo Verde"
 dhsmeta$Country.[which(dhsmeta$Country.=="Congo")]<-"Congo, Republic of"
@@ -30,13 +27,25 @@ dhsmeta$Country.[which(dhsmeta$Country.=="Egypt")]<-"Egypt, Arab Republic of"
 dhsmeta$Country.[which(dhsmeta$Country.=="Gambia")]<-"Gambia, The"
 dhsmeta$Country.[which(dhsmeta$Country.=="Yemen")]<-"Yemen, Republic of"
 #Afghanistan, Cambodia, Equatorial Guinea and Eritrea have had DHS surveys but don't have PovcalNet data
-names(dhsmeta)[which(names(dhsmeta)=="Country.")]="CountryName"
+names(dhsmeta)[which(names(dhsmeta)=="Country.")] <- "CountryName"
 
 dhsmeta$filename=paste0(dhsmeta$dhs_cc,"HR",dhsmeta$dhs_recode_code,"DT")
 dhsmeta=dhsmeta[which(!is.na(dhsmeta$dhs_cc)),]
 
-keep=c("CountryName","RequestYear","filename")
-dhsmeta2=dhsmeta[,keep,with=F]
+#keep=c("CountryName","RequestYear","filename")
+#dhsmeta2=dhsmeta[,keep,with=F]
+
+dhsmeta2 <- unique(dhsmeta[,c(1,97,98)])
+povcalyears=c(1981,1984,1987,1990,1993,1996,1999,2002,2005,2008,2010,2011,2012,2013,2015)
+for(year in povcalyears){
+  dhsmeta2[, as.character(year)] <- abs(dhsmeta2$surveyyr - year)
+}
+
+dhsmeta2 <- melt(dhsmeta2, id.vars = c("filename","CountryName","surveyyr"))
+dhsmeta2 <- dhsmeta2[dhsmeta2[, .I[value == min(value)], by=.(CountryName,variable)]$V1]
+dhsmeta2 <- dhsmeta2[complete.cases(dhsmeta2)]
+dhsmeta2$variable<- as.numeric(levels(dhsmeta2$variable))[dhsmeta2$variable]
+names(dhsmeta2)[which(names(dhsmeta2)=="variable")] <- "RequestYear"
 
 povcalcuts <- join(dhsmeta2,povcalcuts,by=c("CountryName","RequestYear"))
 
@@ -81,10 +90,8 @@ psum <- function(...,na.rm=TRUE) {
 
 ####Run function####
 # set our working directory, change this if using on another machine
-wd <- "~/git/p20_private_data/project_data/"
-setwd(wd)
 
-rdatas <- list.files(paste0(wd,"DHS auto"),pattern="*.RData",ignore.case=T,full.names=TRUE)
+rdatas <- list.files(paste0(wd,"/data/"),pattern="*.RData",ignore.case=T,full.names=TRUE)
 
 
 dataList <- list()
@@ -106,13 +113,13 @@ for(i in 1:length(rdatas)){
     survey_year = povcal_subset$year
     
     br_patha <- paste0(country,"br",phase)
-    br_path <- paste0("DHS auto/",tolower(br_patha),"fl.RData")
+    br_path <- paste0("data/",tolower(br_patha),"fl.RData")
     load(br_path)
     br <- data.frame(data)
     remove(data)
     
     pr_patha <- paste0(country,"pr",phase)
-    pr_path <- paste0("DHS auto/",tolower(pr_patha),"fl.RData")
+    pr_path <- paste0("data/",tolower(pr_patha),"fl.RData")
     load(pr_path)
     pr <- data.frame(data)
     remove(data)
@@ -140,7 +147,7 @@ for(i in 1:length(rdatas)){
       names(pr)[which(names(pr)=="hv271")] <- "wealth"
     }else{
       wi_patha <- paste0(country,"wi",phase)
-      wi_path <- paste0("DHS auto/",tolower(wi_patha),"fl.RData")
+      wi_path <- paste0("data/",tolower(wi_patha),"fl.RData")
       if(file.exists(wi_path)){
         load(wi_path)
         wi <- data.frame(data)
@@ -249,6 +256,7 @@ for(i in 1:length(rdatas)){
     names(br)[which(names(br)=="v002")] <- "household"
     pr.pov = data.table(pr)[,.(p20=mean(p20,na.rm=T)),by=.(cluster,household)]
     
+    br <- as.data.table(br)
     br = merge(br,pr.pov,by=c("cluster","household"),all.x=T)
     br.p20 = subset(br,p20==T)
     br.u80 = subset(br,!p20)
