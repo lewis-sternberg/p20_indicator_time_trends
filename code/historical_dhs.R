@@ -5,20 +5,24 @@ if(length(new.packages)) install.packages(new.packages)
 lapply(list.of.packages, require, character.only=T)
 
 #Taken from https://raw.githubusercontent.com/akmiller01/alexm-util/master/DevInit/R/P20/2013_tab_data2.R
-setwd("C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/p20_indicator_time_trends")
-wd<- getwd()
+
+if(Sys.info()[["user"]]=="alex"){
+  wd <- "~/git/p20_indicator_time_trends"
+  wd2 <- "~/git/p20_private_data/project_data/DHS auto"
+} if(Sys.info()[["user"]]=="dan-w"){
+  wd <- "C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/gap-narrative"
+  wd2 <- "C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/gap-narrative/data"
+}else{
+  wd <- "E:/DHSauto"
+  wd2 <- "~/git/p20_private_data/project_data/"
+}
+
+setwd(wd)
 
 source("code/child_mort.R")
 povcalcuts <- fread("https://raw.githubusercontent.com/ZChristensen/poverty_trends/master/data/P20incometrends.csv")
 dhsmeta<- fread("https://raw.githubusercontent.com/ZChristensen/p20_indicator_time_trends/master/data/dhs_meta_data20190524.csv")
 dhsmeta<- subset(dhsmeta, Recode.Structure.!="DHS-I")
-
-#dhsmeta$RequestYear=NA
-#povcalyears=c(1981,1984,1987,1990,1993,1996,1999,2002,2005,2008,2010,2011,2012,2013,2015)
-#for(i in povcalyears){
-#  dhsmeta$RequestYear[which(dhsmeta$surveyyr>=i)]=i
-#  i=i+1
-#}
 
 dhsmeta$Country.[which(dhsmeta$Country.=="Cape Verde")]<-"Cabo Verde"
 dhsmeta$Country.[which(dhsmeta$Country.=="Congo")]<-"Congo, Republic of"
@@ -31,9 +35,6 @@ names(dhsmeta)[which(names(dhsmeta)=="Country.")] <- "CountryName"
 
 dhsmeta$filename=paste0(dhsmeta$dhs_cc,"HR",dhsmeta$dhs_recode_code,"DT")
 dhsmeta=dhsmeta[which(!is.na(dhsmeta$dhs_cc)),]
-
-#keep=c("CountryName","RequestYear","filename")
-#dhsmeta2=dhsmeta[,keep,with=F]
 
 dhsmeta2 <- unique(dhsmeta[,c("CountryName","surveyyr","filename")])
 povcalyears=c(1981,1984,1987,1990,1993,1996,1999,2002,2005,2008,2010,2011,2012,2013,2015)
@@ -89,10 +90,10 @@ psum <- function(...,na.rm=TRUE) {
 } 
 
 ####Run function####
-# set our working directory, change this if using on another machine
 
-rdatas <- list.files(paste0(wd,"/data/"),pattern="*.RData",ignore.case=T,full.names=TRUE)
+setwd(wd2)
 
+rdatas <- list.files(pattern="*.RData",ignore.case=T,full.names=TRUE)
 
 dataList <- list()
 dataIndex <- 1
@@ -362,5 +363,5 @@ for(i in 1:length(rdatas)){
 }
 
 data.total <- rbindlist(dataList)
-save(data.total,file="~/git/p20_private_data/project_data/historical_dhs.RData")
-fwrite(data.total,"~/git/p20_private_data/project_data/historical_dhs.csv")
+save(data.total,file="historical_dhs.RData")
+fwrite(data.total,"historical_dhs.csv")
