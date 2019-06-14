@@ -52,7 +52,7 @@ povcalcuts$extreme <- povcalcuts$ExtPovHC/100
 keep <- c("iso3","RequestYear","surveyyr","hc","PovGap","filename","extreme")
 povcalcuts <- povcalcuts[,keep, with=F]
 povcalcuts = subset(povcalcuts, !is.na(hc))
-povcalcuts = povcalcuts[order(povcalcuts$iso3,povcalcuts$RequestYear),]
+povcalcuts = povcalcuts[order(povcalcuts$filename,povcalcuts$RequestYear),]
 
 weighted.percentile <- function(x,w,prob,na.rm=TRUE){
   df <- data.frame(x,w)
@@ -88,9 +88,12 @@ rdatas = substr(rdatas,1,nchar(rdatas)-6)
 
 dataList <- list()
 dataIndex <- 1
+previous_rdata = ""
 pb = txtProgressBar(max=nrow(povcalcuts),style=3)
 # Loop through every povcalcut
 for(i in 1:nrow(povcalcuts)){
+  if(exists("pr")){rm(pr)}
+  if(exists("br")){rm(br)}
   setTxtProgressBar(pb, i)
   povcal_subset = povcalcuts[i,]
   # Pull some coded info out of the dir name
@@ -101,17 +104,19 @@ for(i in 1:nrow(povcalcuts)){
   rdata_name = paste0(country,recode,phase,"fl")
   if(rdata_name %in% rdatas){
     
-    br_patha <- paste0(country,"br",phase)
-    br_path <- paste0(tolower(br_patha),"fl.RData")
-    load(br_path)
-    br <- data.frame(data)
-    remove(data)
-  
-    pr_patha <- paste0(country,"pr",phase)
-    pr_path <- paste0(tolower(pr_patha),"fl.RData")
-    load(pr_path)
-    pr <- data.frame(data)
-    remove(data)
+    if(rdata_name != previous_rdata){
+      br_patha <- paste0(country,"br",phase)
+      br_path <- paste0(tolower(br_patha),"fl.RData")
+      load(br_path)
+      br <- data.frame(data)
+      remove(data)
+      
+      pr_patha <- paste0(country,"pr",phase)
+      pr_path <- paste0(tolower(pr_patha),"fl.RData")
+      load(pr_path)
+      pr <- data.frame(data)
+      remove(data)
+    }
   
     names(pr)[which(names(pr)=="hv001")] <- "cluster"
     names(pr)[which(names(pr)=="hv002")] <- "household"
@@ -338,6 +343,7 @@ for(i in 1:nrow(povcalcuts)){
 
     dataList[[dataIndex]] <- dat
     dataIndex <- dataIndex + 1
+    previous_rdata = rdata_name
   }
 }
 close(pb)
