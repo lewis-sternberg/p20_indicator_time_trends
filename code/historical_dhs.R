@@ -102,12 +102,6 @@ for(i in 1:nrow(povcalcuts)){
   if(rdata_name %in% rdatas){
     
     if(exists("pr")){rm(pr)}
-    if(exists("br")){rm(br)}
-    br_patha <- paste0(country,"br",phase)
-    br_path <- paste0(tolower(br_patha),"fl.RData")
-    load(br_path)
-    br <- data.frame(data)
-    remove(data)
     
     pr_patha <- paste0(country,"pr",phase)
     pr_path <- paste0(tolower(pr_patha),"fl.RData")
@@ -241,41 +235,6 @@ for(i in 1:nrow(povcalcuts)){
       } 
     }
     pr <- pr[,keep]
-    names(br)[which(names(br)=="v001")] <- "cluster"
-    names(br)[which(names(br)=="v002")] <- "household"
-    pr.pov = data.table(pr)[,.(p20=mean(p20,na.rm=T)),by=.(cluster,household)]
-    
-    br <- as.data.table(br)
-    br = merge(br,pr.pov,by=c("cluster","household"),all.x=T)
-    br.p20 = subset(br,p20==T)
-    br.u80 = subset(br,!p20)
-    if(nrow(br.p20)>1){
-      p20.mort.list = mort(br.p20)
-      p20.mort = p20.mort.list$mortality
-      p20.mort.numerator = p20.mort.list$total_morts
-      p20.mort.denominator = p20.mort.list$total_survs
-    }else{
-      p20.mort = NA
-      p20.mort.numerator = NA
-      p20.mort.denominator = NA
-    }
-    if(nrow(br.u80)>1){
-      u80.mort.list = mort(br.u80)
-      u80.mort = u80.mort.list$mortality
-      u80.mort.numerator = u80.mort.list$total_morts
-      u80.mort.denominator = u80.mort.list$total_survs
-    }else{
-      u80.mort = NA
-      u80.mort.numerator = NA
-      u80.mort.denominator = NA
-    }
-
-    mort_dat = data.frame(
-      p20=c(rep(T,3),rep(F,3)),
-      variable=c(rep("mortality",6)),
-      type=rep(c("statistic","numerator","denominator"),2),
-      value=c(p20.mort,p20.mort.numerator,p20.mort.denominator,u80.mort,u80.mort.numerator,u80.mort.denominator)
-    )
     
     dsn = svydesign(
       data=pr
@@ -332,6 +291,54 @@ for(i in 1:nrow(povcalcuts)){
       type=rep(c("statistic","numerator","denominator"),2),
       value=c(p20.reg,p20.reg.numerator,p20.reg.denominator,u80.reg,u80.reg.numerator,u80.reg.denominator)
     )
+    
+    if(exists("br")){rm(br)}
+    br_patha <- paste0(country,"br",phase)
+    br_path <- paste0(tolower(br_patha),"fl.RData")
+    load(br_path)
+    br <- data.frame(data)
+    remove(data)
+    
+    names(br)[which(names(br)=="v001")] <- "cluster"
+    names(br)[which(names(br)=="v002")] <- "household"
+    pr.pov = data.table(pr)[,.(p20=mean(p20,na.rm=T)),by=.(cluster,household)]
+    rm(pr)
+    gc()
+    
+    br <- as.data.table(br)
+    br = merge(br,pr.pov,by=c("cluster","household"),all.x=T)
+    br.p20 = subset(br,p20==T)
+    br.u80 = subset(br,!p20)
+    rm(br)
+    gc()
+    if(nrow(br.p20)>1){
+      p20.mort.list = mort(br.p20)
+      p20.mort = p20.mort.list$mortality
+      p20.mort.numerator = p20.mort.list$total_morts
+      p20.mort.denominator = p20.mort.list$total_survs
+    }else{
+      p20.mort = NA
+      p20.mort.numerator = NA
+      p20.mort.denominator = NA
+    }
+    if(nrow(br.u80)>1){
+      u80.mort.list = mort(br.u80)
+      u80.mort = u80.mort.list$mortality
+      u80.mort.numerator = u80.mort.list$total_morts
+      u80.mort.denominator = u80.mort.list$total_survs
+    }else{
+      u80.mort = NA
+      u80.mort.numerator = NA
+      u80.mort.denominator = NA
+    }
+
+    mort_dat = data.frame(
+      p20=c(rep(T,3),rep(F,3)),
+      variable=c(rep("mortality",6)),
+      type=rep(c("statistic","numerator","denominator"),2),
+      value=c(p20.mort,p20.mort.numerator,p20.mort.denominator,u80.mort,u80.mort.numerator,u80.mort.denominator)
+    )
+    
     dat = rbind(mort_dat,stunt_dat,reg_dat)
     dat$iso3 = povcal_subset$iso3
     dat$povcal_year = povcal_subset$RequestYear
