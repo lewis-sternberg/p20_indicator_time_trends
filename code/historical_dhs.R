@@ -5,8 +5,19 @@ if(length(new.packages)) install.packages(new.packages)
 lapply(list.of.packages, require, character.only=T)
 
 #Taken from https://raw.githubusercontent.com/akmiller01/alexm-util/master/DevInit/R/P20/2013_tab_data2.R
-# wd <- "E:/DHSauto"
-wd<- "~/git/p20_indicator_time_trends"
+# 
+
+if(Sys.info()[["user"]]=="alex"){
+  wd <- "~/git/p20_indicator_time_trends"
+  wd2 <- "~/git/p20_private_data/project_data/"
+} if(Sys.info()[["user"]]=="dan-w"){
+  wd <- "C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/gap-narrative"
+  wd2 <- "~/git/p20_private_data/project_data/"
+}else{
+  wd <- "E:/DHSauto"
+  wd2 <- "~/git/p20_private_data/project_data/"
+}
+
 setwd(wd)
 
 source("code/child_mort.R")
@@ -80,11 +91,9 @@ psum <- function(...,na.rm=TRUE) {
 } 
 
 ####Run function####
-# set our working directory, change this if using on another machine
-wd <- "~/git/p20_private_data/project_data/"
-setwd(wd)
+setwd(wd2)
 
-rdatas <- list.files(paste0(wd,"DHS auto"),pattern="*.RData",ignore.case=T,full.names=TRUE)
+rdatas <- list.files(paste0(wd2,"DHS auto"),pattern="*.RData",ignore.case=T,full.names=TRUE)
 
 
 dataList <- list()
@@ -352,5 +361,5 @@ for(i in 1:length(rdatas)){
 }
 
 data.total <- rbindlist(dataList)
-save(data.total,file="~/git/p20_private_data/project_data/historical_dhs.RData")
-fwrite(data.total,"~/git/p20_private_data/project_data/historical_dhs.csv")
+save(data.total,file="historical_dhs.RData")
+fwrite(data.total,"historical_dhs.csv")
