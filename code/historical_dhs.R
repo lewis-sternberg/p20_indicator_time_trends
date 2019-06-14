@@ -92,8 +92,6 @@ previous_rdata = ""
 pb = txtProgressBar(max=nrow(povcalcuts),style=3)
 # Loop through every povcalcut
 for(i in 1:nrow(povcalcuts)){
-  if(exists("pr")){rm(pr)}
-  if(exists("br")){rm(br)}
   setTxtProgressBar(pb, i)
   povcal_subset = povcalcuts[i,]
   # Pull some coded info out of the dir name
@@ -105,6 +103,8 @@ for(i in 1:nrow(povcalcuts)){
   if(rdata_name %in% rdatas){
     
     if(rdata_name != previous_rdata){
+      if(exists("pr")){rm(pr)}
+      if(exists("br")){rm(br)}
       br_patha <- paste0(country,"br",phase)
       br_path <- paste0(tolower(br_patha),"fl.RData")
       load(br_path)
