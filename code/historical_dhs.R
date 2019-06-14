@@ -88,7 +88,6 @@ rdatas = substr(rdatas,1,nchar(rdatas)-6)
 
 dataList <- list()
 dataIndex <- 1
-previous_rdata = ""
 pb = txtProgressBar(max=nrow(povcalcuts),style=3)
 # Loop through every povcalcut
 for(i in 1:nrow(povcalcuts)){
@@ -102,28 +101,19 @@ for(i in 1:nrow(povcalcuts)){
   rdata_name = paste0(country,recode,phase,"fl")
   if(rdata_name %in% rdatas){
     
-    if(rdata_name != previous_rdata){
-      if(exists("pr")){rm(pr)}
-      if(exists("br")){rm(br)}
-      if(exists("pr.original")){rm(pr.original)}
-      if(exists("br.original")){rm(br.original)}
-      br_patha <- paste0(country,"br",phase)
-      br_path <- paste0(tolower(br_patha),"fl.RData")
-      load(br_path)
-      br <- data.frame(data)
-      br.original = copy(br)
-      remove(data)
-      
-      pr_patha <- paste0(country,"pr",phase)
-      pr_path <- paste0(tolower(pr_patha),"fl.RData")
-      load(pr_path)
-      pr <- data.frame(data)
-      pr.original = copy(pr)
-      remove(data)
-    }else{
-      pr = copy(pr.original)
-      br = copy(br.original)
-    }
+    if(exists("pr")){rm(pr)}
+    if(exists("br")){rm(br)}
+    br_patha <- paste0(country,"br",phase)
+    br_path <- paste0(tolower(br_patha),"fl.RData")
+    load(br_path)
+    br <- data.frame(data)
+    remove(data)
+    
+    pr_patha <- paste0(country,"pr",phase)
+    pr_path <- paste0(tolower(pr_patha),"fl.RData")
+    load(pr_path)
+    pr <- data.frame(data)
+    remove(data)
   
     names(pr)[which(names(pr)=="hv001")] <- "cluster"
     names(pr)[which(names(pr)=="hv002")] <- "household"
@@ -350,10 +340,9 @@ for(i in 1:nrow(povcalcuts)){
 
     dataList[[dataIndex]] <- dat
     dataIndex <- dataIndex + 1
-    previous_rdata = rdata_name
   }
 }
 close(pb)
 data.total <- rbindlist(dataList)
-save(data.total,file="historical_dhs.RData")
-fwrite(data.total,"historical_dhs.csv")
+save(data.total,file="../historical_dhs.RData")
+fwrite(data.total,"../historical_dhs.csv")
