@@ -10,8 +10,8 @@ if(Sys.info()[["user"]]=="alex"){
   wd <- "~/git/p20_indicator_time_trends"
   wd2 <- "~/git/p20_private_data/project_data/DHS auto"
 }else if(Sys.info()[["user"]]=="dan-w"){
-  wd <- "C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/gap-narrative"
-  wd2 <- "C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/gap-narrative/data"
+  wd <- "C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/p20_indicator_time_trends"
+  wd2 <- "C:/Users/dan-w/Box/Gap Narrative (ITEP), June 2019/git/p20_indicator_time_trends/data"
 }else{
   wd <- "E:/DHSauto"
   wd2 <- "~/git/p20_private_data/project_data/"
@@ -116,7 +116,7 @@ for(i in 1:nrow(povcalcuts)){
     pr_patha <- paste0(country,"pr",phase)
     pr_path <- paste0(tolower(pr_patha),"fl.RData")
     load(pr_path)
-    pr <- data.frame(data)
+    pr <- as.data.table(data)
     remove(data)
   
     names(pr)[which(names(pr)=="hv001")] <- "cluster"
@@ -145,7 +145,7 @@ for(i in 1:nrow(povcalcuts)){
       wi_path <- paste0(tolower(wi_patha),"fl.RData")
       if(file.exists(wi_path)){
         load(wi_path)
-        wi <- data.frame(data)
+        wi <- as.data.table(data)
         remove(data)
       }else{
         next;
@@ -245,7 +245,7 @@ for(i in 1:nrow(povcalcuts)){
         message(paste("Missing variable",namesDiff[y]))
       } 
     }
-    pr <- pr[,keep]
+    pr <- pr[,..keep]
     
     dsn = svydesign(
       data=pr
@@ -307,16 +307,14 @@ for(i in 1:nrow(povcalcuts)){
     br_patha <- paste0(country,"br",phase)
     br_path <- paste0(tolower(br_patha),"fl.RData")
     load(br_path)
-    br <- data.frame(data)
+    br <- as.data.table(data)
     remove(data)
     
     names(br)[which(names(br)=="v001")] <- "cluster"
     names(br)[which(names(br)=="v002")] <- "household"
-    pr.pov = data.table(pr)[,.(p20=mean(p20,na.rm=T)),by=.(cluster,household)]
+    pr.pov = pr[,.(p20=mean(p20,na.rm=T)),by=.(cluster,household)]
     rm(pr, dsn)
     gc()
-    
-    br <- as.data.table(br)
     br = merge(br,pr.pov,by=c("cluster","household"),all.x=T)
     br.p20 = subset(br,p20==T)
     br.u80 = subset(br,!p20)
