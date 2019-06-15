@@ -1,4 +1,4 @@
-list.of.packages <- c("readr","scrapeR","data.table","jsonlite","RCurl","plyr","zoo","reshape2")
+list.of.packages <- c("readr","scrapeR","data.table","jsonlite","RCurl","plyr","zoo","reshape2","tidyr")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 lapply(list.of.packages, require, character.only=T)
@@ -7,7 +7,7 @@ wd = "E:/git/p20_indicator_time_trends"
 setwd(wd)
 
 base_link = "https://dhsprogram.com"
-datasets_page_source = scrape("https://dhsprogram.com/data/available-datasets.cfm",headers=T,follow=T,parse=T)[[1]]
+datasets_page_source = htmlParse(content(GET("https://dhsprogram.com/data/available-datasets.cfm",headers=T,follow=T,parse=T)))
 link_elems = getNodeSet(datasets_page_source,"//td[@id='survey']/a")
 link_suffixes = sapply(link_elems,xmlGetAttr,"href")
 link_suffixes <- subset(link_suffixes,link_suffixes!="#footNotesLink")
@@ -18,7 +18,7 @@ data.index = 1
 full_links = paste0(base_link,link_suffixes)
 for(full_link in full_links){
   message(full_link)
-  country_page_source = scrape(full_link,headers=T,follow=T,parse=T)[[1]]
+  country_page_source = htmlParse(content(GET(full_link,headers=T,follow=T,parse=T)))
   
   meta_data_list = list()
   
@@ -42,7 +42,7 @@ for(full_link in full_links){
   data_available_link_suffix = sapply(data_available_link_elem,xmlGetAttr,"href")
   data_available_link = paste0(base_link,data_available_link_suffix)
   
-  data_available_page_source = scrape(data_available_link,headers=T,follow=T,parse=T)[[1]]
+  data_available_page_source = htmlParse(content(GET(data_available_link,headers=T,follow=T,parse=T)))
   first_td_elem = getNodeSet(data_available_page_source,"//td[1]")
   first_td_text = sapply(first_td_elem,xmlValue)
   zips = trimws(subset(first_td_text,grepl(".zip",first_td_text,ignore.case=T)))
@@ -50,8 +50,11 @@ for(full_link in full_links){
   dhs_cc = substr(correct_zips[1],1,2)
   dhs_recode_code = substr(correct_zips[1],5,6)
   
+  survey_id <- substr(full_link, gregexpr("-",full_link)[[1]][4]+1, gregexpr("cfm",full_link)[[1]]-2)
+  
   meta_data_list[["dhs_cc"]] = dhs_cc
   meta_data_list[["dhs_recode_code"]] = dhs_recode_code
+  meta_data_list[["survey_id"]] <- survey_id
   
   meta_data = data.frame(meta_data_list)
   
@@ -70,5 +73,18 @@ all_meta_data$BeginYear=format(all_meta_data$BeginDate,"%Y")
 all_meta_data$EndYear=format(all_meta_data$EndDate,"%Y")
 all_meta_data$surveyyr=round(as.numeric(all_meta_data$middate)/365.25)+1970
 all_meta_data$surveyyr[which(all_meta_data$BeginYear==all_meta_data$EndYear)]=all_meta_data$BeginYear[which(all_meta_data$BeginYear==all_meta_data$EndYear)]
+
+#List of wealth index surveys
+datasets_page_source = htmlParse(content(GET("https://dhsprogram.com/topics/wealth-index/Wealth-Index-Construction.cfm")))
+link_elems = getNodeSet(datasets_page_source,"//tr/td/a")
+link_suffixes = sapply(link_elems,xmlGetAttr,"href")
+link_suffixes <- link_suffixes[grepl("what-we",link_suffixes)]
+wealth_ids <- sapply(link_suffixes, function(x) substr(x, gregexpr("-",x)[[1]][4]+1, gregexpr("cfm",x)[[1]]-2))
+
+#Recent surveys which don't appear on list yet
+wealth_ids <- c(wealth_ids, "523","524","525")
+
+all_meta_data$WealthIndex <- NA
+all_meta_data$WealthIndex[which(all_meta_data$survey_id %in% wealth_ids)] <- 1
 
 write_csv(all_meta_data,"dhs_meta_data20190524.csv")
