@@ -101,7 +101,7 @@ dataList <- list()
 dataIndex <- 1
 #pb = txtProgressBar(max=nrow(povcalcuts),style=3)
 # Loop through every povcalcut
-for(i in 1:nrow(povcalcut)){
+for(i in 1:nrow(povcalcuts)){
   #setTxtProgressBar(pb, i)
   povcal_subset = povcalcuts[i,]
   # Pull some coded info out of the dir name
@@ -120,6 +120,8 @@ for(i in 1:nrow(povcalcut)){
     pr <- as.data.table(data)
     remove(data)
     message("pr")
+    keep <- c("hvidx","hv001","hv002","hv005","hv024","hv025","hv219","hv220","hv271","hv104","hv105","hv109","hv112","hv140","hc70")
+    pr <- subset(pr, select= (colnames(pr) %in% keep))
     gc()
     names(pr)[which(names(pr)=="hv001")] <- "cluster"
     names(pr)[which(names(pr)=="hv002")] <- "household"
@@ -313,6 +315,8 @@ for(i in 1:nrow(povcalcut)){
     br <- as.data.table(data)
     remove(data)
     message("br")
+    keep <- c("v001","v002","b3","v008","v005","b7")
+    br <- subset(br, select= (colnames(br) %in% keep))
     gc()
     names(br)[which(names(br)=="v001")] <- "cluster"
     names(br)[which(names(br)=="v002")] <- "household"
