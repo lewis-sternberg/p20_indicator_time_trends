@@ -88,9 +88,10 @@ weighted.percentile <- function(x,w,prob,na.rm=TRUE){
   names(cutList) <- cutNames
   return(cutList)
 }
+rm(grid)
+gc()
 
 ####Run function####
-
 setwd(wd2)
 
 rdatas = list.files(pattern="*.RData",ignore.case=T)
@@ -98,10 +99,10 @@ rdatas = substr(rdatas,1,nchar(rdatas)-6)
 
 dataList <- list()
 dataIndex <- 1
-pb = txtProgressBar(max=nrow(povcalcuts),style=3)
+#pb = txtProgressBar(max=nrow(povcalcuts),style=3)
 # Loop through every povcalcut
-for(i in 1:nrow(povcalcuts)){
-  setTxtProgressBar(pb, i)
+for(i in 1:nrow(povcalcut)){
+  #setTxtProgressBar(pb, i)
   povcal_subset = povcalcuts[i,]
   # Pull some coded info out of the dir name
   country <- tolower(substr(povcal_subset$filename,1,2))
@@ -110,7 +111,7 @@ for(i in 1:nrow(povcalcuts)){
   subphase <- substr(povcal_subset$filename,5,5)
   rdata_name = paste0(country,recode,phase,"fl")
   if(rdata_name %in% rdatas){
-    
+    message(paste(rdata_name,i))
     if(exists("pr")){rm(pr)}
     
     pr_patha <- paste0(country,"pr",phase)
@@ -118,14 +119,15 @@ for(i in 1:nrow(povcalcuts)){
     load(pr_path)
     pr <- as.data.table(data)
     remove(data)
-  
+    message("pr")
+    gc()
     names(pr)[which(names(pr)=="hv001")] <- "cluster"
     names(pr)[which(names(pr)=="hv002")] <- "household"
     names(pr)[which(names(pr)=="hvidx")] <- "line"
     #Rename sample.weights var
     names(pr)[which(names(pr)=="hv005")] <- "sample.weights"
     pr$weights <- pr$sample.weights/1000000
-  
+    gc()
     #Urban/rural
     if(phase>1){
       names(pr)[which(names(pr)=="hv025")] <- "urban.rural"
@@ -147,6 +149,7 @@ for(i in 1:nrow(povcalcuts)){
         load(wi_path)
         wi <- as.data.table(data)
         remove(data)
+        message("wi")
       }else{
         next;
       }
@@ -155,7 +158,7 @@ for(i in 1:nrow(povcalcuts)){
       rm(wi)
       names(pr)[which(names(pr)=="wlthindf")] <-"wealth"
     }
-    
+    gc()
     # Poverty
     povcalcut <- povcal_subset$hc
     extcut <- povcal_subset$extreme
@@ -164,7 +167,7 @@ for(i in 1:nrow(povcalcuts)){
     
     pr$p20 <- (pr$wealth < povperc[1])
     pr$ext <- (pr$wealth < povperc[2])
-    
+    gc()
     # Education
     if(phase>1){
       names(pr)[which(names(pr)=="hv109")] <- "educ"
@@ -246,7 +249,7 @@ for(i in 1:nrow(povcalcuts)){
       } 
     }
     pr <- pr[,..keep]
-    
+    gc()
     dsn = svydesign(
       data=pr
       ,ids=~1
@@ -309,7 +312,8 @@ for(i in 1:nrow(povcalcuts)){
     load(br_path)
     br <- as.data.table(data)
     remove(data)
-    
+    message("br")
+    gc()
     names(br)[which(names(br)=="v001")] <- "cluster"
     names(br)[which(names(br)=="v002")] <- "household"
     pr.pov = pr[,.(p20=mean(p20,na.rm=T)),by=.(cluster,household)]
@@ -340,7 +344,7 @@ for(i in 1:nrow(povcalcuts)){
       u80.mort.numerator = NA
       u80.mort.denominator = NA
     }
-
+    gc()
     mort_dat = data.frame(
       p20=c(rep(T,3),rep(F,3)),
       variable=c(rep("mortality",6)),
@@ -359,7 +363,7 @@ for(i in 1:nrow(povcalcuts)){
     dataIndex <- dataIndex + 1
   }
 }
-close(pb)
+#close(pb)
 data.total <- rbindlist(dataList)
 data.total = data.total[,.(
   value=sum(.SD$value*.SD$year.weight,na.rm=T)/sum(.SD$year.weight),
