@@ -103,6 +103,8 @@ gc()
 ####Run function####
 setwd(wd2)
 
+missing.br = c("aobr51fl.RData")
+
 rdatas = list.files(pattern="*.RData",ignore.case=T)
 rdatas = substr(rdatas,1,nchar(rdatas)-6)
 dataList <- list()
@@ -138,19 +140,25 @@ for(i in 1:nrow(povcalcuts)){
     if(exists("br")){rm(br)}
     br_patha <- paste0(country,"br",phase)
     br_path <- paste0(tolower(br_patha),"fl.RData")
-    load(br_path)
-    br <- as.data.table(data)
-    remove(data)
-    keep <- c("v001","v002","b3","v008","v005","b7","hw5")
-    br <- subset(br, select= (colnames(br) %in% keep))
-    gc()
-    names(br)[which(names(br)=="v001")] <- "cluster"
-    names(br)[which(names(br)=="v002")] <- "household"
+    if(!(br_path %in% missing.br)){
+      load(br_path)
+      br <- as.data.table(data)
+      remove(data)
+      keep <- c("v001","v002","b3","v008","v005","b7","hw5")
+      br <- subset(br, select= (colnames(br) %in% keep))
+      gc()
+      names(br)[which(names(br)=="v001")] <- "cluster"
+      names(br)[which(names(br)=="v002")] <- "household"
+      names(br)[which(names(br)=="v005")] <- "sample.weights"
+      br$weights <- br$sample.weights/1000000
+    }else{
+      br = data.frame(p20=NA)
+    }
+    
     #Rename sample.weights var
     names(pr)[which(names(pr)=="hv005")] <- "sample.weights"
     pr$weights <- pr$sample.weights/1000000
-    names(br)[which(names(br)=="v005")] <- "sample.weights"
-    br$weights <- br$sample.weights/1000000
+    
     #Urban/rural
     if(phase>1){
       names(pr)[which(names(pr)=="hv025")] <- "urban.rural"
@@ -255,13 +263,14 @@ for(i in 1:nrow(povcalcuts)){
   pr$p20 <- (pr$wealth < povperc[1])
   pr$ext <- (pr$wealth < povperc[2])
   
-  #Merge br
-  pr.pov = pr[,.(p20=mean(p20,na.rm=T)),by=.(cluster,household)]
-  pr.pov$p20 <- floor(pr.pov$p20)
-  pr.pov$p20 <- as.logical(pr.pov$p20)
-  br$p20 = NA
-  br = merge(br[,p20:=NULL],pr.pov,by=c("cluster","household"),all.x=T)
-  
+  if(!(br_path %in% missing.br)){
+    #Merge br
+    pr.pov = pr[,.(p20=mean(p20,na.rm=T)),by=.(cluster,household)]
+    pr.pov$p20 <- floor(pr.pov$p20)
+    pr.pov$p20 <- as.logical(pr.pov$p20)
+    br$p20 = NA
+    br = merge(br[,p20:=NULL],pr.pov,by=c("cluster","household"),all.x=T)
+  }
   # Birth certificate
   if(variable == "birth.registration"){
     #message("Registration")
