@@ -146,9 +146,6 @@ for(i in 1:nrow(povcalcuts)){
     gc()
     names(br)[which(names(br)=="v001")] <- "cluster"
     names(br)[which(names(br)=="v002")] <- "household"
-    if(!("hhid" %in% names(pr))){ #May be India-specific
-      pr$hhid <- paste0(sprintf("%5s", floor(pr$cluster/10^floor(log10(min(pr$cluster))))),sprintf("%3s",pr$line),sprintf("%4s",pr$household))
-    }
     #Rename sample.weights var
     names(pr)[which(names(pr)=="hv005")] <- "sample.weights"
     pr$weights <- pr$sample.weights/1000000
@@ -262,6 +259,7 @@ for(i in 1:nrow(povcalcuts)){
   pr.pov = pr[,.(p20=mean(p20,na.rm=T)),by=.(cluster,household)]
   pr.pov$p20 <- floor(pr.pov$p20)
   pr.pov$p20 <- as.logical(pr.pov$p20)
+  br$p20 = NA
   br = merge(br[,p20:=NULL],pr.pov,by=c("cluster","household"),all.x=T)
   
   # Birth certificate
