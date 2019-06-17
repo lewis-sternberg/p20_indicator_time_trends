@@ -453,6 +453,7 @@ for(i in 1:nrow(povcalcuts)){
 }
 close(pb)
 data.total <- rbindlist(dataList)
+data.total$year.weight[which(is.na(data.total$value))] = NA
 data.total = data.total[,.(
   value=sum(.SD$value*.SD$year.weight,na.rm=T)/sum(.SD$year.weight),
   survey_year=paste(.SD$survey_year,collapse=";")
