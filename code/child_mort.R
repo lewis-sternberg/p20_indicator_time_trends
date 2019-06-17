@@ -8,7 +8,7 @@ mort = function(br){
   #E.g. someone born 59 months ago would be expressed as -59
   #So we subtract the date of the survey from the birth date
   br$age.months <- br$b3-br$v008
-  br$weights <- br$v005/1000000
+  # br$weights <- br$v005/1000000
   # v001 = cluster
   dsn = svydesign(
     data=br
