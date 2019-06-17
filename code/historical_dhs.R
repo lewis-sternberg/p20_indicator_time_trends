@@ -103,7 +103,21 @@ gc()
 ####Run function####
 setwd(wd2)
 
-missing.br = c("aobr51fl.RData","bfbr70fl.RData","bubr6hfl.RData")
+missing.br = c(
+  "aobr51fl.RData",
+  "bfbr70fl.RData",
+  "bubr6hfl.RData",
+  "kebr7afl.RData",
+  "lbbr61fl.RData",
+  "lbbr71fl.RData",
+  "mdbr71fl.RData",
+  "mlbr70fl.RData",
+  "mwbr6hfl.RData",
+  "rwbr6qfl.RData",
+  "slbr71fl.RData",
+  "snbr50fl.RData",
+  "ugbr72fl.RData"
+)
 
 rdatas = list.files(pattern="*.RData",ignore.case=T)
 rdatas = substr(rdatas,1,nchar(rdatas)-6)
@@ -131,7 +145,7 @@ for(i in 1:nrow(povcalcuts)){
     load(pr_path)
     pr <- as.data.table(data)
     remove(data)
-    keep <- c("hvidx","hv001","hv002","hv005","hv024","hv025","hv219","hv220","hv271","hv104","hv105","hv109","hv112","hv140","hc70")
+    keep <- c("hvidx","hhid","hv001","hv002","hv005","hv024","hv025","hv219","hv220","hv271","hv104","hv105","hv109","hv112","hv140","hc70")
     pr <- subset(pr, select= (colnames(pr) %in% keep))
     gc()
     names(pr)[which(names(pr)=="hv001")] <- "cluster"
@@ -191,12 +205,8 @@ for(i in 1:nrow(povcalcuts)){
           next;
         }
       }
-      
-      wi$shortcluster <- as.numeric(trimws(substr(wi$whhid,1,5)))
-      wi$line <- as.numeric(trimws(substr(wi$whhid,6,8)))
-      wi$household <- as.numeric(trimws(substr(wi$whhid,9,12)))
-      pr$shortcluster <- floor(pr$cluster/10^floor(log10(min(pr$cluster))))
-      pr<- join(pr,wi,by=c("shortcluster","line","household"))
+      setnames(wi,"whhid","hhid")
+      pr<- join(pr,wi,by=c("hhid"))
       rm(wi)
       names(pr)[which(names(pr)=="wlthindf")] <-"wealth"
     }
