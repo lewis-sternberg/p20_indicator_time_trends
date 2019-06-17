@@ -29,8 +29,8 @@ parser = OptionParser()
 parser.add_option("-u", "--username", dest="user", help="DHS username", metavar="STRING")
 parser.add_option("-p", "--password", dest="password", default=False, help="DHS password", metavar="STRING")
 parser.add_option("-r", "--project", dest="proj", default=1, help="Project index", metavar="INTEGER")
-parser.add_option("-d", "--download", dest="download", default="/home/alex/git/p20_indicator_time_trends/data/dhslist.txt", help="Bulk download PATH", metavar="STRING")
-parser.add_option("-o", "--output", dest="output", default="/home/alex/Survey Microdata/DHSauto", help="Output path.", metavar="FOLDER")
+parser.add_option("-d", "--download", dest="download", default="/home/alex/git/p20_indicator_time_trends/data/mislist.txt", help="Bulk download PATH", metavar="STRING")
+parser.add_option("-o", "--output", dest="output", default="/home/alex/Survey Microdata/MISauto", help="Output path.", metavar="FOLDER")
 (options, args) = parser.parse_args()
 
 
