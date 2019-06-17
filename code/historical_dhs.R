@@ -103,7 +103,7 @@ gc()
 ####Run function####
 setwd(wd2)
 
-missing.br = c("aobr51fl.RData")
+missing.br = c("aobr51fl.RData","bfbr70fl.RData","bubr6hfl.RData")
 
 rdatas = list.files(pattern="*.RData",ignore.case=T)
 rdatas = substr(rdatas,1,nchar(rdatas)-6)
@@ -293,20 +293,40 @@ for(i in 1:nrow(povcalcuts)){
     
     pov.reg.tab = svytable(~birth.reg+p20,dsn)
     if("TRUE" %in% colnames(pov.reg.tab)){
-      p20.reg = pov.reg.tab["1","TRUE"]/sum(pov.reg.tab["0","TRUE"],pov.reg.tab["1","TRUE"],na.rm=T)
-      p20.reg.numerator = pov.reg.tab["1","TRUE"]
-      p20.reg.denominator = sum(pov.reg.tab["0","TRUE"],pov.reg.tab["1","TRUE"],na.rm=T)
+      if("1" %in% rownames(pov.reg.tab)){
+        p20.reg = pov.reg.tab["1","TRUE"]
+      }else{
+        p20.reg = NA
+      }
+      if("0" %in% rownames(pov.reg.tab)){
+        p20.non.reg = pov.reg.tab["0","TRUE"]
+      }else{
+        p20.non.reg = NA
+      }
+      p20.reg.numerator = p20.reg
+      p20.reg.denominator = sum(p20.reg,p20.non.reg,na.rm=T)
+      p20.reg.stat = p20.reg.numerator/p20.reg.denominator
     }else{
-      p20.reg = NA
+      p20.reg.stat = NA
       p20.reg.numerator = NA
       p20.reg.denominator = NA
     }
     if("FALSE" %in% colnames(pov.reg.tab)){
-      u80.reg = pov.reg.tab["1","FALSE"]/sum(pov.reg.tab["0","FALSE"],pov.reg.tab["1","FALSE"],na.rm=T)
-      u80.reg.numerator = pov.reg.tab["1","FALSE"]
-      u80.reg.denominator = sum(pov.reg.tab["0","FALSE"],pov.reg.tab["1","FALSE"],na.rm=T)
+      if("1" %in% rownames(pov.reg.tab)){
+        u80.reg = pov.reg.tab["1","FALSE"]
+      }else{
+        u80.reg = NA
+      }
+      if("0" %in% rownames(pov.reg.tab)){
+        u80.non.reg = pov.reg.tab["0","FALSE"]
+      }else{
+        u80.non.reg = NA
+      }
+      u80.reg.numerator = u80.reg
+      u80.reg.denominator = sum(u80.reg,u80.non.reg,na.rm=T)
+      u80.reg.stat = u80.reg.numerator/u80.reg.denominator
     }else{
-      u80.reg = NA
+      u80.reg.stat = NA
       u80.reg.numerator = NA
       u80.reg.denominator = NA
     }
@@ -314,7 +334,7 @@ for(i in 1:nrow(povcalcuts)){
       p20=c(rep(T,3),rep(F,3)),
       variable=c(rep("registration",6)),
       type=rep(c("statistic","numerator","denominator"),2),
-      value=c(p20.reg,p20.reg.numerator,p20.reg.denominator,u80.reg,u80.reg.numerator,u80.reg.denominator)
+      value=c(p20.reg.stat,p20.reg.numerator,p20.reg.denominator,u80.reg.stat,u80.reg.numerator,u80.reg.denominator)
     )
   }
   
@@ -349,20 +369,40 @@ for(i in 1:nrow(povcalcuts)){
     }
     pov.stunting.tab = svytable(~stunting+p20,dsn)
     if("TRUE" %in% colnames(pov.stunting.tab)){
-      p20.stunting = pov.stunting.tab["1","TRUE"]/sum(pov.stunting.tab["0","TRUE"],pov.stunting.tab["1","TRUE"],na.rm=T)
-      p20.stunting.numerator = pov.stunting.tab["1","TRUE"]
-      p20.stunting.denominator = sum(pov.stunting.tab["0","TRUE"],pov.stunting.tab["1","TRUE"],na.rm=T)
+      if("1" %in% rownames(pov.stunting.tab)){
+        p20.stunting = pov.stunting.tab["1","TRUE"]
+      }else{
+        p20.stunting = NA
+      }
+      if("0" %in% rownames(pov.stunting.tab)){
+        p20.non.stunting = pov.stunting.tab["0","TRUE"]
+      }else{
+        p20.non.stunting = NA
+      }
+      p20.stunting.numerator = p20.stunting
+      p20.stunting.denominator = sum(p20.stunting,p20.non.stunting,na.rm=T)
+      p20.stunting.stat = p20.stunting.numerator/p20.stunting.denominator
     }else{
-      p20.stunting = NA
+      p20.stunting.stat = NA
       p20.stunting.numerator = NA
       p20.stunting.denominator = NA
     }
     if("FALSE" %in% colnames(pov.stunting.tab)){
-      u80.stunting = pov.stunting.tab["1","FALSE"]/sum(pov.stunting.tab["0","FALSE"],pov.stunting.tab["1","FALSE"],na.rm=T)
-      u80.stunting.numerator = pov.stunting.tab["1","FALSE"]
-      u80.stunting.denominator = sum(pov.stunting.tab["0","FALSE"],pov.stunting.tab["1","FALSE"],na.rm=T)
+      if("1" %in% rownames(pov.stunting.tab)){
+        u80.stunting = pov.stunting.tab["1","FALSE"]
+      }else{
+        u80.stunting = NA
+      }
+      if("0" %in% rownames(pov.stunting.tab)){
+        u80.non.stunting = pov.stunting.tab["0","FALSE"]
+      }else{
+        u80.non.stunting = NA
+      }
+      u80.stunting.numerator = u80.stunting
+      u80.stunting.denominator = sum(u80.stunting,u80.non.stunting,na.rm=T)
+      u80.stunting.stat = u80.stunting.numerator/u80.stunting.denominator
     }else{
-      u80.stunting = NA
+      u80.stunting.stat = NA
       u80.stunting.numerator = NA
       u80.stunting.denominator = NA
     }
@@ -370,7 +410,7 @@ for(i in 1:nrow(povcalcuts)){
       p20=c(rep(T,3),rep(F,3)),
       variable=c(rep("stunting",6)),
       type=rep(c("statistic","numerator","denominator"),2),
-      value=c(p20.stunting,p20.stunting.numerator,p20.stunting.denominator,u80.stunting,u80.stunting.numerator,u80.stunting.denominator)
+      value=c(p20.stunting.stat,p20.stunting.numerator,p20.stunting.denominator,u80.stunting.stat,u80.stunting.numerator,u80.stunting.denominator)
     )
   }
   
@@ -423,20 +463,40 @@ for(i in 1:nrow(povcalcuts)){
     )
     pov.education.tab = svytable(~secedu+p20,dsn)
     if("TRUE" %in% colnames(pov.education.tab)){
-      p20.education = pov.education.tab["1","TRUE"]/sum(pov.education.tab["0","TRUE"],pov.education.tab["1","TRUE"],na.rm=T)
-      p20.education.numerator = pov.education.tab["1","TRUE"]
-      p20.education.denominator = sum(pov.education.tab["0","TRUE"],pov.education.tab["1","TRUE"],na.rm=T)
+      if("1" %in% rownames(pov.education.tab)){
+        p20.education = pov.education.tab["1","TRUE"]
+      }else{
+        p20.education = NA
+      }
+      if("0" %in% rownames(pov.education.tab)){
+        p20.non.education = pov.education.tab["0","TRUE"]
+      }else{
+        p20.non.education = NA
+      }
+      p20.education.numerator = p20.education
+      p20.education.denominator = sum(p20.education,p20.non.education,na.rm=T)
+      p20.education.stat = p20.education.numerator/p20.education.denominator
     }else{
-      p20.education = NA
+      p20.education.stat = NA
       p20.education.numerator = NA
       p20.education.denominator = NA
     }
     if("FALSE" %in% colnames(pov.education.tab)){
-      u80.education = pov.education.tab["1","FALSE"]/sum(pov.education.tab["0","FALSE"],pov.education.tab["1","FALSE"],na.rm=T)
-      u80.education.numerator = pov.education.tab["1","FALSE"]
-      u80.education.denominator = sum(pov.education.tab["0","FALSE"],pov.education.tab["1","FALSE"],na.rm=T)
+      if("1" %in% rownames(pov.education.tab)){
+        u80.education = pov.education.tab["1","FALSE"]
+      }else{
+        u80.education = NA
+      }
+      if("0" %in% rownames(pov.education.tab)){
+        u80.non.education = pov.education.tab["0","FALSE"]
+      }else{
+        u80.non.education = NA
+      }
+      u80.education.numerator = u80.education
+      u80.education.denominator = sum(u80.education,u80.non.education,na.rm=T)
+      u80.education.stat = u80.education.numerator/u80.education.denominator
     }else{
-      u80.education = NA
+      u80.education.stat = NA
       u80.education.numerator = NA
       u80.education.denominator = NA
     }
@@ -444,7 +504,7 @@ for(i in 1:nrow(povcalcuts)){
       p20=c(rep(T,3),rep(F,3)),
       variable=c(rep("education",6)),
       type=rep(c("statistic","numerator","denominator"),2),
-      value=c(p20.education,p20.education.numerator,p20.education.denominator,u80.education,u80.education.numerator,u80.education.denominator)
+      value=c(p20.education.stat,p20.education.numerator,p20.education.denominator,u80.education.stat,u80.education.numerator,u80.education.denominator)
     )
     
   }
