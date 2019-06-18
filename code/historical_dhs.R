@@ -519,11 +519,11 @@ data.total$diff[which(is.na(data.total$value))] = NA
 data.total$diff.sign = sign(data.total$survey_year - data.total$povcal_year)
 pos.data.total = subset(data.total,diff.sign %in% c(0,1))
 neg.data.total = subset(data.total,diff.sign %in% c(0,-1))
-pos.data.total = data.table(pos.data.total)[,.SD[which.min(.SD$diff),],by=.(iso3,povcal_year, variable)]
-neg.data.total = data.table(neg.data.total)[,.SD[which.min(.SD$diff),],by=.(iso3,povcal_year, variable)]
+pos.data.total = data.table(pos.data.total)[,.SD[which.min(.SD$diff),],by=.(iso3,povcal_year, variable, p20)]
+neg.data.total = data.table(neg.data.total)[,.SD[which.min(.SD$diff),],by=.(iso3,povcal_year, variable, p20)]
 neg.data.total = subset(neg.data.total,diff!=0)
 data.total = rbind(pos.data.total,neg.data.total)
-data.total[,year.weight:=(sum(.SD$diff)-.SD$diff)/sum(.SD$diff),by=.(iso3,povcal_year, variable)]
+data.total[,year.weight:=(sum(.SD$diff)-.SD$diff)/sum(.SD$diff),by=.(iso3,povcal_year, variable, p20)]
 data.total$diff = NULL
 data.total$diff.sign = NULL
 data.total$year.weight[which(data.total$year.weight==0)] = 1
