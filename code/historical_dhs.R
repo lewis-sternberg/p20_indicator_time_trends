@@ -11,7 +11,7 @@ if(Sys.info()[["user"]]=="alex"){
   wd2 <- "~/git/p20_private_data/project_data/DHS auto"
 }else if(Sys.info()[["user"]]=="dan-w" | Sys.info()[["user"]]=="danw"){
   wd <- paste0("C:/Users/",Sys.info()[["user"]],"/Box/Gap Narrative (ITEP), June 2019/git/p20_indicator_time_trends")
-  wd2 <- paste0("C:/Users/",Sys.info()[["user"]],"/Box/Gap Narrative (ITEP), June 2019/git/p20_indicator_time_trends/data")
+  wd2 <- paste0("C:/Users/",Sys.info()[["user"]],"/Box/Gap Narrative (ITEP), June 2019/git/p20_indicator_time_trends/data/DHSauto")
 }else{
   wd <- "E:/DHSauto"
   wd2 <- "~/git/p20_private_data/project_data/"
@@ -357,7 +357,12 @@ for(i in 1:nrow(povcalcuts)){
           ,weights=~weights
         )
       } else {
-        br$child.height.age <- NA}
+        br$stunting <- NA}
+        dsn = svydesign(
+          data=br
+          ,ids=~1
+          ,weights=~weights
+        )
     }
     pov.stunting.tab = svytable(~stunting+p20,dsn)
     if("TRUE" %in% colnames(pov.stunting.tab)){
