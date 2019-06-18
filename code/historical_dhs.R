@@ -453,9 +453,8 @@ for(i in 1:nrow(povcalcuts)){
   if(variable == "education"){
     #message("Education")
     pr$secedu <- NA
-    pr$secedu[which(!is.na(pr$educ))] <- 0
-    pr$secedu[which(pr$educ == "Secondary")] <- 1
-    pr$secedu[which(pr$educ == "Higher")] <- 1
+    pr$secedu[which(!is.na(pr$educ) & pr$age >= 21)] <- 0
+    pr$secedu[which(pr$educ %in% c("Secondary","Higher") & pr$age >= 21)] <- 1
     dsn = svydesign(
       data=pr
       ,ids=~1
