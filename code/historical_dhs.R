@@ -94,9 +94,12 @@ missing.br = c(
   "mdbr71fl.RData",
   "mlbr70fl.RData",
   "mwbr6hfl.RData",
+  "mwbr7ifl.RData",
   "rwbr6qfl.RData",
+  "rwbr7afl.RData",
   "slbr71fl.RData",
   "snbr50fl.RData",
+  "tzbr7ifl.RData", 
   "ugbr72fl.RData"
 )
 
@@ -183,7 +186,6 @@ for(i in 1:nrow(povcalcuts)){
           wi <- as.data.table(data)
           remove(data)
         } else {
-          message(paste("No wealth index in",povcal_subset$filename))
           next;
         }
       }
@@ -357,12 +359,13 @@ for(i in 1:nrow(povcalcuts)){
           ,weights=~weights
         )
       } else {
-        br$stunting <- NA}
+        br$stunting <- NA
         dsn = svydesign(
-          data=br
+          data=rbind(br,br) #Quick and dirty fix for when br is missing
           ,ids=~1
-          ,weights=~weights
+          ,weights = ~1
         )
+      }
     }
     pov.stunting.tab = svytable(~stunting+p20,dsn)
     if("TRUE" %in% colnames(pov.stunting.tab)){
