@@ -36,39 +36,20 @@ names(dhsmeta)[which(names(dhsmeta)=="Country.")] <- "CountryName"
 dhsmeta$filename=paste0(dhsmeta$dhs_cc,"HR",dhsmeta$dhs_recode_code,"DT")
 dhsmeta=dhsmeta[which(!is.na(dhsmeta$dhs_cc)),]
 
-dhsmeta$Education <- 1
+dhsmeta2 <- unique(dhsmeta[,c("CountryName","surveyyr","filename")])
+povcalyears=c(1990,1993,1996,1999,2002,2005,2008,2010,2011,2012,2013,2015)
 
-dhsmeta2 <- unique(dhsmeta[,c("CountryName","surveyyr","filename","Birth.registration","Women.s.status","Anthropometry","Education")])
-povcalyears=c(1981,1984,1987,1990,1993,1996,1999,2002,2005,2008,2010,2011,2012,2013,2015)
+variables <- c("birth.registration","u5.mortality","stunting","education")
+grid = as.data.table(expand.grid(filename=unique(dhsmeta2$filename), RequestYear=povcalyears, variable = variables))
 
-variables <- c("Birth.registration","Women.s.status","Anthropometry","Education")
-grid = as.data.table(expand.grid(filename=unique(dhsmeta2$filename), surveyyr=unique(dhsmeta2$surveyyr), RequestYear=povcalyears, variable = variables))
-dhsmeta2.br <- merge(grid[which(grid$variable == "Birth.registration")], dhsmeta2[which(dhsmeta2$Birth.registration==1)], all=T)
-dhsmeta2.ws <- merge(grid[which(grid$variable == "Women.s.status")], dhsmeta2[which(dhsmeta2$Women.s.status==1)], all=T)
-dhsmeta2.an <- merge(grid[which(grid$variable == "Anthropometry")], dhsmeta2[which(dhsmeta2$Anthropometry==1)], all=T)
-dhsmeta2.ed <- merge(grid[which(grid$variable == "Education")], dhsmeta2[which(dhsmeta2$Education==1)], all=T)
-dhsmeta2 <- rbind(dhsmeta2.br,dhsmeta2.an,dhsmeta2.ws,dhsmeta2.ed)
-
-dhsmeta2$diff = abs(dhsmeta2$surveyyr - dhsmeta2$RequestYear)
-dhsmeta2$diff.sign = sign(dhsmeta2$surveyyr - dhsmeta2$RequestYear)
-pos.dhsmeta2 = subset(dhsmeta2,diff.sign %in% c(0,1))
-neg.dhsmeta2 = subset(dhsmeta2,diff.sign %in% c(0,-1))
-pos.dhsmeta2 = data.table(pos.dhsmeta2)[,.SD[which.min(.SD$diff),],by=.(CountryName,RequestYear, variable)]
-neg.dhsmeta2 = data.table(neg.dhsmeta2)[,.SD[which.min(.SD$diff),],by=.(CountryName,RequestYear, variable)]
-neg.dhsmeta2 = subset(neg.dhsmeta2,diff!=0)
-dhsmeta2 = rbind(pos.dhsmeta2,neg.dhsmeta2)
-dhsmeta2[,year.weight:=(sum(.SD$diff)-.SD$diff)/sum(.SD$diff),by=.(CountryName,RequestYear, variable)]
-dhsmeta2$diff = NULL
-dhsmeta2$diff.sign = NULL
-dhsmeta2$year.weight[which(dhsmeta2$year.weight==0)] = 1
-dhsmeta2$year.weight[which(is.nan(dhsmeta2$year.weight))] = 1
+dhsmeta2 <- merge(grid, dhsmeta2, all=T)
 
 povcalcuts <- join(dhsmeta2,povcalcuts,by=c("CountryName","RequestYear"))
 
 names(povcalcuts)[which(names(povcalcuts)=="CountryCode")] <- "iso3"
 povcalcuts$hc<- povcalcuts$P20Headcount/100
 povcalcuts$extreme <- povcalcuts$ExtPovHC/100
-keep <- c("iso3","RequestYear","surveyyr","hc","PovGap","filename","extreme","year.weight","variable")
+keep <- c("iso3","RequestYear","surveyyr","hc","PovGap","filename","extreme","variable")
 povcalcuts <- povcalcuts[,keep, with=F]
 povcalcuts = subset(povcalcuts, !is.na(hc))
 povcalcuts = povcalcuts[order(povcalcuts$filename,povcalcuts$RequestYear),]
@@ -97,7 +78,7 @@ weighted.percentile <- function(x,w,prob,na.rm=TRUE){
   names(cutList) <- cutNames
   return(cutList)
 }
-rm(grid,dhsmeta2.an,dhsmeta2.br,dhsmeta2.ws,neg.dhsmeta2,pos.dhsmeta2,dhsmeta)
+rm(grid,dhsmeta,dhsmeta2)
 gc()
 
 ####Run function####
@@ -125,10 +106,10 @@ dataList <- list()
 dataIndex <- 1
 last_filename <- ""
 pb = txtProgressBar(max=nrow(povcalcuts),style=3)
-setTxtProgressBar(pb, 0)
 # Loop through every povcalcut
 for(i in 1:nrow(povcalcuts)){
   povcal_subset = povcalcuts[i,]
+  setTxtProgressBar(pb, i-1)
   # Pull some coded info out of the dir name
   country <- tolower(substr(povcal_subset$filename,1,2))
   recode <- tolower(substr(povcal_subset$filename,3,4))
@@ -202,6 +183,7 @@ for(i in 1:nrow(povcalcuts)){
           wi <- as.data.table(data)
           remove(data)
         } else {
+          message(paste("No wealth index in",povcal_subset$filename))
           next;
         }
       }
@@ -349,7 +331,7 @@ for(i in 1:nrow(povcalcuts)){
   }
   
   # Stunting
-  if(variable == "anthropometry"){
+  if(variable == "stunting"){
     #message("Stunting")
     if(!(typeof(pr$child.height.age)=="NULL")){
       pr$child.height.age[which(pr$child.height.age>80)] <- NA
@@ -425,7 +407,7 @@ for(i in 1:nrow(povcalcuts)){
   }
   
   #Mortality    
-  if(variable == "women.s.status"){
+  if(variable == "u5.mortality"){
     #message("Mortality")
     br.p20 = subset(br,p20==T)
     br.u80 = subset(br,p20==F)
@@ -519,20 +501,34 @@ for(i in 1:nrow(povcalcuts)){
     
   }
   
-  
   dat$iso3 = povcal_subset$iso3
   dat$povcal_year = povcal_subset$RequestYear
   dat$survey_year = povcal_subset$surveyyr
   last_filename = tolower(substr(povcal_subset$filename,0,6))
-  dat$year.weight = povcal_subset$year.weight
-  
   dataList[[dataIndex]] <- dat
   dataIndex <- dataIndex + 1
-  setTxtProgressBar(pb, i)
 }
+
+setTxtProgressBar(pb, i)
 close(pb)
 data.total <- rbindlist(dataList)
-data.total$year.weight[which(is.na(data.total$value))] = NA
+
+#Weightings
+data.total$diff = abs(data.total$survey_year - data.total$povcal_year)
+data.total$diff[which(is.na(data.total$value))] = NA
+data.total$diff.sign = sign(data.total$survey_year - data.total$povcal_year)
+pos.data.total = subset(data.total,diff.sign %in% c(0,1))
+neg.data.total = subset(data.total,diff.sign %in% c(0,-1))
+pos.data.total = data.table(pos.data.total)[,.SD[which.min(.SD$diff),],by=.(iso3,povcal_year, variable)]
+neg.data.total = data.table(neg.data.total)[,.SD[which.min(.SD$diff),],by=.(iso3,povcal_year, variable)]
+neg.data.total = subset(neg.data.total,diff!=0)
+data.total = rbind(pos.data.total,neg.data.total)
+data.total[,year.weight:=(sum(.SD$diff)-.SD$diff)/sum(.SD$diff),by=.(iso3,povcal_year, variable)]
+data.total$diff = NULL
+data.total$diff.sign = NULL
+data.total$year.weight[which(data.total$year.weight==0)] = 1
+data.total$year.weight[which(is.nan(data.total$year.weight))] = 1
+
 data.total = data.total[,.(
   value=sum(.SD$value*.SD$year.weight,na.rm=T)/sum(.SD$year.weight),
   survey_year=paste(.SD$survey_year,collapse=";")
