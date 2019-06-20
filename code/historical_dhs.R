@@ -265,7 +265,6 @@ for(i in 1:nrow(povcalcuts)){
     pr.pov$p20 <- floor(pr.pov$p20)
     pr.pov$p20 <- as.logical(pr.pov$p20)
     br$p20 = NA
-    br$sex = NA
     br = merge(br[,p20:=NULL],pr.pov,by=c("cluster","household"),all.x=T)
   }
   # Birth certificate
@@ -455,7 +454,7 @@ for(i in 1:nrow(povcalcuts)){
     }
     dat = data.frame(
       p20=c(rep(T,6),rep(F,6)),
-      variable=c(rep("registration",12)),
+      variable=c(rep("stunting",12)),
       type=rep(c("statistic","numerator","denominator"),4),
       sex=rep(c(rep("male",3),rep("female",3)),2),
       value=c(p20.stunting.m.stat,p20.stunting.m.numerator,p20.stunting.m.denominator,
@@ -598,7 +597,7 @@ for(i in 1:nrow(povcalcuts)){
     }
     dat = data.frame(
       p20=c(rep(T,6),rep(F,6)),
-      variable=c(rep("registration",12)),
+      variable=c(rep("education",12)),
       type=rep(c("statistic","numerator","denominator"),4),
       sex=rep(c(rep("male",3),rep("female",3)),2),
       value=c(p20.education.m.stat,p20.education.m.numerator,p20.education.m.denominator,
@@ -643,5 +642,5 @@ data.total = data.total[,.(
 ,by=.(p20,variable,type,iso3,povcal_year,sex)
 ]
 
-save(data.total,file="../historical_dhs.RData")
-fwrite(data.total,"../historical_dhs.csv")
+save(data.total,file="../historical_dhsmf.RData")
+fwrite(data.total,"../historical_dhsmf.csv")
