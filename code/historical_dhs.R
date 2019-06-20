@@ -47,8 +47,8 @@ dhsmeta2 <- merge(grid, dhsmeta2, all=T)
 povcalcuts <- join(dhsmeta2,povcalcuts,by=c("CountryName","RequestYear"))
 
 names(povcalcuts)[which(names(povcalcuts)=="CountryCode")] <- "iso3"
-povcalcuts$hc<- povcalcuts$P20Headcount/100
-povcalcuts$extreme <- povcalcuts$ExtPovHC/100
+povcalcuts$hc<- povcalcuts$P20Headcount
+povcalcuts$extreme <- povcalcuts$ExtPovHC
 keep <- c("iso3","RequestYear","surveyyr","hc","PovGap","filename","extreme","variable")
 povcalcuts <- povcalcuts[,keep, with=F]
 povcalcuts = subset(povcalcuts, !is.na(hc))
@@ -483,10 +483,10 @@ for(i in 1:nrow(povcalcuts)){
       p20.mort.m.denominator = NA
     }
     if(nrow(br.p20.f)>1){
-      p20.fort.list.f = mort(br.p20.f)
-      p20.fort.f = p20.fort.list.f$mortality
-      p20.fort.f.numerator = p20.fort.list.f$total_morts
-      p20.fort.f.denominator = p20.fort.list.f$total_survs
+      p20.mort.list.f = mort(br.p20.f)
+      p20.mort.f = p20.mort.list.f$mortality
+      p20.mort.f.numerator = p20.mort.list.f$total_morts
+      p20.mort.f.denominator = p20.mort.list.f$total_survs
     }else{
       p20.mort.f = NA
       p20.mort.f.numerator = NA
