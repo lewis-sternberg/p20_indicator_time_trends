@@ -514,9 +514,9 @@ for(i in 1:nrow(povcalcuts)){
     }
     gc()
     dat = data.frame(
-      p20=c(rep(T,3),rep(F,3)),
-      variable=c(rep("mortality",6)),
-      type=rep(c("statistic","numerator","denominator"),2),
+      p20=c(rep(T,6),rep(F,6)),
+      variable=c(rep("mortality",12)),
+      type=rep(c("statistic","numerator","denominator"),4),
       sex=rep(c(rep("male",3),rep("female",3)),2),
       value=c(p20.mort.m,p20.mort.m.numerator,p20.mort.m.denominator,
               p20.mort.f,p20.mort.f.numerator,p20.mort.f.denominator,
