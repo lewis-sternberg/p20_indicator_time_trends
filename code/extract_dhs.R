@@ -5,11 +5,17 @@ if(length(new.packages)) install.packages(new.packages)
 lapply(list.of.packages, require, character.only=T)
 ####Run function####
 # set our working directory, change this if using on another machine
+if(Sys.info()[["user"]]=="zachc"){
+  wd <- "D:/DHSauto"
+}else{
 wd <- "/home/alex/Survey Microdata/MISauto"
+}
 setwd(wd)
-
+if(Sys.info()[["user"]]=="zachc"){
+  output.dir <- "D:/DHSauto"
+}else{
 output.dir = "/home/alex/git/p20_private_data/project_data/DHS auto/"
-
+}
 #Unzip
 message("Unzipping...")
 zips <- list.files(pattern="*.zip",ignore.case=T,full.names=T)

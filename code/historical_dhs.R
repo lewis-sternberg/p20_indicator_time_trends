@@ -13,8 +13,8 @@ if(Sys.info()[["user"]]=="alex"){
   wd <- "G:/My Drive/Work/GitHub/p20_indicator_time_trends"
   wd2 <- "G:/My Drive/Work/GitHub/p20_indicator_time_trends/data/DHSauto"
 }else{
-  wd <- "E:/DHSauto"
-  wd2 <- "~/git/p20_private_data/project_data/"
+  wd <- "D:/git/p20_indicator_time_trends"
+  wd2 <- "D:/DHSauto"
 }
 
 setwd(wd)
@@ -51,11 +51,12 @@ povcalcuts$hc<- povcalcuts$P20Headcount
 povcalcuts$extreme <- povcalcuts$ExtPovHC
 keep <- c("iso3","RequestYear","surveyyr","hc","PovGap","filename","extreme","variable")
 povcalcuts <- povcalcuts[,keep, with=F]
+
 povcalcuts = subset(povcalcuts, !is.na(hc))
 povcalcuts = povcalcuts[order(povcalcuts$filename,povcalcuts$RequestYear),]
 
 weighted.percentile <- function(x,w,prob,na.rm=TRUE){
-  df <- data.frame(x,w)
+  df <- data.frame(x,w) 
   if(na.rm){
     df <- df[which(complete.cases(df)),]
   }
@@ -102,8 +103,19 @@ missing.br = c(
   "tzbr7ifl.RData", 
   "ugbr72fl.RData"
 )
+af=subset(povcalcuts, filename=="ALHR71DT")
+af$filename="AFHR070DT"
+af$iso3="AFG"
+af$hc=0
+af$PovGap=0
+af$extreme=0
 
-rdatas = list.files(pattern="*.RData",ignore.case=T)
+povcalcuts=rbind(af,povcalcuts)
+#List of countries with subnational data
+subnationalcountries=c("AFG","BGD","BFA","CMR","GHA","KEN","MDG","MWI","MDA","MOZ","MMR","NPL","NGA","RWA","SEN","TZA","UGA")
+povcalcuts=subset(povcalcuts, iso3 %in% subnationalcountries)
+  
+rdatas = list.files(pattern="*.RData",ignore.case=T,recursive=T)
 rdatas = substr(rdatas,1,nchar(rdatas)-6)
 dataList <- list()
 dataIndex <- 1
@@ -121,9 +133,10 @@ for(i in 1:nrow(povcalcuts)){
   rdata_name = paste0(country,recode,phase,"fl")
   variable <- tolower(povcal_subset$variable)
   if(substr(rdata_name,0,6) != last_filename){
-    if(!(rdata_name %in% rdatas)){ next; }
+    if(!(substr(rdata_name,0,6) != last_filename)){ next; }
     #message(paste(rdata_name,povcal_subset$RequestYear))
     if(exists("pr")){rm(pr)}
+    print(country)
     pr_patha <- paste0(country,"pr",phase)
     pr_path <- paste0(tolower(pr_patha),"fl.RData")
     load(pr_path)
@@ -248,7 +261,7 @@ for(i in 1:nrow(povcalcuts)){
     if(length(names(pr)[which(names(br)=="hw5")])){
       names(br)[which(names(br)=="hw5")] <- "child.height.age"
       br$child.height.age <- br$child.height.age/100}
-    
+   
   }
   
   # Poverty
@@ -613,6 +626,7 @@ for(i in 1:nrow(povcalcuts)){
   last_filename = tolower(substr(povcal_subset$filename,0,6))
   dataList[[dataIndex]] <- dat
   dataIndex <- dataIndex + 1
+  }
 }
 
 setTxtProgressBar(pb, i)
