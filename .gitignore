@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+data/.RDataTmp
+code/historical_dhs - Copy.R
+historical_dhs.csv
+*.RData
