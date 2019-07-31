@@ -688,5 +688,16 @@ data.total = data.total[,.(
 ,by=.(p20,variable,type,iso3,povcal_year,region, sex)
 ]
 setwd(wd)
-save(data.total,file="data/historical_dhssubnational.RData")
-fwrite(data.total,"data/historical_dhssubnational.csv")
+save(data.total,file="data/historical_dhssubgender.RData")
+fwrite(data.total,"data/historical_dhssubgender.csv")
+data.total.num=subset(data.total,type=="numerator")
+setnames(data.total.num,"value","numerator")
+data.total.den=subset(data.total,type=="denominator")
+setnames(data.total.den,"value","denominator")
+data.total.wide=join(data.total.num,data.total.den,by=c("region","sex","variable","p20","iso3","povcal_year","survey_year"))
+data.total.wide2=data.table(data.total.wide)[,.(
+                                             denominator=sum(denominator)
+                                             ,numerator=sum(numerator))
+                                             ,by=c("region","variable","p20","iso3","povcal_year","survey_year")]
+data.total.wide2$value=data.total.wide2$numerator/data.total.wide2$denominator
+fwrite(data.total.wide2,"data/historical_dhs_sub.csv")
