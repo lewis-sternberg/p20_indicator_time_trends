@@ -54,7 +54,7 @@ povcalcuts <- povcalcuts[,keep, with=F]
 
 povcalcuts = subset(povcalcuts, !is.na(hc))
 povcalcuts = povcalcuts[order(povcalcuts$filename,povcalcuts$RequestYear),]
-
+povcalcuts=subset(povcalcuts, filename!="SNHR7IDT")
 weighted.percentile <- function(x,w,prob,na.rm=TRUE){
   df <- data.frame(x,w) 
   if(na.rm){
@@ -89,6 +89,7 @@ missing.br = c(
   "aobr51fl.RData",
   "bfbr70fl.RData",
   "bubr6hfl.RData",
+  "ghbr7afl.RData",
   "kebr7afl.RData",
   "lbbr61fl.RData",
   "lbbr71fl.RData",
@@ -96,15 +97,19 @@ missing.br = c(
   "mlbr70fl.RData",
   "mwbr6hfl.RData",
   "mwbr7ifl.RData",
+  "mzbr51fl.RData",
+  "ngbr72fl.RData",
   "rwbr6qfl.RData",
   "rwbr7afl.RData",
   "slbr71fl.RData",
   "snbr50fl.RData",
   "tzbr7ifl.RData", 
-  "ugbr72fl.RData"
+  "tzbr4afl.RData",
+  "ugbr72fl.RData",
+  "ugbr6afl.RData"
 )
 af=subset(povcalcuts, filename=="ALHR71DT")
-af$filename="AFHR070DT"
+af$filename="AFHR70DT"
 af$iso3="AFG"
 af$hc=0
 af$PovGap=0
@@ -134,7 +139,7 @@ for(i in 1:nrow(povcalcuts)){
   variable <- tolower(povcal_subset$variable)
   if(substr(rdata_name,0,6) != last_filename){
     if(!(substr(rdata_name,0,6) != last_filename)){ next; }
-    #message(paste(rdata_name,povcal_subset$RequestYear))
+    message(paste(rdata_name,povcal_subset$RequestYear))
     if(exists("pr")){rm(pr)}
     print(country)
     pr_patha <- paste0(country,"pr",phase)
@@ -627,23 +632,23 @@ for(i in 1:nrow(povcalcuts)){
   dataList[[dataIndex]] <- dat
   dataIndex <- dataIndex + 1
   }
-}
+
 
 setTxtProgressBar(pb, i)
 close(pb)
 data.total <- rbindlist(dataList)
-
+save(data.total,file="../historical_allrowssubnational.RData")
 #Weightings
 data.total$diff = abs(data.total$survey_year - data.total$povcal_year)
 data.total$diff[which(is.na(data.total$value))] = NA
 data.total$diff.sign = sign(data.total$survey_year - data.total$povcal_year)
 pos.data.total = subset(data.total,diff.sign %in% c(0,1))
 neg.data.total = subset(data.total,diff.sign %in% c(0,-1))
-pos.data.total = data.table(pos.data.total)[,.SD[which.min(.SD$diff),],by=.(iso3,povcal_year, variable, p20, type, sex)]
-neg.data.total = data.table(neg.data.total)[,.SD[which.min(.SD$diff),],by=.(iso3,povcal_year, variable, p20, type, sex)]
+pos.data.total = data.table(pos.data.total)[,.SD[which.min(.SD$diff),],by=.(iso3,povcal_year, region, variable, p20, type, sex)]
+neg.data.total = data.table(neg.data.total)[,.SD[which.min(.SD$diff),],by=.(iso3,povcal_year, region,variable, p20, type, sex)]
 neg.data.total = subset(neg.data.total,diff!=0)
 data.total = rbind(pos.data.total,neg.data.total)
-data.total[,year.weight:=(sum(.SD$diff)-.SD$diff)/sum(.SD$diff),by=.(iso3,povcal_year, variable, p20, type, sex)]
+data.total[,year.weight:=(sum(.SD$diff)-.SD$diff)/sum(.SD$diff),by=.(iso3,povcal_year, variable, region, p20, type, sex)]
 data.total$diff = NULL
 data.total$diff.sign = NULL
 data.total$year.weight[which(data.total$year.weight==0)] = 1
@@ -653,7 +658,7 @@ data.total = data.total[,.(
   value=sum(.SD$value*.SD$year.weight,na.rm=T)/sum(.SD$year.weight),
   survey_year=paste(.SD$survey_year,collapse=";")
 )
-,by=.(p20,variable,type,iso3,povcal_year,sex)
+,by=.(p20,variable,type,iso3,povcal_year,region, sex)
 ]
 
 save(data.total,file="../historical_dhsmf.RData")
