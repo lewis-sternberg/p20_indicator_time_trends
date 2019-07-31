@@ -79,6 +79,16 @@ weighted.percentile <- function(x,w,prob,na.rm=TRUE){
   names(cutList) <- cutNames
   return(cutList)
 }
+
+label.region=function(region.vals,region.labs){
+  reg.lab.list=list()
+  for(i in 1:length(region.labs)){
+    reg.name=names(region.labs)[i]
+    reg.lab=as.character(region.labs[i])
+    reg.lab.list[[reg.lab]]=reg.name
+  } 
+  return(unlist(reg.lab.list[as.character(region.vals)]))
+}
 rm(grid,dhsmeta,dhsmeta2)
 gc()
 
@@ -145,9 +155,12 @@ for(i in 1:nrow(povcalcuts)){
     pr_patha <- paste0(country,"pr",phase)
     pr_path <- paste0(tolower(pr_patha),"fl.RData")
     load(pr_path)
+    names(attributes(data)$label.table)=toupper(names(attributes(data)$label.table))
+    reg.labs=attributes(data)$label.table$HV024
+    data$region=label.region(data$hv024,reg.labs)
     pr <- as.data.table(data)
     remove(data)
-    keep <- c("hvidx","hhid","hv001","hv002","hv005","hv024","hv025","hv219","hv220","hv271","hv104","hv105","hv109","hv112","hv140","hc70","v106")
+    keep <- c("hvidx","hhid","hv001","hv002","hv005","region","hv025","hv219","hv220","hv271","hv104","hv105","hv109","hv112","hv140","hc70","v106")
     pr <- subset(pr, select= (colnames(pr) %in% keep))
     gc()
     names(pr)[which(names(pr)=="hv001")] <- "cluster"
@@ -158,9 +171,11 @@ for(i in 1:nrow(povcalcuts)){
     br_path <- paste0(tolower(br_patha),"fl.RData")
     if(!(br_path %in% missing.br)){
       load(br_path)
+      names(attributes(data)$label.table)=toupper(names(attributes(data)$label.table))
+      data$region=label.region(data$v024,reg.labs)
       br <- as.data.table(data)
       remove(data)
-      keep <- c("v001","v002","b3","v008","v005","b7","hw5","b4")
+      keep <- c("v001","v002","b3","v008","v005","b7","hw5","b4","region")
       br <- subset(br, select= (colnames(br) %in% keep))
       gc()
       names(br)[which(names(br)=="v001")] <- "cluster"
@@ -250,7 +265,6 @@ for(i in 1:nrow(povcalcuts)){
     # ID vars
     names(pr)[which(names(pr)=="hv001")] <- "cluster"
     names(pr)[which(names(pr)=="hv002")] <- "household"
-    names(pr)[which(names(pr)=="hv024")] <- "region"
     names(pr)[which(names(pr)=="hvidx")] <- "line"
     names(pr)[which(names(pr)=="hv112")] <- "mother.line"
     pr$mother.line[which(pr$mother.line==99)] <- NA
@@ -285,352 +299,365 @@ for(i in 1:nrow(povcalcuts)){
     br$p20 = NA
     br = merge(br[,p20:=NULL],pr.pov,by=c("cluster","household"),all.x=T)
   }
-  # Birth certificate
-  if(variable == "birth.registration"){
-    #message("Registration")
-    names(pr)[which(names(pr)=="hv140")] <- "birth.cert"
-    #0 - neither certificate or registered
-    #1 - has certificate
-    #2 - registered, no certificate
-    #3 - registered, no certificate
-    #6 - other
-    #8 - dk
-    pr$birth.reg = NA
-    pr$birth.reg[which(pr$birth.cert %in% c(0,6,8,9))] = 0
-    pr$birth.reg[which(pr$birth.cert %in% c(1,2,3))] = 1
-    
-    dsn = svydesign(
-      data=pr
-      ,ids=~1
-      ,weights=~weights
-    )
-    
-    pov.reg.tab = svytable(~birth.reg+p20+sex,dsn)
-    if("TRUE" %in% colnames(pov.reg.tab)){
-      if("1" %in% rownames(pov.reg.tab)){
-        p20.reg.m = pov.reg.tab["1","TRUE","1"]
-        p20.reg.f = pov.reg.tab["1","TRUE","2"]
-      }else{
-        p20.reg.m = NA
-        p20.reg.f = NA
-      }
-      if("0" %in% rownames(pov.reg.tab)){
-        p20.non.reg.m = pov.reg.tab["0","TRUE","1"]
-        p20.non.reg.f = pov.reg.tab["0","TRUE","2"]
-      }else{
-        p20.non.reg.m = NA
-        p20.non.reg.f = NA
-      }
-      p20.reg.m.numerator = p20.reg.m
-      p20.reg.m.denominator = sum(p20.reg.m,p20.non.reg.m,na.rm=T)
-      p20.reg.m.stat = p20.reg.m.numerator/p20.reg.m.denominator
-      p20.reg.f.numerator = p20.reg.f
-      p20.reg.f.denominator = sum(p20.reg.f,p20.non.reg.f,na.rm=T)
-      p20.reg.f.stat = p20.reg.f.numerator/p20.reg.f.denominator
-    }else{
-      p20.reg.m.stat = NA
-      p20.reg.m.numerator = NA
-      p20.reg.m.denominator = NA
-      p20.reg.f.stat = NA
-      p20.reg.f.numerator = NA
-      p20.reg.f.denominator = NA
+  pr.backup=copy(pr)
+  br.backup=copy(br)
+  regions=unique(pr$region)
+  for(this.region in regions){
+    pr=copy(pr.backup)
+    br=copy(br.backup)
+    pr=subset(pr,this.region==region)
+    if("region" %in% names(br)){
+      br=subset(br,this.region==region)
     }
-    if("FALSE" %in% colnames(pov.reg.tab)){
-      if("1" %in% rownames(pov.reg.tab)){
-        u80.reg.m = pov.reg.tab["1","FALSE","1"]
-        u80.reg.f = pov.reg.tab["1","FALSE","2"]
-      }else{
-        u80.reg.m = NA
-        u80.reg.f = NA
-      }
-      if("0" %in% rownames(pov.reg.tab)){
-        u80.non.reg.m = pov.reg.tab["0","FALSE","1"]
-        u80.non.reg.f = pov.reg.tab["0","FALSE","2"]
-      }else{
-        u80.non.reg.m = NA
-        u80.non.reg.f = NA
-      }
-      u80.reg.m.numerator = u80.reg.m
-      u80.reg.m.denominator = sum(u80.reg.m,u80.non.reg.m,na.rm=T)
-      u80.reg.m.stat = u80.reg.m.numerator/u80.reg.m.denominator
-      u80.reg.f.numerator = u80.reg.f
-      u80.reg.f.denominator = sum(u80.reg.f,u80.non.reg.f,na.rm=T)
-      u80.reg.f.stat = u80.reg.f.numerator/u80.reg.f.denominator
-    }else{
-      u80.reg.m.stat = NA
-      u80.reg.m.numerator = NA
-      u80.reg.m.denominator = NA
-      u80.reg.f.stat = NA
-      u80.reg.f.numerator = NA
-      u80.reg.f.denominator = NA
-    }
-    dat = data.frame(
-      p20=c(rep(T,6),rep(F,6)),
-      variable=c(rep("registration",12)),
-      type=rep(c("statistic","numerator","denominator"),4),
-      sex=rep(c(rep("male",3),rep("female",3)),2),
-      value=c(p20.reg.m.stat,p20.reg.m.numerator,p20.reg.m.denominator,
-              p20.reg.f.stat,p20.reg.f.numerator,p20.reg.f.denominator,
-              u80.reg.m.stat,u80.reg.m.numerator,u80.reg.m.denominator,
-              u80.reg.f.stat,u80.reg.f.numerator,u80.reg.f.denominator)
-    )
-  }
-  
-  # Stunting
-  if(variable == "stunting"){
-    #message("Stunting")
-    if(!(typeof(pr$child.height.age)=="NULL")){
-      pr$child.height.age[which(pr$child.height.age>80)] <- NA
-      pr$stunting <- NA
-      pr$stunting[which(pr$child.height.age > (-6) & pr$child.height.age<= (-3))] <- 1
-      pr$stunting[which(pr$child.height.age > (-3) & pr$child.height.age<= (-2))] <- 1
-      pr$stunting[which(pr$child.height.age > (-2) & pr$child.height.age< (6))] <- 0
+    # Birth certificate
+    if(variable == "birth.registration"){
+      #message("Registration")
+      names(pr)[which(names(pr)=="hv140")] <- "birth.cert"
+      #0 - neither certificate or registered
+      #1 - has certificate
+      #2 - registered, no certificate
+      #3 - registered, no certificate
+      #6 - other
+      #8 - dk
+      pr$birth.reg = NA
+      pr$birth.reg[which(pr$birth.cert %in% c(0,6,8,9))] = 0
+      pr$birth.reg[which(pr$birth.cert %in% c(1,2,3))] = 1
+      
       dsn = svydesign(
         data=pr
         ,ids=~1
         ,weights=~weights
       )
-    } else {
-      if(!(typeof(br$child.height.age)=="NULL")){
-        br$child.height.age[which(br$child.height.age>80)] <- NA
-        br$stunting <- NA
-        br$stunting[which(br$child.height.age > (-6) & br$child.height.age<= (-3))] <- 1
-        br$stunting[which(br$child.height.age > (-3) & br$child.height.age<= (-2))] <- 1
-        br$stunting[which(br$child.height.age > (-2) & br$child.height.age< (6))] <- 0
+      
+      pov.reg.tab = svytable(~birth.reg+p20+sex,dsn)
+      if("TRUE" %in% colnames(pov.reg.tab)){
+        if("1" %in% rownames(pov.reg.tab)){
+          p20.reg.m = pov.reg.tab["1","TRUE","1"]
+          p20.reg.f = pov.reg.tab["1","TRUE","2"]
+        }else{
+          p20.reg.m = NA
+          p20.reg.f = NA
+        }
+        if("0" %in% rownames(pov.reg.tab)){
+          p20.non.reg.m = pov.reg.tab["0","TRUE","1"]
+          p20.non.reg.f = pov.reg.tab["0","TRUE","2"]
+        }else{
+          p20.non.reg.m = NA
+          p20.non.reg.f = NA
+        }
+        p20.reg.m.numerator = p20.reg.m
+        p20.reg.m.denominator = sum(p20.reg.m,p20.non.reg.m,na.rm=T)
+        p20.reg.m.stat = p20.reg.m.numerator/p20.reg.m.denominator
+        p20.reg.f.numerator = p20.reg.f
+        p20.reg.f.denominator = sum(p20.reg.f,p20.non.reg.f,na.rm=T)
+        p20.reg.f.stat = p20.reg.f.numerator/p20.reg.f.denominator
+      }else{
+        p20.reg.m.stat = NA
+        p20.reg.m.numerator = NA
+        p20.reg.m.denominator = NA
+        p20.reg.f.stat = NA
+        p20.reg.f.numerator = NA
+        p20.reg.f.denominator = NA
+      }
+      if("FALSE" %in% colnames(pov.reg.tab)){
+        if("1" %in% rownames(pov.reg.tab)){
+          u80.reg.m = pov.reg.tab["1","FALSE","1"]
+          u80.reg.f = pov.reg.tab["1","FALSE","2"]
+        }else{
+          u80.reg.m = NA
+          u80.reg.f = NA
+        }
+        if("0" %in% rownames(pov.reg.tab)){
+          u80.non.reg.m = pov.reg.tab["0","FALSE","1"]
+          u80.non.reg.f = pov.reg.tab["0","FALSE","2"]
+        }else{
+          u80.non.reg.m = NA
+          u80.non.reg.f = NA
+        }
+        u80.reg.m.numerator = u80.reg.m
+        u80.reg.m.denominator = sum(u80.reg.m,u80.non.reg.m,na.rm=T)
+        u80.reg.m.stat = u80.reg.m.numerator/u80.reg.m.denominator
+        u80.reg.f.numerator = u80.reg.f
+        u80.reg.f.denominator = sum(u80.reg.f,u80.non.reg.f,na.rm=T)
+        u80.reg.f.stat = u80.reg.f.numerator/u80.reg.f.denominator
+      }else{
+        u80.reg.m.stat = NA
+        u80.reg.m.numerator = NA
+        u80.reg.m.denominator = NA
+        u80.reg.f.stat = NA
+        u80.reg.f.numerator = NA
+        u80.reg.f.denominator = NA
+      }
+      dat = data.frame(
+        p20=c(rep(T,6),rep(F,6)),
+        variable=c(rep("registration",12)),
+        type=rep(c("statistic","numerator","denominator"),4),
+        sex=rep(c(rep("male",3),rep("female",3)),2),
+        value=c(p20.reg.m.stat,p20.reg.m.numerator,p20.reg.m.denominator,
+                p20.reg.f.stat,p20.reg.f.numerator,p20.reg.f.denominator,
+                u80.reg.m.stat,u80.reg.m.numerator,u80.reg.m.denominator,
+                u80.reg.f.stat,u80.reg.f.numerator,u80.reg.f.denominator)
+      )
+    }
+    
+    # Stunting
+    if(variable == "stunting"){
+      #message("Stunting")
+      if(!(typeof(pr$child.height.age)=="NULL")){
+        pr$child.height.age[which(pr$child.height.age>80)] <- NA
+        pr$stunting <- NA
+        pr$stunting[which(pr$child.height.age > (-6) & pr$child.height.age<= (-3))] <- 1
+        pr$stunting[which(pr$child.height.age > (-3) & pr$child.height.age<= (-2))] <- 1
+        pr$stunting[which(pr$child.height.age > (-2) & pr$child.height.age< (6))] <- 0
         dsn = svydesign(
-          data=br
+          data=pr
           ,ids=~1
           ,weights=~weights
         )
       } else {
-        br$stunting <- NA
-        dsn = svydesign(
-          data=rbind(br,br) #Quick and dirty fix for when br is missing
-          ,ids=~1
-          ,weights = ~1
-        )
+        if(!(typeof(br$child.height.age)=="NULL")){
+          br$child.height.age[which(br$child.height.age>80)] <- NA
+          br$stunting <- NA
+          br$stunting[which(br$child.height.age > (-6) & br$child.height.age<= (-3))] <- 1
+          br$stunting[which(br$child.height.age > (-3) & br$child.height.age<= (-2))] <- 1
+          br$stunting[which(br$child.height.age > (-2) & br$child.height.age< (6))] <- 0
+          dsn = svydesign(
+            data=br
+            ,ids=~1
+            ,weights=~weights
+          )
+        } else {
+          br$stunting <- NA
+          dsn = svydesign(
+            data=rbind(br,br) #Quick and dirty fix for when br is missing
+            ,ids=~1
+            ,weights = ~1
+          )
+        }
       }
+      pov.stunting.tab = svytable(~stunting+p20+sex,dsn)
+      if("TRUE" %in% colnames(pov.stunting.tab)){
+        if("1" %in% rownames(pov.stunting.tab)){
+          p20.stunting.m = pov.stunting.tab["1","TRUE","1"]
+          p20.stunting.f = pov.stunting.tab["1","TRUE","2"]
+        }else{
+          p20.stunting.m = NA
+          p20.stunting.f = NA
+        }
+        if("0" %in% rownames(pov.stunting.tab)){
+          p20.non.stunting.m = pov.stunting.tab["0","TRUE","1"]
+          p20.non.stunting.f = pov.stunting.tab["0","TRUE","2"]
+        }else{
+          p20.non.stunting.m = NA
+          p20.non.stunting.f = NA
+        }
+        p20.stunting.m.numerator = p20.stunting.m
+        p20.stunting.m.denominator = sum(p20.stunting.m,p20.non.stunting.m,na.rm=T)
+        p20.stunting.m.stat = p20.stunting.m.numerator/p20.stunting.m.denominator
+        p20.stunting.f.numerator = p20.stunting.f
+        p20.stunting.f.denominator = sum(p20.stunting.f,p20.non.stunting.f,na.rm=T)
+        p20.stunting.f.stat = p20.stunting.f.numerator/p20.stunting.f.denominator
+      }else{
+        p20.stunting.m.stat = NA
+        p20.stunting.m.numerator = NA
+        p20.stunting.m.denominator = NA
+        p20.stunting.f.stat = NA
+        p20.stunting.f.numerator = NA
+        p20.stunting.f.denominator = NA
+      }
+      if("FALSE" %in% colnames(pov.stunting.tab)){
+        if("1" %in% rownames(pov.stunting.tab)){
+          u80.stunting.m = pov.stunting.tab["1","FALSE","1"]
+          u80.stunting.f = pov.stunting.tab["1","FALSE","2"]
+        }else{
+          u80.stunting.m = NA
+          u80.stunting.f = NA
+        }
+        if("0" %in% rownames(pov.stunting.tab)){
+          u80.non.stunting.m = pov.stunting.tab["0","FALSE","1"]
+          u80.non.stunting.f = pov.stunting.tab["0","FALSE","2"]
+        }else{
+          u80.non.stunting.m = NA
+          u80.non.stunting.f = NA
+        }
+        u80.stunting.m.numerator = u80.stunting.m
+        u80.stunting.m.denominator = sum(u80.stunting.m,u80.non.stunting.m,na.rm=T)
+        u80.stunting.m.stat = u80.stunting.m.numerator/u80.stunting.m.denominator
+        u80.stunting.f.numerator = u80.stunting.f
+        u80.stunting.f.denominator = sum(u80.stunting.f,u80.non.stunting.f,na.rm=T)
+        u80.stunting.f.stat = u80.stunting.f.numerator/u80.stunting.f.denominator
+      }else{
+        u80.stunting.m.stat = NA
+        u80.stunting.m.numerator = NA
+        u80.stunting.m.denominator = NA
+        u80.stunting.f.stat = NA
+        u80.stunting.f.numerator = NA
+        u80.stunting.f.denominator = NA
+      }
+      dat = data.frame(
+        p20=c(rep(T,6),rep(F,6)),
+        variable=c(rep("stunting",12)),
+        type=rep(c("statistic","numerator","denominator"),4),
+        sex=rep(c(rep("male",3),rep("female",3)),2),
+        value=c(p20.stunting.m.stat,p20.stunting.m.numerator,p20.stunting.m.denominator,
+                p20.stunting.f.stat,p20.stunting.f.numerator,p20.stunting.f.denominator,
+                u80.stunting.m.stat,u80.stunting.m.numerator,u80.stunting.m.denominator,
+                u80.stunting.f.stat,u80.stunting.f.numerator,u80.stunting.f.denominator)
+      )
     }
-    pov.stunting.tab = svytable(~stunting+p20+sex,dsn)
-    if("TRUE" %in% colnames(pov.stunting.tab)){
-      if("1" %in% rownames(pov.stunting.tab)){
-        p20.stunting.m = pov.stunting.tab["1","TRUE","1"]
-        p20.stunting.f = pov.stunting.tab["1","TRUE","2"]
+    
+    #Mortality
+    if(variable == "u5.mortality"){
+      #message("Mortality")
+      br.p20.m = subset(br,p20==T & sex==1)
+      br.u80.m = subset(br,p20==F & sex==1)
+      br.p20.f = subset(br,p20==T & sex==2)
+      br.u80.f = subset(br,p20==F & sex==2)
+      gc()
+      if(nrow(br.p20.m)>1){
+        p20.mort.list.m = mort(br.p20.m)
+        p20.mort.m = p20.mort.list.m$mortality
+        p20.mort.m.numerator = p20.mort.list.m$total_morts
+        p20.mort.m.denominator = p20.mort.list.m$total_survs
       }else{
-        p20.stunting.m = NA
-        p20.stunting.f = NA
+        p20.mort.m = NA
+        p20.mort.m.numerator = NA
+        p20.mort.m.denominator = NA
       }
-      if("0" %in% rownames(pov.stunting.tab)){
-        p20.non.stunting.m = pov.stunting.tab["0","TRUE","1"]
-        p20.non.stunting.f = pov.stunting.tab["0","TRUE","2"]
+      if(nrow(br.p20.f)>1){
+        p20.mort.list.f = mort(br.p20.f)
+        p20.mort.f = p20.mort.list.f$mortality
+        p20.mort.f.numerator = p20.mort.list.f$total_morts
+        p20.mort.f.denominator = p20.mort.list.f$total_survs
       }else{
-        p20.non.stunting.m = NA
-        p20.non.stunting.f = NA
+        p20.mort.f = NA
+        p20.mort.f.numerator = NA
+        p20.mort.f.denominator = NA
       }
-      p20.stunting.m.numerator = p20.stunting.m
-      p20.stunting.m.denominator = sum(p20.stunting.m,p20.non.stunting.m,na.rm=T)
-      p20.stunting.m.stat = p20.stunting.m.numerator/p20.stunting.m.denominator
-      p20.stunting.f.numerator = p20.stunting.f
-      p20.stunting.f.denominator = sum(p20.stunting.f,p20.non.stunting.f,na.rm=T)
-      p20.stunting.f.stat = p20.stunting.f.numerator/p20.stunting.f.denominator
-    }else{
-      p20.stunting.m.stat = NA
-      p20.stunting.m.numerator = NA
-      p20.stunting.m.denominator = NA
-      p20.stunting.f.stat = NA
-      p20.stunting.f.numerator = NA
-      p20.stunting.f.denominator = NA
+      if(nrow(br.u80.m)>1){
+        u80.mort.m.list = mort(br.u80.m)
+        u80.mort.m = u80.mort.m.list$mortality
+        u80.mort.m.numerator = u80.mort.m.list$total_morts
+        u80.mort.m.denominator = u80.mort.m.list$total_survs
+      }else{
+        u80.mort.m = NA
+        u80.mort.m.numerator = NA
+        u80.mort.m.denominator = NA
+      }
+      if(nrow(br.u80.f)>1){
+        u80.mort.f.list = mort(br.u80.f)
+        u80.mort.f = u80.mort.f.list$mortality
+        u80.mort.f.numerator = u80.mort.f.list$total_morts
+        u80.mort.f.denominator = u80.mort.f.list$total_survs
+      }else{
+        u80.mort.f = NA
+        u80.mort.f.numerator = NA
+        u80.mort.f.denominator = NA
+      }
+      gc()
+      dat = data.frame(
+        p20=c(rep(T,6),rep(F,6)),
+        variable=c(rep("mortality",12)),
+        type=rep(c("statistic","numerator","denominator"),4),
+        sex=rep(c(rep("male",3),rep("female",3)),2),
+        value=c(p20.mort.m,p20.mort.m.numerator,p20.mort.m.denominator,
+                p20.mort.f,p20.mort.f.numerator,p20.mort.f.denominator,
+                u80.mort.m,u80.mort.m.numerator,u80.mort.m.denominator,
+                u80.mort.f,u80.mort.f.numerator,u80.mort.f.denominator)
+      )
     }
-    if("FALSE" %in% colnames(pov.stunting.tab)){
-      if("1" %in% rownames(pov.stunting.tab)){
-        u80.stunting.m = pov.stunting.tab["1","FALSE","1"]
-        u80.stunting.f = pov.stunting.tab["1","FALSE","2"]
+    
+    #Secondary Education
+    if(variable == "education"){
+      #message("Education")
+      pr$secedu <- NA
+      pr$secedu[which(!is.na(pr$educ) & pr$age >= 21)] <- 0
+      pr$secedu[which(pr$educ %in% c("Secondary","Higher") & pr$age >= 21)] <- 1
+      dsn = svydesign(
+        data=pr
+        ,ids=~1
+        ,weights=~weights
+      )
+      pov.education.tab = svytable(~secedu+p20+sex,dsn)
+      if("TRUE" %in% colnames(pov.education.tab)){
+        if("1" %in% rownames(pov.education.tab)){
+          p20.education.m = pov.education.tab["1","TRUE","1"]
+          p20.education.f = pov.education.tab["1","TRUE","2"]
+        }else{
+          p20.education.m = NA
+          p20.education.f = NA
+        }
+        if("0" %in% rownames(pov.education.tab)){
+          p20.non.education.m = pov.education.tab["0","TRUE","1"]
+          p20.non.education.f = pov.education.tab["0","TRUE","2"]
+        }else{
+          p20.non.education.m = NA
+          p20.non.education.f = NA
+        }
+        p20.education.m.numerator = p20.education.m
+        p20.education.m.denominator = sum(p20.education.m,p20.non.education.m,na.rm=T)
+        p20.education.m.stat = p20.education.m.numerator/p20.education.m.denominator
+        p20.education.f.numerator = p20.education.f
+        p20.education.f.denominator = sum(p20.education.f,p20.non.education.f,na.rm=T)
+        p20.education.f.stat = p20.education.f.numerator/p20.education.f.denominator
       }else{
-        u80.stunting.m = NA
-        u80.stunting.f = NA
+        p20.education.m.stat = NA
+        p20.education.m.numerator = NA
+        p20.education.m.denominator = NA
+        p20.education.f.stat = NA
+        p20.education.f.numerator = NA
+        p20.education.f.denominator = NA
       }
-      if("0" %in% rownames(pov.stunting.tab)){
-        u80.non.stunting.m = pov.stunting.tab["0","FALSE","1"]
-        u80.non.stunting.f = pov.stunting.tab["0","FALSE","2"]
+      if("FALSE" %in% colnames(pov.education.tab)){
+        if("1" %in% rownames(pov.education.tab)){
+          u80.education.m = pov.education.tab["1","FALSE","1"]
+          u80.education.f = pov.education.tab["1","FALSE","2"]
+        }else{
+          u80.education.m = NA
+          u80.education.f = NA
+        }
+        if("0" %in% rownames(pov.education.tab)){
+          u80.non.education.m = pov.education.tab["0","FALSE","1"]
+          u80.non.education.f = pov.education.tab["0","FALSE","2"]
+        }else{
+          u80.non.education.m = NA
+          u80.non.education.f = NA
+        }
+        u80.education.m.numerator = u80.education.m
+        u80.education.m.denominator = sum(u80.education.m,u80.non.education.m,na.rm=T)
+        u80.education.m.stat = u80.education.m.numerator/u80.education.m.denominator
+        u80.education.f.numerator = u80.education.f
+        u80.education.f.denominator = sum(u80.education.f,u80.non.education.f,na.rm=T)
+        u80.education.f.stat = u80.education.f.numerator/u80.education.f.denominator
       }else{
-        u80.non.stunting.m = NA
-        u80.non.stunting.f = NA
+        u80.education.m.stat = NA
+        u80.education.m.numerator = NA
+        u80.education.m.denominator = NA
+        u80.education.f.stat = NA
+        u80.education.f.numerator = NA
+        u80.education.f.denominator = NA
       }
-      u80.stunting.m.numerator = u80.stunting.m
-      u80.stunting.m.denominator = sum(u80.stunting.m,u80.non.stunting.m,na.rm=T)
-      u80.stunting.m.stat = u80.stunting.m.numerator/u80.stunting.m.denominator
-      u80.stunting.f.numerator = u80.stunting.f
-      u80.stunting.f.denominator = sum(u80.stunting.f,u80.non.stunting.f,na.rm=T)
-      u80.stunting.f.stat = u80.stunting.f.numerator/u80.stunting.f.denominator
-    }else{
-      u80.stunting.m.stat = NA
-      u80.stunting.m.numerator = NA
-      u80.stunting.m.denominator = NA
-      u80.stunting.f.stat = NA
-      u80.stunting.f.numerator = NA
-      u80.stunting.f.denominator = NA
+      dat = data.frame(
+        p20=c(rep(T,6),rep(F,6)),
+        variable=c(rep("education",12)),
+        type=rep(c("statistic","numerator","denominator"),4),
+        sex=rep(c(rep("male",3),rep("female",3)),2),
+        value=c(p20.education.m.stat,p20.education.m.numerator,p20.education.m.denominator,
+                p20.education.f.stat,p20.education.f.numerator,p20.education.f.denominator,
+                u80.education.m.stat,u80.education.m.numerator,u80.education.m.denominator,
+                u80.education.f.stat,u80.education.f.numerator,u80.education.f.denominator)
+      )
     }
-    dat = data.frame(
-      p20=c(rep(T,6),rep(F,6)),
-      variable=c(rep("stunting",12)),
-      type=rep(c("statistic","numerator","denominator"),4),
-      sex=rep(c(rep("male",3),rep("female",3)),2),
-      value=c(p20.stunting.m.stat,p20.stunting.m.numerator,p20.stunting.m.denominator,
-              p20.stunting.f.stat,p20.stunting.f.numerator,p20.stunting.f.denominator,
-              u80.stunting.m.stat,u80.stunting.m.numerator,u80.stunting.m.denominator,
-              u80.stunting.f.stat,u80.stunting.f.numerator,u80.stunting.f.denominator)
-    )
+    
+    dat$iso3 = povcal_subset$iso3
+    dat$povcal_year = povcal_subset$RequestYear
+    dat$survey_year = povcal_subset$surveyyr
+    dat$region=this.region
+    last_filename = tolower(substr(povcal_subset$filename,0,6))
+    dataList[[dataIndex]] <- dat
+    dataIndex <- dataIndex + 1
   }
   
-  #Mortality
-  if(variable == "u5.mortality"){
-    #message("Mortality")
-    br.p20.m = subset(br,p20==T & sex==1)
-    br.u80.m = subset(br,p20==F & sex==1)
-    br.p20.f = subset(br,p20==T & sex==2)
-    br.u80.f = subset(br,p20==F & sex==2)
-    gc()
-    if(nrow(br.p20.m)>1){
-      p20.mort.list.m = mort(br.p20.m)
-      p20.mort.m = p20.mort.list.m$mortality
-      p20.mort.m.numerator = p20.mort.list.m$total_morts
-      p20.mort.m.denominator = p20.mort.list.m$total_survs
-    }else{
-      p20.mort.m = NA
-      p20.mort.m.numerator = NA
-      p20.mort.m.denominator = NA
-    }
-    if(nrow(br.p20.f)>1){
-      p20.mort.list.f = mort(br.p20.f)
-      p20.mort.f = p20.mort.list.f$mortality
-      p20.mort.f.numerator = p20.mort.list.f$total_morts
-      p20.mort.f.denominator = p20.mort.list.f$total_survs
-    }else{
-      p20.mort.f = NA
-      p20.mort.f.numerator = NA
-      p20.mort.f.denominator = NA
-    }
-    if(nrow(br.u80.m)>1){
-      u80.mort.m.list = mort(br.u80.m)
-      u80.mort.m = u80.mort.m.list$mortality
-      u80.mort.m.numerator = u80.mort.m.list$total_morts
-      u80.mort.m.denominator = u80.mort.m.list$total_survs
-    }else{
-      u80.mort.m = NA
-      u80.mort.m.numerator = NA
-      u80.mort.m.denominator = NA
-    }
-    if(nrow(br.u80.f)>1){
-      u80.mort.f.list = mort(br.u80.f)
-      u80.mort.f = u80.mort.f.list$mortality
-      u80.mort.f.numerator = u80.mort.f.list$total_morts
-      u80.mort.f.denominator = u80.mort.f.list$total_survs
-    }else{
-      u80.mort.f = NA
-      u80.mort.f.numerator = NA
-      u80.mort.f.denominator = NA
-    }
-    gc()
-    dat = data.frame(
-      p20=c(rep(T,6),rep(F,6)),
-      variable=c(rep("mortality",12)),
-      type=rep(c("statistic","numerator","denominator"),4),
-      sex=rep(c(rep("male",3),rep("female",3)),2),
-      value=c(p20.mort.m,p20.mort.m.numerator,p20.mort.m.denominator,
-              p20.mort.f,p20.mort.f.numerator,p20.mort.f.denominator,
-              u80.mort.m,u80.mort.m.numerator,u80.mort.m.denominator,
-              u80.mort.f,u80.mort.f.numerator,u80.mort.f.denominator)
-    )
-  }
-  
-  #Secondary Education
-  if(variable == "education"){
-    #message("Education")
-    pr$secedu <- NA
-    pr$secedu[which(!is.na(pr$educ) & pr$age >= 21)] <- 0
-    pr$secedu[which(pr$educ %in% c("Secondary","Higher") & pr$age >= 21)] <- 1
-    dsn = svydesign(
-      data=pr
-      ,ids=~1
-      ,weights=~weights
-    )
-    pov.education.tab = svytable(~secedu+p20+sex,dsn)
-    if("TRUE" %in% colnames(pov.education.tab)){
-      if("1" %in% rownames(pov.education.tab)){
-        p20.education.m = pov.education.tab["1","TRUE","1"]
-        p20.education.f = pov.education.tab["1","TRUE","2"]
-      }else{
-        p20.education.m = NA
-        p20.education.f = NA
-      }
-      if("0" %in% rownames(pov.education.tab)){
-        p20.non.education.m = pov.education.tab["0","TRUE","1"]
-        p20.non.education.f = pov.education.tab["0","TRUE","2"]
-      }else{
-        p20.non.education.m = NA
-        p20.non.education.f = NA
-      }
-      p20.education.m.numerator = p20.education.m
-      p20.education.m.denominator = sum(p20.education.m,p20.non.education.m,na.rm=T)
-      p20.education.m.stat = p20.education.m.numerator/p20.education.m.denominator
-      p20.education.f.numerator = p20.education.f
-      p20.education.f.denominator = sum(p20.education.f,p20.non.education.f,na.rm=T)
-      p20.education.f.stat = p20.education.f.numerator/p20.education.f.denominator
-    }else{
-      p20.education.m.stat = NA
-      p20.education.m.numerator = NA
-      p20.education.m.denominator = NA
-      p20.education.f.stat = NA
-      p20.education.f.numerator = NA
-      p20.education.f.denominator = NA
-    }
-    if("FALSE" %in% colnames(pov.education.tab)){
-      if("1" %in% rownames(pov.education.tab)){
-        u80.education.m = pov.education.tab["1","FALSE","1"]
-        u80.education.f = pov.education.tab["1","FALSE","2"]
-      }else{
-        u80.education.m = NA
-        u80.education.f = NA
-      }
-      if("0" %in% rownames(pov.education.tab)){
-        u80.non.education.m = pov.education.tab["0","FALSE","1"]
-        u80.non.education.f = pov.education.tab["0","FALSE","2"]
-      }else{
-        u80.non.education.m = NA
-        u80.non.education.f = NA
-      }
-      u80.education.m.numerator = u80.education.m
-      u80.education.m.denominator = sum(u80.education.m,u80.non.education.m,na.rm=T)
-      u80.education.m.stat = u80.education.m.numerator/u80.education.m.denominator
-      u80.education.f.numerator = u80.education.f
-      u80.education.f.denominator = sum(u80.education.f,u80.non.education.f,na.rm=T)
-      u80.education.f.stat = u80.education.f.numerator/u80.education.f.denominator
-    }else{
-      u80.education.m.stat = NA
-      u80.education.m.numerator = NA
-      u80.education.m.denominator = NA
-      u80.education.f.stat = NA
-      u80.education.f.numerator = NA
-      u80.education.f.denominator = NA
-    }
-    dat = data.frame(
-      p20=c(rep(T,6),rep(F,6)),
-      variable=c(rep("education",12)),
-      type=rep(c("statistic","numerator","denominator"),4),
-      sex=rep(c(rep("male",3),rep("female",3)),2),
-      value=c(p20.education.m.stat,p20.education.m.numerator,p20.education.m.denominator,
-              p20.education.f.stat,p20.education.f.numerator,p20.education.f.denominator,
-              u80.education.m.stat,u80.education.m.numerator,u80.education.m.denominator,
-              u80.education.f.stat,u80.education.f.numerator,u80.education.f.denominator)
-    )
-  }
-  
-  dat$iso3 = povcal_subset$iso3
-  dat$povcal_year = povcal_subset$RequestYear
-  dat$survey_year = povcal_subset$surveyyr
-  last_filename = tolower(substr(povcal_subset$filename,0,6))
-  dataList[[dataIndex]] <- dat
-  dataIndex <- dataIndex + 1
   }
 
 
@@ -660,6 +687,6 @@ data.total = data.total[,.(
 )
 ,by=.(p20,variable,type,iso3,povcal_year,region, sex)
 ]
-
-save(data.total,file="../historical_dhsmf.RData")
-fwrite(data.total,"../historical_dhsmf.csv")
+setwd(wd)
+save(data.total,file="data/historical_dhssubnational.RData")
+fwrite(data.total,"data/historical_dhssubnational.csv")
