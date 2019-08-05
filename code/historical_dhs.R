@@ -21,7 +21,9 @@ setwd(wd)
 
 source("code/child_mort.R")
 povcalcuts <- fread("https://raw.githubusercontent.com/ZChristensen/poverty_trends/master/data/P20incometrends.csv")
+povcalcuts<- fread("D:/git/poverty_trends/data/P20incometrends.csv")
 dhsmeta<- fread("data/dhs_meta_data20190524.csv")
+dhsmeta$WealthIndex[which(dhsmeta$Country.=="Burkina Faso" & dhsmeta$dhs_recode_code==62)]=1
 dhsmeta<- subset(dhsmeta, Recode.Structure.!="DHS-I" & WealthIndex == 1)
 
 dhsmeta$Country.[which(dhsmeta$Country.=="Cape Verde")]<-"Cabo Verde"
@@ -102,17 +104,17 @@ missing.br = c(
 #List of countries with subnational data
 subnationalcountries=c("AFG","BGD","BFA","CMR","GHA","KEN","MDG","MWI","MDA","MOZ","MMR","NPL","NGA","RWA","SEN","TZA","UGA")
 povcalcuts=subset(povcalcuts, iso3 %in% subnationalcountries)
-  
-rdatas = list.files(pattern="*.RData",ignore.case=T,recursive=T)
-rdatas = substr(rdatas,1,nchar(rdatas)-6)
+latestsurveys=c("AFHR70DT","BDHR72DT","BFHR62DT","CMHR61DT","GHHR72DT","KEHR71DT","MMHR71DT","MWHR7HDT","MZHR62DT","NGHR6ADT","NPHR7HDT","RWHR70DT","SNHR7ZDT","TZHR7ADT","UGHR7BDT")  
+#MDG latest three DHS surveys have been MIS and they have been dropped from this analysis
+povcalcuts=subset(povcalcuts, filename %in% latestsurveys)
+last_filename <- ""
 dataList <- list()
 dataIndex <- 1
-last_filename <- ""
-pb = txtProgressBar(max=nrow(povcalcuts),style=3)
+
 # Loop through every povcalcut
 for(i in 1:nrow(povcalcuts)){
   povcal_subset = povcalcuts[i,]
-  setTxtProgressBar(pb, i-1)
+  # setTxtProgressBar(pb, i-1)
   # Pull some coded info out of the dir name
   country <- tolower(substr(povcal_subset$filename,1,2))
   recode <- tolower(substr(povcal_subset$filename,3,4))
@@ -120,8 +122,8 @@ for(i in 1:nrow(povcalcuts)){
   subphase <- substr(povcal_subset$filename,5,5)
   rdata_name = paste0(country,recode,phase,"fl")
   variable <- tolower(povcal_subset$variable)
-  if(substr(rdata_name,0,6) != last_filename){
-    if(!(substr(rdata_name,0,6) != last_filename)){ next; }
+  # if(substr(rdata_name,0,6) != last_filename){
+    # if(!(substr(rdata_name,0,6) != last_filename)){ next; }
     message(paste(rdata_name,povcal_subset$RequestYear))
     if(exists("pr")){rm(pr)}
     print(country)
@@ -252,7 +254,7 @@ for(i in 1:nrow(povcalcuts)){
       names(br)[which(names(br)=="hw5")] <- "child.height.age"
       br$child.height.age <- br$child.height.age/100}
    
-  }
+  # }
   
  
   pr.backup=copy(pr)
@@ -377,7 +379,6 @@ for(i in 1:nrow(povcalcuts)){
       
       
       dat = data.frame(
-     
         variable=c(rep("stunting",6)),
         type=rep(c("statistic","numerator","denominator"),2),
         sex=rep(c(rep("male",3),rep("female",3)),1),
@@ -479,8 +480,8 @@ for(i in 1:nrow(povcalcuts)){
   }
 
 
-setTxtProgressBar(pb, i)
-close(pb)
+# setTxtProgressBar(pb, i)
+# close(pb)
 data.total <- rbindlist(dataList)
 save(data.total,file="../historical_allrowssubnational.RData")
 
