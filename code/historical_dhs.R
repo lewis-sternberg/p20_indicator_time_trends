@@ -498,4 +498,17 @@ data.total.wide2=data.table(data.total.wide)[,.(
                                              ,numerator=sum(numerator))
                                              ,by=c("region","variable","iso3","survey_year")]
 data.total.wide2$value=data.total.wide2$numerator/data.total.wide2$denominator
+
+reg=subset(data.total.wide2, variable=="registration")
+setnames(reg, "value", "birth.registration")
+U5M=subset(data.total.wide2, variable=="mortality")
+setnames(U5M, "value", "U5M")
+stunt=subset(data.total.wide2, variable=="stunting")
+setnames(stunt, "value", "stunting")
+educ=subset(data.total.wide2, variable=="education")
+setnames(educ, "value", "education")
+data.wide=merge(reg,stunt, c("region","iso3","survey_year"))
+data.wide=merge(data.wide, U5M, c("region","iso3","survey_year"))
+data.wide=merge(data.wide, educ, c("region","iso3","survey_year"))
+
 fwrite(data.total.wide2,"data/historical_dhs_sub.csv")
